@@ -46,7 +46,8 @@ export class LoginComponent {
     this.validation = true;
     console.log(this.loginForm.value);
     if (this.loginForm.invalid){
-      this.messageService.add({ severity: 'error', summary: 'Error', detail: "Please Fill Details!", life: 3000 });
+      this.router.navigate(['/app/'])
+      //this.messageService.add({ severity: 'error', summary: 'Error', detail: "Please Fill Details!", life: 3000 });
       return;
     }else{
       let data = {
@@ -54,8 +55,10 @@ export class LoginComponent {
          "password" :this.loginForm.get('password').value
       }
       console.log(data);
+      this.router.navigate(['/app/'])
 
-      this.api.login(data)
+
+      /* this.api.login(data)
       .subscribe((res)=>{
         if(res.token){
           localStorage.setItem('Token',res.token);
@@ -71,7 +74,7 @@ export class LoginComponent {
         }
       },err=>{
       this.messageService.add({ severity: 'error', summary: 'Error', detail: err.error.msg, life: 3000 });
-      })
+      }) */
     }
 
 }
