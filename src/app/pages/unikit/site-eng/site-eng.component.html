@@ -1,0 +1,1001 @@
+<p-toast />
+<p-fluid>
+    <div class="flex flex-col md:flex-row gap-8">
+        <div class="md:w-full">
+        </div>
+    </div>
+
+    <div class="flex mt-8">
+        <div class="card flex flex-col gap-6 w-full">
+            <div class="font-semibold text-xl">Welcome {{empDetails.empName}}</div>
+            <div class="flex flex-col md:flex-row gap-6">
+                <div class="flex flex-wrap gap-2 w-full">
+                    <p-card [style]="{ width: 'full', overflow: 'hidden' }">
+                            
+                        <ng-template #title> Project</ng-template>
+                        <ng-template #subtitle> Card subtitle </ng-template>
+                        <p class="text-justify">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae numquam deserunt
+                            quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque quas!
+                        </p>
+                        <ng-template #footer>
+                            <div class="flex gap-4 mt-1">
+                                <p-button label="Click" class="w-full" styleClass="w-full" (click)="showDPR()"/>
+                            </div>
+                        </ng-template>
+                    </p-card>
+                </div>
+                <div class="flex flex-wrap gap-2 w-full">
+                    <p-card [style]="{ width: 'full', overflow: 'hidden' }">
+                            
+                        <ng-template #title> KPI</ng-template>
+                        <ng-template #subtitle> Card subtitle </ng-template>
+                        <p class="text-justify">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae numquam deserunt
+                            quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque quas!
+                        </p>
+                        <ng-template #footer>
+                            <div class="flex gap-4 mt-1">
+                                <p-button label="Click" class="w-full" styleClass="w-full" />
+                            </div>
+                        </ng-template>
+                    </p-card>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="flex mt-8" *ngIf="dprShow" id="targetGreen" #DPR>
+        <div class="card flex flex-col gap-6 w-full">
+            <div class="flex flex-col md:flex-row gap-6">
+                <div class="flex flex-wrap gap-2 w-full">
+                    <p-card [style]="{ width: '20rem', overflow: 'hidden' }">
+                        <ng-template #footer>
+                            <div class="flex gap-4 mt-1">
+                                <p-button label="DPR INPUT" class="w-full" styleClass="w-full" (click)="open('input')"/>
+                            </div>
+                        </ng-template>
+                    </p-card>
+                </div>
+                <div class="flex flex-wrap gap-2 w-full">
+                    <p-card [style]="{ width: '20rem', overflow: 'hidden' }">
+                        <ng-template #footer>
+                            <div class="flex gap-4 mt-1">
+                                <p-button label="DPR OUTPUT" class="w-full" styleClass="w-full" (click)="open('output')"/>
+                            </div>
+                        </ng-template>
+                    </p-card>
+                </div>
+            </div>
+        </div>
+    </div>
+</p-fluid>
+
+<p-dialog header="DPR INPUT" [(visible)]="openProjectList" [breakpoints]="{ '960px': '75vw' }" [style]="{ width: '100vw',height:'98vh' }" [modal]="true" [draggable]="false" [resizable]="false">
+    <p class="leading-normal m-0">
+        <p-chip class="!py-0 !pl-0 !pr-4 text-center">
+                <div  class="card flex justify-center flex-wrap gap-4">
+                    <button *ngFor="let p of NoOfProject" pButton pRipple severity="success" [style]="{ width: '35vw' }" (click)="openProjectInput(p)">
+                        <WindowMaximizeIcon pButtonIcon />
+                        <span pButtonLabel>{{p.proName}}</span> - 
+                        <span pButtonLabel ><i class="pi pi-inbox"></i> WTGs - {{p.numOfWTGs}}</span>
+                    </button>
+                </div>
+        </p-chip>
+    </p>
+</p-dialog>
+
+<p-dialog  [(visible)]="openProjectOutputList" [breakpoints]="{ '960px': '75vw' }" [style]="{ width: '97vw',height:'90vh' }" [modal]="true" [draggable]="false" [resizable]="false" (onHide)="close()">
+    <ng-template #header>
+        <div class="inline-flex items-center justify-center gap-2">
+            <span class="font-bold whitespace-nowrap">DPR OUTPUT</span>
+            <span class="font-bold whitespace-nowrap">
+                <p-splitbutton label="Consolidated Project"  [model]="consolidated" severity="help"/>
+                <!-- <p-button label="Consolidated Project" class="w-full" styleClass="w-full" severity="help"/> -->
+             </span>
+        </div>
+    </ng-template>
+    <p class="leading-normal m-0">
+        <p-chip class="!py-0 !pl-0 !pr-4 text-center">
+                <div  class="card flex justify-center flex-wrap gap-4">
+                    <button *ngFor="let p of NoOfProject" pButton pRipple severity="success" [style]="{ width: '35vw' }" (click)="openClosedProjectInput(p)">
+                        <WindowMaximizeIcon pButtonIcon />
+                        <span pButtonLabel>{{p.proName}}</span> - 
+                        <span pButtonLabel ><i class="pi pi-inbox"></i> WTGs - {{p.numOfWTGs}}</span>
+                    </button>
+                </div>
+        </p-chip>
+    </p>
+</p-dialog>
+
+<p-dialog header="" [modal]="true" [(visible)]="openInpButton" [style]="{ width: '65rem' }">
+    <p-fluid>
+        <div class="flex flex-col md:flex-row gap-8">
+            <div class="md:w-full">
+                <div class="card flex flex-col gap-4">
+                    <div class="flex flex-wrap gap-2">
+                        <h2 class="font-semibold text-xl">Paper Project DPR </h2>
+                        <p-button label="Daily Attendance"  [raised]="true" severity="info"/> 
+                    </div>
+                    
+                    <div class="flex flex-wrap gap-6">
+                        <div class="flex flex-col grow basis-0 gap-2">
+                            <p-button class="w-20vw" label="WTG ID" variant="text" [raised]="true" severity="secondary" (click)="openInputList('WTG ID')"/>
+                        </div>
+                        <div class="flex flex-col grow basis-0 gap-2">
+                            <p-button class="w-20vw" label="Foundation" variant="text" [raised]="true" severity="secondary" (click)="openInputList('Foundation')" />
+                        </div>
+                        <div class="flex flex-col grow basis-0 gap-2">
+                            <p-button class="w-20vw" label="IC status" variant="text" [raised]="true" severity="secondary" (click)="openInputList('IC status')" />
+                        </div>
+                        <div class="flex flex-col grow basis-0 gap-2">
+                            <p-button class="w-20vw" label="WTG Delivery" variant="text" [raised]="true" severity="secondary" (click)="openInputList('WTG Delivery')" />
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap gap-6">
+                        <div class="flex flex-col grow basis-0 gap-2">
+                            <p-button label="Container delivery" variant="text" [raised]="true" severity="secondary" (click)="openInputList('Container delivery')" />
+                        </div>
+                        <div class="flex flex-col grow basis-0 gap-2">
+                            <p-button label="WTG Serial number" variant="text" [raised]="true" severity="secondary" (click)="openInputList('WTG Serial number')" />
+                        </div>
+                        <div class="flex flex-col grow basis-0 gap-2">
+                            <p-button label="Contract plan" variant="text" [raised]="true" severity="secondary" (click)="openInputList('Contract plan')" />
+                        </div>
+                        <div class="flex flex-col grow basis-0 gap-2">
+                            <p-button label="Plant update" variant="text" [raised]="true" severity="secondary" (click)="openInputList('Plant update')" />
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap gap-6">
+                        <div class="flex flex-col grow basis-0 gap-2">
+                            <p-button label="Manpower"  variant="text" [raised]="true" severity="secondary" (click)="openInputList('Manpower')" />
+                        </div>
+                        <div class="flex flex-col grow basis-0 gap-2">
+                            <p-button label="Crane"  variant="text" [raised]="true" severity="secondary" (click)="openInputList('Crane')" />
+                        </div>
+                        
+                    </div>
+                    
+                    
+                </div>
+            </div>
+            
+        </div>
+       <!--  <div class="card flex flex-col gap-4">
+            <div class="font-semibold text-xl">Paper Project DPR</div>
+            <div class="flex flex-wrap gap-6">
+                <p-button label="WTG ID" severity="secondary" raised />
+                <p-button label="Foundation" severity="secondary" raised />
+                <p-button label="IC status" severity="secondary" raised />
+                <p-button label="WTG Delivery" severity="secondary" raised />
+                <p-button label="WTG Serial number" severity="secondary" raised />
+                <p-button label="Contract plan" severity="secondary" raised />
+                <p-button label="Plant update" severity="secondary" raised />
+                <p-button label="Manpower" severity="secondary" raised />
+                <p-button label="Crane" severity="secondary" raised />
+            </div>
+            
+        </div> -->
+    </p-fluid>
+</p-dialog>
+
+<p-dialog header="Standard" [modal]="true" [(visible)]="standardBtns" [style]="{ width: '65rem' }">
+    <p-fluid>
+        <div class="flex flex-col md:flex-row gap-8">
+            <div class="md:w-full">
+                <div class="card flex flex-col gap-4">
+                    <div class="font-semibold text-xl">Paper Project DPR</div>
+                    <div class="flex flex-wrap gap-6">
+                        <div class="flex flex-col grow basis-0 gap-2">
+                            <p-button class="w-20vw" label="Standard" variant="text" [raised]="true" severity="secondary" (click)="openVariables('standard')"/>
+                        </div>
+                        <div class="flex flex-col grow basis-0 gap-2">
+                            <p-button class="w-20vw" label="Varialbe" variant="text" [raised]="true" severity="secondary" (click)="openVariables('variables')" />
+                        </div>
+                        
+                    </div>
+                    
+                    
+                    
+                </div>
+            </div>
+            
+        </div>
+       <!--  <div class="card flex flex-col gap-4">
+            <div class="font-semibold text-xl">Paper Project DPR</div>
+            <div class="flex flex-wrap gap-6">
+                <p-button label="WTG ID" severity="secondary" raised />
+                <p-button label="Foundation" severity="secondary" raised />
+                <p-button label="IC status" severity="secondary" raised />
+                <p-button label="WTG Delivery" severity="secondary" raised />
+                <p-button label="WTG Serial number" severity="secondary" raised />
+                <p-button label="Contract plan" severity="secondary" raised />
+                <p-button label="Plant update" severity="secondary" raised />
+                <p-button label="Manpower" severity="secondary" raised />
+                <p-button label="Crane" severity="secondary" raised />
+            </div>
+            
+        </div> -->
+    </p-fluid>
+</p-dialog>
+
+<p-dialog header="{{projectList}}" [(visible)]="openProjectInputs" [breakpoints]="{ '960px': '75vw' }" [style]="{ width: '90vw',height:'100vh' }" [modal]="true" [draggable]="false" [resizable]="false" (onHide)="close()">
+    <div *ngIf="!isOutputClicked">
+        <p-fluid>
+            <form [formGroup]="addProjectDetailForm">
+                <div class="flex">
+                    <div class="card flex flex-col gap-6 w-full">
+                        <div class="font-semibold text-xl"></div>
+                        <div class="flex flex-col md:flex-row gap-6" *ngIf="isStandard">
+                            <div class="flex flex-wrap gap-2 w-full">
+                                <label for="name1">Site Name</label>
+                                <input pInputText id="name1" type="text" formControlName="siteName" />
+                            </div>
+                            <div class="flex flex-wrap gap-2 w-full">
+                                <label for="email1">Customer</label>
+                                <input pInputText id="email1" type="text" formControlName="proCustomer"/>
+                            </div>
+                        </div>
+                        <div class="flex flex-col md:flex-row gap-6" *ngIf="isStandard">
+                            <div class="flex flex-wrap gap-2 w-full">
+                                <label for="age1">No. of WTGs</label>
+                                <input pInputText  type="text" formControlName="numOfWTGs"/>
+                            </div>
+                            <div class="flex flex-wrap gap-2 w-full">
+                                <label for="age1">Capacity (MW)</label>
+                                <input pInputText  type="text" formControlName="capacity"/>
+                            </div>
+                        </div>
+        
+                        <div class="flex flex-col md:flex-row gap-6" *ngIf="isStandard">
+                            <div class="flex flex-wrap gap-2 w-full">
+                                <label for="age1">TS Date</label>
+                                <input pInputText  type="text" formControlName="tsDate"/>
+                            </div>
+                            <div class="flex flex-wrap gap-2 w-full">
+                                <label for="age1">Supply Contract No</label>
+                                <input pInputText  type="text" formControlName="supplyContractNo"/>
+                            </div>
+                        </div>
+                        <div class="flex flex-col md:flex-row gap-6" *ngIf="isStandard">
+                            <div class="flex flex-wrap gap-2 w-full">
+                                <label for="age1">Supply Contract Date</label>
+                                <input pInputText  type="text" formControlName="supplyContractDate"/>
+                            </div>
+                            <div class="flex flex-wrap gap-2 w-full">
+                                <label for="age1">Service Contract Date</label>
+                                <input pInputText  type="text" formControlName="serviceContractDate"/>
+                            </div>
+                        </div>
+                        <div class="flex flex-col md:flex-row gap-6" *ngIf="isStandard">
+                            <div class="flex flex-wrap gap-2 w-full">
+                                <label for="age1">Date of Commencement</label>
+                                <p-datepicker  formControlName="dateOfCommencement" append="body" [iconDisplay]="'input'" [showIcon]="true" inputId="icondisplay" class="w-full" dateFormat="yy-mm-dd"  />
+                            </div>
+                            <div class="flex flex-wrap gap-2 w-full">
+                                <label for="age1">Date of Completion</label>
+                                <p-datepicker  formControlName="dateOfCompletion" append="body" [iconDisplay]="'input'" [showIcon]="true" inputId="icondisplay" class="w-full" dateFormat="yy-mm-dd"  />
+                            </div>
+                        </div>
+                        <div class="flex flex-col md:flex-row gap-6" *ngIf="!isStandard">
+                            <div class="flex flex-wrap gap-2 w-full">
+                                <label for="age1">Forecasted date of Completion</label>
+                                <p-datepicker  formControlName="forecastedDateOfCompletion" append="body" [iconDisplay]="'input'" [showIcon]="true" inputId="icondisplay" class="w-full" dateFormat="yy-mm-dd"  />
+                            </div>
+                            <div class="flex flex-wrap gap-2 w-full">
+                                <label for="age1">Total Dispatches</label>
+                                <input pInputText  type="text" formControlName="totalDispatches"/>
+                            </div>
+                        </div>
+                        <div class="flex flex-col md:flex-row gap-6" *ngIf="!isStandard">
+                             <div class="flex flex-wrap gap-2 w-full">
+                                <label for="age1">Nacelle</label>
+                                <input pInputText  type="text" formControlName="nacelle"/>
+                            </div> 
+                             <div class="flex flex-wrap gap-2 w-full">
+                                <label for="age1">Hub  </label>
+                                <input pInputText  type="text" formControlName="hub"/>
+                            </div>
+                        </div>
+                        <div class="flex flex-col md:flex-row gap-6" *ngIf="!isStandard">
+                            <div class="flex flex-wrap gap-2 w-full">
+                               <label for="age1">Blade</label>
+                               <input pInputText  type="text" formControlName="blade"/>
+                           </div> 
+                            <div class="flex flex-wrap gap-2 w-full">
+                               <label for="age1">Tower</label>
+                               <input pInputText  type="text" formControlName="tower"/>
+                           </div>
+                       </div>
+                        <div class="flex flex-col md:flex-row gap-6" *ngIf="!isStandard">
+                            <div class="flex flex-wrap gap-2 w-full">
+                                <label for="age1">MVC</label>
+                                <input pInputText  type="text" formControlName="mvc"/>
+                            </div>
+                            <div class="flex flex-wrap gap-2 w-full">
+                                <label for="age1">Envision </label>
+                                <input pInputText  type="text" formControlName="envision"/>
+                            </div>
+                            
+                        </div>
+                        <div class="flex flex-col md:flex-row gap-6" *ngIf="!isStandard">
+                            <div class="flex flex-wrap gap-2 w-full">
+                                <label for="age1">Envision Emp </label>
+                                <input pInputText  type="text" formControlName="envisionEmp"/>
+                            </div>
+                            <div class="flex flex-wrap gap-2 w-full">
+                                <label for="age1">Contractor </label>
+                                <input pInputText  type="text" formControlName="contractor"/>
+                            </div>
+                            
+                        </div>
+                        <div class="flex flex-col md:flex-row gap-6" *ngIf="!isStandard">
+                            <div class="flex flex-wrap gap-2 w-full">
+                                <label for="age1">Maximo </label>
+                                <input pInputText  type="text" formControlName="maximo"/>
+                            </div>
+                            <div class="flex flex-wrap gap-2 w-full">
+                                <label for="age1">Installation Activity </label>
+                                <input pInputText  type="text" formControlName="installationActiovity"/>
+                            </div>
+                            
+                        </div>
+                        <div class="flex flex-col md:flex-row gap-6" *ngIf="!isStandard">
+                            <div class="flex flex-wrap gap-2 w-full">
+                                <label for="age1">Anchor Cage </label>
+                                <input pInputText  type="text" formControlName="anchorCage"/>
+                            </div>
+                            <div class="flex flex-wrap gap-2 w-full">
+                                <label for="age1">WTG Foundation </label>
+                                <input pInputText  type="text" formControlName="wtgFoundation"/>
+                            </div>
+                            
+                        </div>
+                        <div class="flex flex-col md:flex-row gap-6" *ngIf="!isStandard">
+                            <div class="flex flex-wrap gap-2 w-full">
+                                <label for="age1">Cranes Available </label>
+                                <input pInputText  type="text" formControlName="cranesAvailable"/>
+                            </div>
+                            <div class="flex flex-wrap gap-2 w-full">
+                                <label for="age1">WTG Installation </label>
+                                <input pInputText  type="text" formControlName="wtgInstallation"/>
+                            </div>
+                            
+                        </div>
+                        <div class="flex flex-col md:flex-row gap-6" *ngIf="!isStandard">
+                            <div class="flex flex-wrap gap-2 w-full">
+                                <label for="age1">Work in Progress - Installation </label>
+                                <input pInputText  type="text" formControlName="installation"/>
+                            </div>
+                            <div class="flex flex-wrap gap-2 w-full">
+                                <label for="age1">WTG MCC </label>
+                                <input pInputText  type="text" formControlName="wtgMCC"/>
+                            </div>
+                            
+                        </div>
+                        <div class="flex flex-col md:flex-row gap-6" *ngIf="!isStandard">
+                            <div class="flex flex-wrap gap-2 w-full">
+                                <label for="age1">MCC Signoff  </label>
+                                <input pInputText  type="text" formControlName="mccSignOff"/>
+                            </div>
+                            <div class="flex flex-wrap gap-2 w-full">
+                                <label for="age1">WTG Pre Comm </label>
+                                <input pInputText  type="text" formControlName="wtgPreComm"/>
+                            </div>
+                            
+                            
+                        </div>
+                        <div class="flex flex-col md:flex-row gap-6" *ngIf="!isStandard">
+                            <div class="flex flex-wrap gap-2 w-full">
+                                <label for="age1">WTG Comm </label>
+                                <input pInputText  type="text" formControlName="wtgComm"/>
+                            </div>
+                            <div class="flex flex-wrap gap-2 w-full">
+                                <label for="age1">STPT </label>
+                                <input pInputText  type="text" formControlName="stpt"/>
+                            </div>
+                            
+                            
+                        </div>
+                        <div class="flex flex-col md:flex-row gap-6" *ngIf="!isStandard">
+                            <div class="flex flex-wrap gap-2 w-full">
+                                <label for="age1">STPT Signoff </label>
+                                <input pInputText  type="text" formControlName="stptSignOff"/>
+                            </div>
+                            <div class="flex flex-wrap gap-2 w-full">
+                                <label for="age1">HOTO </label>
+                                <input pInputText  type="text" formControlName="hoto"/>
+                            </div>
+                            
+                            
+                        </div>
+                        <div class="flex flex-col md:flex-row gap-6" *ngIf="!isStandard">
+                            <div class="flex flex-wrap gap-2 w-full">
+                                <label for="age1">Nacelle  Frames  </label>
+                                <input pInputText  type="text" formControlName="nacelleFrames"/>
+                            </div>
+                            <div class="flex flex-wrap gap-2 w-full">
+                                <label for="age1">Balance  </label>
+                                <input pInputText  type="text" formControlName="nacelleFramesBalance"/>
+                            </div>
+                            
+                            
+                        </div>
+                        <div class="flex flex-col md:flex-row gap-6" *ngIf="!isStandard">
+                            <div class="flex flex-wrap gap-2 w-full">
+                                <label for="age1">Dispatch thisweek  </label>
+                                <input pInputText  type="text" formControlName="nacelleDispatchThisWeek"/>
+                            </div>
+                            <div class="flex flex-wrap gap-2 w-full">
+                                <label for="age1">Hub Frames </label>
+                                <input pInputText  type="text" formControlName="hubFrames"/>
+                            </div>
+                            
+                            
+                            
+                        </div>
+                        <div class="flex flex-col md:flex-row gap-6" *ngIf="!isStandard">
+                            <div class="flex flex-wrap gap-2 w-full">
+                                <label for="age1">Balance  </label>
+                                <input pInputText  type="text" formControlName="hubFramesBalance"/>
+                            </div>
+                            <div class="flex flex-wrap gap-2 w-full">
+                                <label for="age1">dispatch thisweek  </label>
+                                <input pInputText  type="text" formControlName="hubFramesDispatchThisWeek"/>
+                            </div>
+                            
+                            
+                            
+                        </div>
+                        <div class="flex flex-col md:flex-row gap-6" *ngIf="!isStandard">
+                            <div class="flex flex-wrap gap-2 w-full">
+                                <label for="age1">Blade Frames </label>
+                                <input pInputText  type="text" formControlName="bladeFrames"/>
+                            </div>
+                            <div class="flex flex-wrap gap-2 w-full">
+                                <label for="age1">Balance </label>
+                                <input pInputText  type="text" formControlName="bladeFramesBalance"/>
+                            </div>
+                        </div>
+                        <div class="flex flex-col md:flex-row gap-6" *ngIf="!isStandard">
+                            <div class="flex flex-wrap gap-2 w-full">
+                                <label for="age1">100% Torquing </label>
+                                <input pInputText  type="text" formControlName="torquing"/>
+                            </div>
+                            <div class="flex flex-wrap gap-2 w-full">
+                                <label for="age1">10% Inspection </label>
+                                <input pInputText  type="text" formControlName="inspection"/>
+                            </div>
+                            
+                            
+                        </div>
+                        <div class="flex flex-col md:flex-row gap-6" *ngIf="!isStandard">
+                            <div class="flex flex-wrap gap-2 w-full">
+                                <label for="age1">Rotating Devices </label>
+                                <input pInputText  type="text" formControlName="rotationgDevices"/>
+                            </div>
+                            <div class="flex flex-wrap gap-2 w-full">
+                                <label for="age1">WTG Auxillary Components </label>
+                                <input pInputText  type="text" formControlName="auxillary" />
+                            </div>
+                        </div>
+                        <div class="flex flex-col md:flex-row gap-6" *ngIf="!isOutputClicked && !isStandard">
+                            <div class="flex flex-wrap gap-2 w-full">
+                                <p-button label="Submit" class="w-full" styleClass="w-full" [fluid]="false" (click)="saveProjectDetails()"></p-button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+          </p-fluid>
+    </div>
+    <div *ngIf="isOutputClicked">
+
+        
+        <p-accordion value="0">
+            <p-accordion-panel value="0">
+                <p-accordion-header >View Values</p-accordion-header>
+                <p-accordion-content>
+                    <div class="flex flex-col md:flex-row gap-8">
+                        <div class="md:w-1/2">
+                            <div class="card flex flex-col gap-4">
+                                <div class="font-semibold text-xl">STANDARD</div>
+                                <div class="flex flex-wrap gap-2">
+                                    <form [formGroup]="addProjectDetailForm">
+                                        <table>
+                                            <!-- <tr>
+                                              <th>Company</th>
+                                              <th>Contact</th>
+                                            </tr> -->
+                                            <tr>
+                                              <td class="labels">Site Name</td>
+                                              <td><input pInputText id="name1" type="text" formControlName="siteName" style="border: none;background-color: transparent;"/></td>
+                                            </tr>
+                                            <tr>
+                                              <td class="labels">Customer</td>
+                                              <td><input pInputText id="name1" type="text" formControlName="proCustomer" style="border: none;background-color: transparent;"/></td>
+                                            </tr>
+                                            <tr>
+                                              <td class="labels">No. of WTGs</td>
+                                              <td><input pInputText id="name1" type="text" formControlName="numOfWTGs" style="border: none;background-color: transparent;"/></td>
+                                            </tr>
+                                            <tr>
+                                              <td class="labels">Capacity (MW)</td>
+                                              <td><input pInputText id="name1" type="text" formControlName="capacity" style="border: none;background-color: transparent;"/></td>
+                                            </tr>
+                                            <tr>
+                                              <td class="labels">TS Date</td>
+                                              <td><input pInputText id="name1" type="text" formControlName="supplyContractNo" style="border: none;background-color: transparent;"/></td>
+                                            </tr>
+                                            <tr>
+                                              <td class="labels">Supply Contract Date</td>
+                                              <td><input pInputText id="name1" type="text" formControlName="supplyContractDate" style="border: none;background-color: transparent;"/></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="labels">Service Contract Date</td>
+                                                <td><input pInputText id="name1" type="text" formControlName="serviceContractDate" style="border: none;background-color: transparent;"/></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="labels">Date of Commencement</td>
+                                                <td><input pInputText id="name1" type="text" formControlName="dateOfCommencement" style="border: none;background-color: transparent;"/></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="labels">Date of Completion</td>
+                                                <td><input pInputText id="name1" type="text" formControlName="dateOfCompletion" style="border: none;background-color: transparent;"/></td>
+                                            </tr>
+                                          </table>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="md:w-1/2">
+                            <div class="card flex flex-col gap-4">
+                                <div class="font-semibold text-xl">VARIABLE</div>
+                                <div class="flex flex-wrap gap-2">
+                                    <form [formGroup]="addProjectDetailForm">
+                                        <table>
+                                            <!-- <tr>
+                                              <th>Company</th>
+                                              <th>Contact</th>
+                                            </tr> -->
+                                            <tr>
+                                              <td class="labels">Forecasted date of Completion</td>
+                                              <td><input pInputText id="name1" type="text" formControlName="forecastedDateOfCompletion" style="border: none;background-color: transparent;"/></td>
+                                            </tr>
+                                            <tr>
+                                              <td class="labels">Total Dispatches</td>
+                                              <td><input pInputText id="name1" type="text" formControlName="totalDispatches" style="border: none;background-color: transparent;"/></td>
+                                            </tr>
+                                            <tr>
+                                              <td class="labels">No. of WTGs</td>
+                                              <td><input pInputText id="name1" type="text" formControlName="numOfWTGs" style="border: none;background-color: transparent;"/></td>
+                                            </tr>
+                                            <tr>
+                                              <td class="labels">Nacelle</td>
+                                              <td><input pInputText id="name1" type="text" formControlName="nacelle" style="border: none;background-color: transparent;"/></td>
+                                            </tr>
+                                            <tr>
+                                              <td class="labels">Hub</td>
+                                              <td><input pInputText id="name1" type="text" formControlName="hub" style="border: none;background-color: transparent;"/></td>
+                                            </tr>
+                                            <tr>
+                                              <td class="labels">Tower</td>
+                                              <td><input pInputText id="name1" type="text" formControlName="tower" style="border: none;background-color: transparent;"/></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="labels">MVC</td>
+                                                <td><input pInputText id="name1" type="text" formControlName="mvc" style="border: none;background-color: transparent;"/></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="labels">Envision</td>
+                                                <td><input pInputText id="name1" type="text" formControlName="envision" style="border: none;background-color: transparent;"/></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="labels">Envision Emp</td>
+                                                <td><input pInputText id="name1" type="text" formControlName="envisionEmp" style="border: none;background-color: transparent;"/></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="labels">Contractor</td>
+                                                <td><input pInputText id="name1" type="text" formControlName="contractor" style="border: none;background-color: transparent;"/></td>
+                                              </tr>
+                                              <tr>
+                                                  <td class="labels">Maximo</td>
+                                                  <td><input pInputText id="name1" type="text" formControlName="maximo" style="border: none;background-color: transparent;"/></td>
+                                              </tr>
+                                              <tr>
+                                                  <td class="labels">Installation Activity</td>
+                                                  <td><input pInputText id="name1" type="text" formControlName="installationActiovity" style="border: none;background-color: transparent;"/></td>
+                                              </tr>
+                                              <tr>
+                                                  <td class="labels">Anchor Cage</td>
+                                                  <td><input pInputText id="name1" type="text" formControlName="anchorCage" style="border: none;background-color: transparent;"/></td>
+                                              </tr>
+                                              <tr>
+                                                <td class="labels">WTG Foundation</td>
+                                                <td><input pInputText id="name1" type="text" formControlName="wtgFoundation" style="border: none;background-color: transparent;"/></td>
+                                              </tr>
+                                              <tr>
+                                                  <td class="labels">Cranes Available</td>
+                                                  <td><input pInputText id="name1" type="text" formControlName="cranesAvailable" style="border: none;background-color: transparent;"/></td>
+                                              </tr>
+                                              <tr>
+                                                  <td class="labels">WTG Installation</td>
+                                                  <td><input pInputText id="name1" type="text" formControlName="wtgInstallation" style="border: none;background-color: transparent;"/></td>
+                                              </tr>
+                                              <tr>
+                                                  <td class="labels">Work in Progress - Installation</td>
+                                                  <td><input pInputText id="name1" type="text" formControlName="installation" style="border: none;background-color: transparent;"/></td>
+                                              </tr>
+                                              <tr>
+                                                <td class="labels">WTG MCC</td>
+                                                <td><input pInputText id="name1" type="text" formControlName="wtgMCC" style="border: none;background-color: transparent;"/></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="labels">MCC Signoff</td>
+                                                <td><input pInputText id="name1" type="text" formControlName="mccSignOff" style="border: none;background-color: transparent;"/></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="labels">WTG Pre Comm</td>
+                                                <td><input pInputText id="name1" type="text" formControlName="wtgPreComm" style="border: none;background-color: transparent;"/></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="labels">WTG Comm</td>
+                                                <td><input pInputText id="name1" type="text" formControlName="wtgComm" style="border: none;background-color: transparent;"/></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="labels">STPT</td>
+                                                <td><input pInputText id="name1" type="text" formControlName="stpt" style="border: none;background-color: transparent;"/></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="labels">STPT Signoff</td>
+                                                <td><input pInputText id="name1" type="text" formControlName="stptSignOff" style="border: none;background-color: transparent;"/></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="labels">HOTO</td>
+                                                <td><input pInputText id="name1" type="text" formControlName="hoto" style="border: none;background-color: transparent;"/></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="labels">Nacelle  Frames</td>
+                                                <td><input pInputText id="name1" type="text" formControlName="nacelleFramesBalance" style="border: none;background-color: transparent;"/></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="labels">Dispatch thisweek</td>
+                                                <td><input pInputText id="name1" type="text" formControlName="nacelleDispatchThisWeek" style="border: none;background-color: transparent;"/></td>
+                                            </tr>
+            
+                                            <tr>
+                                                <td class="labels">Hub Frames</td>
+                                                <td><input pInputText id="name1" type="text" formControlName="hubFrames" style="border: none;background-color: transparent;"/></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="labels">Balance</td>
+                                                <td><input pInputText id="name1" type="text" formControlName="hubFramesBalance" style="border: none;background-color: transparent;"/></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="labels">Dispatch thisweek</td>
+                                                <td><input pInputText id="name1" type="text" formControlName="hubFramesDispatchThisWeek" style="border: none;background-color: transparent;"/></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="labels">Blade Frames</td>
+                                                <td><input pInputText id="name1" type="text" formControlName="bladeFrames" style="border: none;background-color: transparent;"/></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="labels">Balance</td>
+                                                <td><input pInputText id="name1" type="text" formControlName="bladeFramesBalance" style="border: none;background-color: transparent;"/></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="labels">100% Torquing</td>
+                                                <td><input pInputText id="name1" type="text" formControlName="torquing" style="border: none;background-color: transparent;"/></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="labels">10% Inspection</td>
+                                                <td><input pInputText id="name1" type="text" formControlName="inspection" style="border: none;background-color: transparent;"/></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="labels">Rotating Devices</td>
+                                                <td><input pInputText id="name1" type="text" formControlName="rotationgDevices" style="border: none;background-color: transparent;"/></td>
+                                            </tr>
+            
+                                            <tr>
+                                                <td class="labels">WTG Auxillary Components</td>
+                                                <td><input pInputText id="name1" type="text" formControlName="auxillary" style="border: none;background-color: transparent;"/></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="labels">Rotating Devices</td>
+                                                <td><input pInputText id="name1" type="text" formControlName="rotationgDevices" style="border: none;background-color: transparent;"/></td>
+                                            </tr>
+                                            
+                                          </table>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                   <!--  <p-fluid>
+                        <form [formGroup]="addProjectDetailForm">
+                            <div class="flex">
+                                <div class="card flex flex-col gap-6 w-full">
+                                    <div class="font-semibold text-xl"></div>
+                                    <div class="flex flex-col md:flex-row gap-6">
+                                        <div class="flex flex-wrap gap-2 w-full">
+                                            <label for="name1">Site Name</label>
+                                            <input pInputText id="name1" type="text" formControlName="siteName" />
+                                        </div>
+                                        <div class="flex flex-wrap gap-2 w-full">
+                                            <label for="email1">Customer</label>
+                                            <input pInputText id="email1" type="text" formControlName="proCustomer"/>
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-col md:flex-row gap-6">
+                                        <div class="flex flex-wrap gap-2 w-full">
+                                            <label for="age1">No. of WTGs</label>
+                                            <input pInputText  type="text" formControlName="numOfWTGs"/>
+                                        </div>
+                                        <div class="flex flex-wrap gap-2 w-full">
+                                            <label for="age1">Capacity (MW)</label>
+                                            <input pInputText  type="text" formControlName="capacity"/>
+                                        </div>
+                                    </div>
+                    
+                                    <div class="flex flex-col md:flex-row gap-6">
+                                        <div class="flex flex-wrap gap-2 w-full">
+                                            <label for="age1">TS Date</label>
+                                            <input pInputText  type="text" formControlName="tsDate"/>
+                                        </div>
+                                        <div class="flex flex-wrap gap-2 w-full">
+                                            <label for="age1">Supply Contract No</label>
+                                            <input pInputText  type="text" formControlName="supplyContractNo"/>
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-col md:flex-row gap-6">
+                                        <div class="flex flex-wrap gap-2 w-full">
+                                            <label for="age1">Supply Contract Date</label>
+                                            <input pInputText  type="text" formControlName="supplyContractDate"/>
+                                        </div>
+                                        <div class="flex flex-wrap gap-2 w-full">
+                                            <label for="age1">Service Contract Date</label>
+                                            <input pInputText  type="text" formControlName="serviceContractDate"/>
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-col md:flex-row gap-6">
+                                        <div class="flex flex-wrap gap-2 w-full">
+                                            <label for="age1">Date of Commencement</label>
+                                            <p-datepicker  formControlName="dateOfCommencement" append="body" [iconDisplay]="'input'" [showIcon]="true" inputId="icondisplay" class="w-full" dateFormat="yy-mm-dd"  />
+                                        </div>
+                                        <div class="flex flex-wrap gap-2 w-full">
+                                            <label for="age1">Date of Completion</label>
+                                            <p-datepicker  formControlName="dateOfCompletion" append="body" [iconDisplay]="'input'" [showIcon]="true" inputId="icondisplay" class="w-full" dateFormat="yy-mm-dd"  />
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-col md:flex-row gap-6">
+                                        <div class="flex flex-wrap gap-2 w-full">
+                                            <label for="age1">Forecasted date of Completion</label>
+                                            <p-datepicker  formControlName="forecastedDateOfCompletion" append="body" [iconDisplay]="'input'" [showIcon]="true" inputId="icondisplay" class="w-full" dateFormat="yy-mm-dd"  />
+                                        </div>
+                                        <div class="flex flex-wrap gap-2 w-full">
+                                            <label for="age1">Total Dispatches</label>
+                                            <input pInputText  type="text" formControlName="totalDispatches"/>
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-col md:flex-row gap-6">
+                                         <div class="flex flex-wrap gap-2 w-full">
+                                            <label for="age1">Nacelle</label>
+                                            <input pInputText  type="text" formControlName="nacelle"/>
+                                        </div> 
+                                         <div class="flex flex-wrap gap-2 w-full">
+                                            <label for="age1">Hub  </label>
+                                            <input pInputText  type="text" formControlName="hub"/>
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-col md:flex-row gap-6">
+                                        <div class="flex flex-wrap gap-2 w-full">
+                                           <label for="age1">Blade</label>
+                                           <input pInputText  type="text" formControlName="blade"/>
+                                       </div> 
+                                        <div class="flex flex-wrap gap-2 w-full">
+                                           <label for="age1">Tower</label>
+                                           <input pInputText  type="text" formControlName="tower"/>
+                                       </div>
+                                   </div>
+                                    <div class="flex flex-col md:flex-row gap-6">
+                                        <div class="flex flex-wrap gap-2 w-full">
+                                            <label for="age1">MVC</label>
+                                            <input pInputText  type="text" formControlName="mvc"/>
+                                        </div>
+                                        <div class="flex flex-wrap gap-2 w-full">
+                                            <label for="age1">Envision </label>
+                                            <input pInputText  type="text" formControlName="envision"/>
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="flex flex-col md:flex-row gap-6">
+                                        <div class="flex flex-wrap gap-2 w-full">
+                                            <label for="age1">Envision Emp </label>
+                                            <input pInputText  type="text" formControlName="envisionEmp"/>
+                                        </div>
+                                        <div class="flex flex-wrap gap-2 w-full">
+                                            <label for="age1">Contractor </label>
+                                            <input pInputText  type="text" formControlName="contractor"/>
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="flex flex-col md:flex-row gap-6">
+                                        <div class="flex flex-wrap gap-2 w-full">
+                                            <label for="age1">Maximo </label>
+                                            <input pInputText  type="text" formControlName="maximo"/>
+                                        </div>
+                                        <div class="flex flex-wrap gap-2 w-full">
+                                            <label for="age1">Installation Activity </label>
+                                            <input pInputText  type="text" formControlName="installationActiovity"/>
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="flex flex-col md:flex-row gap-6">
+                                        <div class="flex flex-wrap gap-2 w-full">
+                                            <label for="age1">Anchor Cage </label>
+                                            <input pInputText  type="text" formControlName="anchorCage"/>
+                                        </div>
+                                        <div class="flex flex-wrap gap-2 w-full">
+                                            <label for="age1">WTG Foundation </label>
+                                            <input pInputText  type="text" formControlName="wtgFoundation"/>
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="flex flex-col md:flex-row gap-6">
+                                        <div class="flex flex-wrap gap-2 w-full">
+                                            <label for="age1">Cranes Available </label>
+                                            <input pInputText  type="text" formControlName="cranesAvailable"/>
+                                        </div>
+                                        <div class="flex flex-wrap gap-2 w-full">
+                                            <label for="age1">WTG Installation </label>
+                                            <input pInputText  type="text" formControlName="wtgInstallation"/>
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="flex flex-col md:flex-row gap-6">
+                                        <div class="flex flex-wrap gap-2 w-full">
+                                            <label for="age1">Work in Progress - Installation </label>
+                                            <input pInputText  type="text" formControlName="installation"/>
+                                        </div>
+                                        <div class="flex flex-wrap gap-2 w-full">
+                                            <label for="age1">WTG MCC </label>
+                                            <input pInputText  type="text" formControlName="wtgMCC"/>
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="flex flex-col md:flex-row gap-6">
+                                        <div class="flex flex-wrap gap-2 w-full">
+                                            <label for="age1">MCC Signoff  </label>
+                                            <input pInputText  type="text" formControlName="mccSignOff"/>
+                                        </div>
+                                        <div class="flex flex-wrap gap-2 w-full">
+                                            <label for="age1">WTG Pre Comm </label>
+                                            <input pInputText  type="text" formControlName="wtgPreComm"/>
+                                        </div>
+                                        
+                                        
+                                    </div>
+                                    <div class="flex flex-col md:flex-row gap-6">
+                                        <div class="flex flex-wrap gap-2 w-full">
+                                            <label for="age1">WTG Comm </label>
+                                            <input pInputText  type="text" formControlName="wtgComm"/>
+                                        </div>
+                                        <div class="flex flex-wrap gap-2 w-full">
+                                            <label for="age1">STPT </label>
+                                            <input pInputText  type="text" formControlName="stpt"/>
+                                        </div>
+                                        
+                                        
+                                    </div>
+                                    <div class="flex flex-col md:flex-row gap-6">
+                                        <div class="flex flex-wrap gap-2 w-full">
+                                            <label for="age1">STPT Signoff </label>
+                                            <input pInputText  type="text" formControlName="stptSignOff"/>
+                                        </div>
+                                        <div class="flex flex-wrap gap-2 w-full">
+                                            <label for="age1">HOTO </label>
+                                            <input pInputText  type="text" formControlName="hoto"/>
+                                        </div>
+                                        
+                                        
+                                    </div>
+                                    <div class="flex flex-col md:flex-row gap-6">
+                                        <div class="flex flex-wrap gap-2 w-full">
+                                            <label for="age1">Nacelle  Frames  </label>
+                                            <input pInputText  type="text" formControlName="nacelleFrames"/>
+                                        </div>
+                                        <div class="flex flex-wrap gap-2 w-full">
+                                            <label for="age1">Balance  </label>
+                                            <input pInputText  type="text" formControlName="nacelleFramesBalance"/>
+                                        </div>
+                                        
+                                        
+                                    </div>
+                                    <div class="flex flex-col md:flex-row gap-6">
+                                        <div class="flex flex-wrap gap-2 w-full">
+                                            <label for="age1">Dispatch thisweek  </label>
+                                            <input pInputText  type="text" formControlName="nacelleDispatchThisWeek"/>
+                                        </div>
+                                        <div class="flex flex-wrap gap-2 w-full">
+                                            <label for="age1">Hub Frames </label>
+                                            <input pInputText  type="text" formControlName="hubFrames"/>
+                                        </div>
+                                        
+                                        
+                                        
+                                    </div>
+                                    <div class="flex flex-col md:flex-row gap-6">
+                                        <div class="flex flex-wrap gap-2 w-full">
+                                            <label for="age1">Balance  </label>
+                                            <input pInputText  type="text" formControlName="hubFramesBalance"/>
+                                        </div>
+                                        <div class="flex flex-wrap gap-2 w-full">
+                                            <label for="age1">Dispatch thisweek  </label>
+                                            <input pInputText  type="text" formControlName="hubFramesDispatchThisWeek"/>
+                                        </div>
+                                        
+                                        
+                                        
+                                    </div>
+                                    <div class="flex flex-col md:flex-row gap-6">
+                                        <div class="flex flex-wrap gap-2 w-full">
+                                            <label for="age1">Blade Frames </label>
+                                            <input pInputText  type="text" formControlName="bladeFrames"/>
+                                        </div>
+                                        <div class="flex flex-wrap gap-2 w-full">
+                                            <label for="age1">Balance </label>
+                                            <input pInputText  type="text" formControlName="bladeFramesBalance"/>
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-col md:flex-row gap-6">
+                                        <div class="flex flex-wrap gap-2 w-full">
+                                            <label for="age1">100% Torquing </label>
+                                            <input pInputText  type="text" formControlName="torquing"/>
+                                        </div>
+                                        <div class="flex flex-wrap gap-2 w-full">
+                                            <label for="age1">10% Inspection </label>
+                                            <input pInputText  type="text" formControlName="inspection"/>
+                                        </div>
+                                        
+                                        
+                                    </div>
+                                    <div class="flex flex-col md:flex-row gap-6">
+                                        <div class="flex flex-wrap gap-2 w-full">
+                                            <label for="age1">Rotating Devices </label>
+                                            <input pInputText  type="text" formControlName="rotationgDevices"/>
+                                        </div>
+                                        <div class="flex flex-wrap gap-2 w-full">
+                                            <label for="age1">WTG Auxillary Components </label>
+                                            <input pInputText  type="text" formControlName="auxillary" />
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-col md:flex-row gap-6" *ngIf="!isOutputClicked">
+                                        <div class="flex flex-wrap gap-2 w-full">
+                                            <p-button label="Submit" class="w-full" styleClass="w-full" [fluid]="false" (click)="saveProjectDetails()"></p-button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                      </p-fluid> -->
+                </p-accordion-content>
+            </p-accordion-panel>
+        
+            <p-accordion-panel value="1">
+                <p-accordion-header>View Graph</p-accordion-header>
+                <p-accordion-content>
+                        <div class="col-span-12 xl:col-span-6">
+                            <div class="card">
+                                <div class="font-semibold text-xl mb-4">Bar</div>
+                                <p-chart type="bar" [data]="barData" [options]="barOptions"></p-chart>
+                            </div>
+                        </div>
+                </p-accordion-content>
+            </p-accordion-panel>
+        </p-accordion>
+    </div>
+    
+</p-dialog>
+
+
+

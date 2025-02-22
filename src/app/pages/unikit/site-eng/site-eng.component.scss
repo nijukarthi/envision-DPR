@@ -1,0 +1,26 @@
+::ng-deep p-accordion-header {
+    background-color: rgb(135, 169, 194) !important;
+    color:#fff !important;
+    font-weight: bold;
+    
+  }
+  table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  .labels{
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
