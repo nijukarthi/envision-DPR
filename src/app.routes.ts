@@ -7,6 +7,7 @@ import { Notfound } from './app/pages/notfound/notfound';
 import { Login } from './app/pages/auth/login';
 import { LoginComponent } from './app/pages/auth/login/login.component';
 import { AuthService } from './app/services/auth/auth.service';
+import { DashComponent } from './app/pages/dashboard/dash/dash.component';
 
 export const appRoutes: Routes = [
     {
@@ -16,9 +17,10 @@ export const appRoutes: Routes = [
     
     {
         path: 'app',
-        component: AppLayout, canActivate: [AuthService],
+        component: AppLayout, //canActivate: [AuthService],
         children: [
-            { path: '', component: Dashboard },
+            { path: 'dash', component: Dashboard },
+            { path: '', component: DashComponent },
             { path: 'uikit', loadChildren: () => import('./app/pages/uikit/uikit.routes') },
             { path: 'documentation', component: Documentation },
             { path: 'pages', loadChildren: () => import('./app/pages/pages.routes') }
