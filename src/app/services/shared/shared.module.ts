@@ -35,6 +35,8 @@ import { TextareaModule } from 'primeng/textarea';
 import { DatePickerModule } from 'primeng/datepicker';
 import { AccordionModule } from 'primeng/accordion';
 import { FluidModule } from 'primeng/fluid';
+import { ToolbarModule } from 'primeng/toolbar';
+import {RouterModule} from '@angular/router';
 @NgModule({
   declarations: [],
   imports: [
@@ -74,7 +76,9 @@ import { FluidModule } from 'primeng/fluid';
     TextareaModule,
     DatePickerModule,
     AccordionModule,
-    FluidModule
+    FluidModule,
+    ToolbarModule,
+    RouterModule
   ],
   providers:[
     MessageService,
