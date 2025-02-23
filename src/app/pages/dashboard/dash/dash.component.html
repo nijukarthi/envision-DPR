@@ -1,5 +1,16 @@
 <div class="flex flex-col">
-    <div class="card">
+    <div>
+        <p-toolbar>
+            <ng-template #start>
+            </ng-template>
+            <ng-template #center>
+            </ng-template>
+            <ng-template #end>
+                <p-button icon="pi pi-plus" label="Create Project" [routerLink]="['/app/createProject']" class="m-2 text-end"></p-button>
+            </ng-template>
+        </p-toolbar>
+    </div>
+    <div class="card mt-3">
         <div class="font-semibold text-xl mb-4">Welcome Karthikeyan B</div>
         <p-toolbar>
             <!-- <ng-template #start>
@@ -9,20 +20,30 @@
             </ng-template> -->
 
             <ng-template #center>
-                <p-iconfield>
-                    <p-inputicon>
-                        <i class="pi pi-search pi-spin"></i>
-                    </p-inputicon>
-                    <input pInputText placeholder="Search Here..." />
+                <p-iconfield class="p-1">
+                    <input pInputText placeholder="Search By P Code..." />
                 </p-iconfield>
+
+                <p-iconfield class="p-1">
+                    <input pInputText placeholder="Search By C Code..." />
+                </p-iconfield>
+
+                <p-iconfield class="p-1">
+                    <input pInputText placeholder="Search By P Client..." />
+                </p-iconfield>
+
+                
             </ng-template>
 
-            <ng-template #end><p-button icon="pi pi-plus" label="Create Project" (click)="createProjectSubmit()"></p-button></ng-template>
+            <ng-template #end>
+                <p-button icon="pi pi-search pi-spin" label="Search" (click)="createProjectSubmit()" class="m-2"></p-button>
+                <p-button icon="pi pi-times" label="Cancel" severity="danger"></p-button>
+            </ng-template>
         </p-toolbar>
     </div>
 </div>
 
-<div class="flex flex-col mt-5" *ngIf="showCreateProject">
+<!-- <div class="flex flex-col mt-5" *ngIf="showCreateProject">
     <div class="card flex flex-col gap-6 w-full">
         <div class="font-semibold text-xl">Create Project</div>
         <div class="flex flex-col md:flex-row gap-6">
@@ -852,4 +873,4 @@
         </div>
         
     </div>
-</div>
+</div> -->

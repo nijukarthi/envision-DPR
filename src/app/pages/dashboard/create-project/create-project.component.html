@@ -1,0 +1,1152 @@
+<div id="targetGreen">
+    
+</div>
+<div class="flex flex-col mt-5" *ngIf="showCreateProject">
+    <div class="card flex flex-col gap-6 w-full">
+        <div class="font-semibold text-xl">Create Project</div>
+        <div class="flex flex-col md:flex-row gap-6">
+            <div class="flex flex-wrap gap-2 w-full">
+                <label for="pcode">P Code</label>
+                <input pInputText id="pcode" type="text" class="w-full" />
+            </div>
+            <div class="flex flex-wrap gap-2 w-full">
+                <label for="fcode">F Code</label>
+                <input pInputText id="fcode" type="text" class="w-full" />
+            </div>
+        </div>
+        <div class="flex flex-col md:flex-row gap-6">
+            <div class="flex flex-wrap gap-2 w-full">
+                <label for="pDesc">Project Description</label>
+                <textarea rows="5" cols="30" pTextarea [autoResize]="true" class="w-full"></textarea>
+            </div>
+
+        </div>
+        <div class="flex flex-col md:flex-row gap-6">
+
+            <div class="flex flex-wrap gap-2 w-full">
+                <label for="client">Client</label>
+                <p-select id="client" placeholder="Select Client" class="w-full"></p-select>
+            </div>
+            <div class="flex flex-wrap gap-2 w-full">
+                <label for="state">State</label>
+                <p-select id="state" placeholder="Select State" class="w-full"></p-select>
+            </div>
+        </div>
+        <div class="flex flex-col md:flex-row gap-6">
+
+            <div class="flex flex-wrap gap-2 w-full">
+                <label for="WTG">WTG</label>
+                <input pInputText id="wtg" type="text" class="w-full" />
+            </div>
+            <div class="flex flex-wrap gap-2 w-full">
+                <label for="capacity">Capacity</label>
+                <input pInputText id="capacity" type="text" class="w-full" />
+            </div>
+        </div>
+
+        <div class="flex flex-col md:flex-row gap-6">
+
+            <div class="flex flex-wrap gap-2 w-full">
+                <label for="owner">Owner</label>
+                <p-select id="owner" placeholder="Select Owner" class="w-full"></p-select>
+            </div>
+            <div class="flex flex-wrap gap-2 w-full">
+                <label for="pManager">Project Manager</label>
+                <p-select id="pManager" placeholder="Select Project Manager" class="w-full"></p-select>
+            </div>
+        </div>
+        <div class="flex flex-col md:flex-row gap-6">
+
+            <div class="flex flex-wrap gap-2 w-full">
+                <label for="stateHead">State Head</label>
+                <p-select id="stateHead" placeholder="Select State Head" class="w-full"></p-select>
+            </div>
+            <div class="flex flex-wrap gap-2 w-full">
+                <label for="constructionManager">Construction Manager</label>
+                <p-select id="constructionManager" placeholder="Select Construction Manager" class="w-full"></p-select>
+            </div>
+        </div>
+        <div class="flex flex-col md:flex-row gap-6">
+
+            <div class="flex flex-wrap gap-2 w-full">
+                <label for="location">Location</label>
+                <p-select id="location" placeholder="Select Location" class="w-full"></p-select>
+            </div>
+            <div class="flex flex-wrap gap-2 w-full">
+                <label for="wtgCoordinates">WTG Coordinates</label>
+                <p-select id="wtgCoordinates" placeholder="Select WTG Coordinates" class="w-full"></p-select>
+            </div>
+        </div>
+        <div class="flex flex-col md:flex-row gap-6">
+            <div class="flex flex-wrap gap-2 w-full">
+                <label for="location">Select Plan Date</label>
+                <p-datepicker dateFormat="dd.mm.yy" placeholder="Select Plan Date" class="w-full" showIcon
+                    iconDisplay="input" />
+            </div>
+            <div class="flex flex-wrap gap-2 w-full">
+
+            </div>
+
+        </div>
+
+    </div>
+    <div class="flex flex-col md:flex-row gap-8">
+        <div class="md:w-full text-center">
+            <p-button icon="pi pi-arrow-right" iconPos="right" label="Create Project" class="w-full"
+                (click)="nextSubmit('next')"></p-button>
+        </div>
+
+    </div>
+</div>
+
+<div class="flex flex-col mt-5" *ngIf="showCreateProjectAccordian" id="targetGreen">
+    <div class="card flex flex-col gap-6 w-full">
+        <div class="font-semibold text-xl">Create Project</div>
+        <div class="flex mb-4 gap-2 justify-end">
+            <p-button (onClick)="active = '0'" [rounded]="true" label="1" class="w-8 h-8 p-0"
+                [outlined]="active !== '0'" />
+            <p-button (onClick)="active = '1'" [rounded]="true" label="2" class="w-8 h-8 p-0"
+                [outlined]="active !== '1'" />
+            <p-button (onClick)="active = '2'" [rounded]="true" label="3" class="w-8 h-8 p-0"
+                [outlined]="active !== '2'" />
+            <p-button (onClick)="active = '3'" [rounded]="true" label="4" class="w-8 h-8 p-0"
+                [outlined]="active !== '3'" />
+            <p-button (onClick)="active = '4'" [rounded]="true" label="5" class="w-8 h-8 p-0"
+                [outlined]="active !== '4'" />
+        </div>
+
+        <p-accordion [(value)]="active">
+            <p-accordion-panel value="0">
+                <p-accordion-header>
+                    <p-table showGridlines breakpoint="775px" [rowHover]="true" [value]="products"
+                        [tableStyle]="{ 'min-width': '50rem' }">
+                        <ng-template #header>
+                            <tr>
+                                <th colspan="4">
+                                </th>
+
+                            </tr>
+                        </ng-template>
+                        <ng-template #body>
+                            <tr>
+                                <td style="width: 5%;" >1.</td>
+                                <td style="width: 25%;">Supply Plan</td>
+                                <td style="width: 35%;">{{cdate | date : 'dd/MM/yyyy' }}</td>
+                                <td style="width: 45%;">Description about Supply Plan</td>
+                            </tr>
+                        </ng-template>
+                    </p-table>
+                </p-accordion-header>
+                <p-accordion-content>
+                    <div class="flex flex-col mt-5">
+                        <div class="card flex flex-col gap-6 w-full">
+                            <div class="font-semibold text-xl">Supply Plan</div>
+                            <div class="flex flex-col md:flex-row gap-6">
+                                <div class="flex flex-wrap gap-2 w-full">
+                                    <label>1.1 Anchor Cages</label>
+                                    <p-datepicker appendTo="body" dateFormat="dd.mm.yy" placeholder="Anchor Cages Date"
+                                        class="w-full" showIcon iconDisplay="input" />
+                                </div>
+                                <div class="flex flex-wrap gap-2 w-full">
+                                    <label>1.1.1 Ready for Dispatch</label>
+                                    <p-datepicker appendTo="body" dateFormat="dd.mm.yy"
+                                        placeholder="Ready for Dispatch Date" class="w-full" showIcon
+                                        iconDisplay="input" />
+                                </div>
+                            </div>
+
+                            <div class="flex flex-col md:flex-row gap-6">
+                                <div class="flex flex-wrap gap-2 w-full">
+                                    <label>1.1.2 Dispatch</label>
+                                    <p-datepicker appendTo="body" dateFormat="dd.mm.yy" placeholder="Dispatch Date"
+                                        class="w-full" showIcon iconDisplay="input" />
+                                </div>
+                                <div class="flex flex-wrap gap-2 w-full">
+                                    <label>1.1.3 Delivery</label>
+                                    <p-datepicker appendTo="body" dateFormat="dd.mm.yy" placeholder="Delivery Date"
+                                        class="w-full" showIcon iconDisplay="input" />
+                                </div>
+                            </div>
+
+                            <div class="flex flex-col md:flex-row gap-6">
+                                <div class="flex flex-wrap gap-2 w-full">
+                                    <label>1.2 Nacelle</label>
+                                    <p-datepicker appendTo="body" dateFormat="dd.mm.yy" placeholder="Nacelle Date"
+                                        class="w-full" showIcon iconDisplay="input" />
+                                </div>
+                                <div class="flex flex-wrap gap-2 w-full">
+                                    <label>1.2.1 Production Launch</label>
+                                    <p-datepicker appendTo="body" dateFormat="dd.mm.yy"
+                                        placeholder="Production Launch Date" class="w-full" showIcon
+                                        iconDisplay="input" />
+                                </div>
+                            </div>
+
+                            <div class="flex flex-col md:flex-row gap-6">
+                                <div class="flex flex-wrap gap-2 w-full">
+                                    <label>1.2.2 Manufacturing / Build</label>
+                                    <p-datepicker appendTo="body" dateFormat="dd.mm.yy"
+                                        placeholder="Manufacturing / Build Date" class="w-full" showIcon
+                                        iconDisplay="input" />
+                                </div>
+                                <div class="flex flex-wrap gap-2 w-full">
+                                    <label>1.2.3 Inspection Call</label>
+                                    <p-datepicker appendTo="body" dateFormat="dd.mm.yy"
+                                        placeholder="Inspection Call Date" class="w-full" showIcon
+                                        iconDisplay="input" />
+                                </div>
+                            </div>
+
+                            <div class="flex flex-col md:flex-row gap-6">
+                                <div class="flex flex-wrap gap-2 w-full">
+                                    <label>1.2.4 Inspection by Customer</label>
+                                    <p-datepicker appendTo="body" dateFormat="dd.mm.yy"
+                                        placeholder="Inspection by Customer Date" class="w-full" showIcon
+                                        iconDisplay="input" />
+                                </div>
+                                <div class="flex flex-wrap gap-2 w-full">
+                                    <label>1.2.5 Dispatch Clearance (MDCC)</label>
+                                    <p-datepicker appendTo="body" dateFormat="dd.mm.yy"
+                                        placeholder="Dispatch Clearance (MDCC) Date" class="w-full" showIcon
+                                        iconDisplay="input" />
+                                </div>
+                            </div>
+                            <div class="flex flex-col md:flex-row gap-6">
+                                <div class="flex flex-wrap gap-2 w-full">
+                                    <label>1.2.6 Ready for Dispatch</label>
+                                    <p-datepicker appendTo="body" dateFormat="dd.mm.yy"
+                                        placeholder="Ready for Dispatch Date" class="w-full" showIcon
+                                        iconDisplay="input" />
+                                </div>
+                                <div class="flex flex-wrap gap-2 w-full">
+                                    <label>1.2.7 Dispatch</label>
+                                    <p-datepicker appendTo="body" dateFormat="dd.mm.yy" placeholder="Dispatch Date"
+                                        class="w-full" showIcon iconDisplay="input" />
+                                </div>
+                            </div>
+                            <div class="flex flex-col md:flex-row gap-6">
+                                <div class="flex flex-wrap gap-2 w-full">
+                                    <label>1.2.8 Delivery</label>
+                                    <p-datepicker appendTo="body" dateFormat="dd.mm.yy" placeholder="Delivery Date"
+                                        class="w-full" showIcon iconDisplay="input" />
+                                </div>
+                                <div class="flex flex-wrap gap-2 w-full">
+                                    <label>1.3 Hub</label>
+                                    <p-datepicker appendTo="body" dateFormat="dd.mm.yy" placeholder="Hub Date"
+                                        class="w-full" showIcon iconDisplay="input" />
+                                </div>
+                            </div>
+                            <div class="flex flex-col md:flex-row gap-6">
+                                <div class="flex flex-wrap gap-2 w-full">
+                                    <label>1.3.1 Production Launch</label>
+                                    <p-datepicker appendTo="body" dateFormat="dd.mm.yy"
+                                        placeholder="Production Launch Date" class="w-full" showIcon
+                                        iconDisplay="input" />
+                                </div>
+                                <div class="flex flex-wrap gap-2 w-full">
+                                    <label>1.3.2 Manufacturing / Build</label>
+                                    <p-datepicker appendTo="body" dateFormat="dd.mm.yy"
+                                        placeholder="Manufacturing / Build Date" class="w-full" showIcon
+                                        iconDisplay="input" />
+                                </div>
+                            </div>
+                            <div class="flex flex-col md:flex-row gap-6">
+                                <div class="flex flex-wrap gap-2 w-full">
+                                    <label>1.3.3 Inspection Call</label>
+                                    <p-datepicker appendTo="body" dateFormat="dd.mm.yy"
+                                        placeholder="Inspection Call Date" class="w-full" showIcon
+                                        iconDisplay="input" />
+                                </div>
+                                <div class="flex flex-wrap gap-2 w-full">
+                                    <label>1.3.4 Inspection by Customer</label>
+                                    <p-datepicker appendTo="body" dateFormat="dd.mm.yy"
+                                        placeholder="Inspection by Customer Date" class="w-full" showIcon
+                                        iconDisplay="input" />
+                                </div>
+                            </div>
+                            <div class="flex flex-col md:flex-row gap-6">
+                                <div class="flex flex-wrap gap-2 w-full">
+                                    <label>1.3.5 Dispatch Clearance (MDCC)</label>
+                                    <p-datepicker appendTo="body" dateFormat="dd.mm.yy"
+                                        placeholder="Dispatch Clearance (MDCC) Date" class="w-full" showIcon
+                                        iconDisplay="input" />
+                                </div>
+                                <div class="flex flex-wrap gap-2 w-full">
+                                    <label>1.3.6 Ready for Dispatch</label>
+                                    <p-datepicker appendTo="body" dateFormat="dd.mm.yy"
+                                        placeholder="Ready for Dispatch Date" class="w-full" showIcon
+                                        iconDisplay="input" />
+                                </div>
+                            </div>
+                            <div class="flex flex-col md:flex-row gap-6">
+                                <div class="flex flex-wrap gap-2 w-full">
+                                    <label>1.3.7 Dispatch</label>
+                                    <p-datepicker appendTo="body" dateFormat="dd.mm.yy" placeholder="Dispatch Date"
+                                        class="w-full" showIcon iconDisplay="input" />
+                                </div>
+                                <div class="flex flex-wrap gap-2 w-full">
+                                    <label>1.3.8 Delivery</label>
+                                    <p-datepicker appendTo="body" dateFormat="dd.mm.yy" placeholder="Delivery Date"
+                                        class="w-full" showIcon iconDisplay="input" />
+                                </div>
+                            </div>
+                            <div class="flex flex-col md:flex-row gap-6">
+                                <div class="flex flex-wrap gap-2 w-full">
+                                    <label>1.4 Blade</label>
+                                    <p-datepicker appendTo="body" dateFormat="dd.mm.yy" placeholder="Blade Date"
+                                        class="w-full" showIcon iconDisplay="input" />
+                                </div>
+                                <div class="flex flex-wrap gap-2 w-full">
+                                    <label>1.4.1 Production Launch</label>
+                                    <p-datepicker appendTo="body" dateFormat="dd.mm.yy"
+                                        placeholder="Production Launch Date" class="w-full" showIcon
+                                        iconDisplay="input" />
+                                </div>
+                            </div>
+                            <div class="flex flex-col md:flex-row gap-6">
+                                <div class="flex flex-wrap gap-2 w-full">
+                                    <label>1.4.2 Manufacturing / Build</label>
+                                    <p-datepicker appendTo="body" dateFormat="dd.mm.yy"
+                                        placeholder="Manufacturing / Build Date" class="w-full" showIcon
+                                        iconDisplay="input" />
+                                </div>
+                                <div class="flex flex-wrap gap-2 w-full">
+                                    <label>1.4.3 Inspection Call</label>
+                                    <p-datepicker appendTo="body" dateFormat="dd.mm.yy"
+                                        placeholder="Inspection Call Date" class="w-full" showIcon
+                                        iconDisplay="input" />
+                                </div>
+                            </div>
+                            <div class="flex flex-col md:flex-row gap-6">
+                                <div class="flex flex-wrap gap-2 w-full">
+                                    <label>1.4.4 Inspection by Customer</label>
+                                    <p-datepicker appendTo="body" dateFormat="dd.mm.yy"
+                                        placeholder="Inspection by Customer Date" class="w-full" showIcon
+                                        iconDisplay="input" />
+                                </div>
+                                <div class="flex flex-wrap gap-2 w-full">
+                                    <label>1.4.5 Dispatch Clearance (MDCC)</label>
+                                    <p-datepicker appendTo="body" dateFormat="dd.mm.yy"
+                                        placeholder="Dispatch Clearance (MDCC) Date" class="w-full" showIcon
+                                        iconDisplay="input" />
+                                </div>
+                            </div>
+                            <div class="flex flex-col md:flex-row gap-6">
+                                <div class="flex flex-wrap gap-2 w-full">
+                                    <label>1.4.6 Ready for Dispatch</label>
+                                    <p-datepicker appendTo="body" dateFormat="dd.mm.yy"
+                                        placeholder="Ready for Dispatch Date" class="w-full" showIcon
+                                        iconDisplay="input" />
+                                </div>
+                                <div class="flex flex-wrap gap-2 w-full">
+                                    <label>1.4.7 Dispatch</label>
+                                    <p-datepicker appendTo="body" dateFormat="dd.mm.yy" placeholder="Dispatch Date"
+                                        class="w-full" showIcon iconDisplay="input" />
+                                </div>
+                            </div>
+                            <div class="flex flex-col md:flex-row gap-6">
+                                <div class="flex flex-wrap gap-2 w-full">
+                                    <label>1.4.8 Delivery</label>
+                                    <p-datepicker appendTo="body" dateFormat="dd.mm.yy" placeholder="Delivery Date"
+                                        class="w-full" showIcon iconDisplay="input" />
+                                </div>
+                                <div class="flex flex-wrap gap-2 w-full">
+                                    <label>1.5 Tower</label>
+                                    <p-datepicker appendTo="body" dateFormat="dd.mm.yy" placeholder="Tower Date"
+                                        class="w-full" showIcon iconDisplay="input" />
+                                </div>
+                            </div>
+                            <div class="flex flex-col md:flex-row gap-6">
+                                <div class="flex flex-wrap gap-2 w-full">
+                                    <label>1.5.1 Manufacturing / Build</label>
+                                    <p-datepicker appendTo="body" dateFormat="dd.mm.yy"
+                                        placeholder="Manufacturing / Build Date" class="w-full" showIcon
+                                        iconDisplay="input" />
+                                </div>
+                                <div class="flex flex-wrap gap-2 w-full">
+                                    <label>1.5.2 Inspection Call</label>
+                                    <p-datepicker appendTo="body" dateFormat="dd.mm.yy"
+                                        placeholder="Inspection Call Date" class="w-full" showIcon
+                                        iconDisplay="input" />
+                                </div>
+                            </div>
+                            <div class="flex flex-col md:flex-row gap-6">
+                                <div class="flex flex-wrap gap-2 w-full">
+                                    <label>1.5.3 Inspection by Customer</label>
+                                    <p-datepicker appendTo="body" dateFormat="dd.mm.yy"
+                                        placeholder="Inspection by Customer Date" class="w-full" showIcon
+                                        iconDisplay="input" />
+                                </div>
+                                <div class="flex flex-wrap gap-2 w-full">
+                                    <label>1.5.4 Dispatch Clearance (MDCC)</label>
+                                    <p-datepicker appendTo="body" dateFormat="dd.mm.yy"
+                                        placeholder="Dispatch Clearance (MDCC) Date" class="w-full" showIcon
+                                        iconDisplay="input" />
+                                </div>
+                            </div>
+                            <div class="flex flex-col md:flex-row gap-6">
+                                <div class="flex flex-wrap gap-2 w-full">
+                                    <label>1.5.5 Ready for Dispatch</label>
+                                    <p-datepicker appendTo="body" dateFormat="dd.mm.yy"
+                                        placeholder="Ready for Dispatch Date" class="w-full" showIcon
+                                        iconDisplay="input" />
+                                </div>
+                                <div class="flex flex-wrap gap-2 w-full">
+                                    <label>1.5.6 Dispatch</label>
+                                    <p-datepicker appendTo="body" dateFormat="dd.mm.yy" placeholder="Dispatch Date"
+                                        class="w-full" showIcon iconDisplay="input" />
+                                </div>
+                            </div>
+                            <div class="flex flex-col md:flex-row gap-6">
+                                <div class="flex flex-wrap gap-2 w-full">
+                                    <label>1.5.7 Delivery</label>
+                                    <p-datepicker appendTo="body" dateFormat="dd.mm.yy" placeholder="Delivery Date"
+                                        class="w-full" showIcon iconDisplay="input" />
+                                </div>
+                                <div class="flex flex-wrap gap-2 w-full">
+                                    <label>1.6 Converter Panel</label>
+                                    <p-datepicker appendTo="body" dateFormat="dd.mm.yy"
+                                        placeholder="Converter Panel Date" class="w-full" showIcon
+                                        iconDisplay="input" />
+                                </div>
+                            </div>
+                            <div class="flex flex-col md:flex-row gap-6">
+                                <div class="flex flex-wrap gap-2 w-full">
+                                    <label>1.6.1 Ready for dispatch</label>
+                                    <p-datepicker appendTo="body" dateFormat="dd.mm.yy"
+                                        placeholder="Ready for dispatch Date" class="w-full" showIcon
+                                        iconDisplay="input" />
+                                </div>
+                                <div class="flex flex-wrap gap-2 w-full">
+                                    <label>1.6.2 Dispatch</label>
+                                    <p-datepicker appendTo="body" dateFormat="dd.mm.yy" placeholder="Dispatch Date"
+                                        class="w-full" showIcon iconDisplay="input" />
+                                </div>
+                            </div>
+                            <div class="flex flex-col md:flex-row gap-6">
+                                <div class="flex flex-wrap gap-2 w-full">
+                                    <label>1.6.3 Delivery</label>
+                                    <p-datepicker appendTo="body" dateFormat="dd.mm.yy" placeholder="Delivery Date"
+                                        class="w-full" showIcon iconDisplay="input" />
+                                </div>
+                                <div class="flex flex-wrap gap-2 w-full">
+                                    <label>1.7 Accessories</label>
+                                    <p-datepicker appendTo="body" dateFormat="dd.mm.yy" placeholder="Accessories Date"
+                                        class="w-full" showIcon iconDisplay="input" />
+                                </div>
+                            </div>
+                            <div class="flex flex-col md:flex-row gap-6">
+                                <div class="flex flex-wrap gap-2 w-full">
+                                    <label>1.7.1 Ready for dispatch</label>
+                                    <p-datepicker appendTo="body" dateFormat="dd.mm.yy"
+                                        placeholder="Ready for dispatch Date" class="w-full" showIcon
+                                        iconDisplay="input" />
+                                </div>
+                                <div class="flex flex-wrap gap-2 w-full">
+                                    <label>1.7.2 Dispatch</label>
+                                    <p-datepicker appendTo="body" dateFormat="dd.mm.yy" placeholder="Dispatch Date"
+                                        class="w-full" showIcon iconDisplay="input" />
+                                </div>
+                            </div>
+                            <div class="flex flex-col md:flex-row gap-6">
+                                <div class="flex flex-wrap gap-2 w-full">
+                                    <label>1.7.3 Delivery</label>
+                                    <p-datepicker appendTo="body" dateFormat="dd.mm.yy" placeholder="Delivery Date"
+                                        class="w-full" showIcon iconDisplay="input" />
+                                </div>
+                                <div class="flex flex-wrap gap-2 w-full">
+
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <div class="flex flex-col md:flex-row gap-8">
+                            <div class="md:w-full text-center">
+                                <p-button icon="pi pi-times" severity="danger" iconPos="right" label="Reset"
+                                    class="w-full"></p-button>
+                            </div>
+
+                        </div>
+                    </div>
+                </p-accordion-content>
+            </p-accordion-panel>
+            <p-accordion-panel value="1">
+                <p-accordion-header>
+                    <p-table showGridlines breakpoint="775px" [rowHover]="true" [value]="products"
+                        [tableStyle]="{ 'min-width': '50rem' }">
+                        <ng-template #header>
+                            <tr>
+                                <th colspan="4">
+                                </th>
+
+                            </tr>
+                        </ng-template>
+                        <ng-template #body>
+                            <tr>
+                                <td style="width: 5%;" >2.</td>
+                                <td style="width: 25%;">Service Plan</td>
+                                <td style="width: 35%;">{{cdate | date : 'dd/MM/yyyy' }}</td>
+                                <td style="width: 45%;">Description about Service Plan</td>
+                            </tr>
+                        </ng-template>
+                    </p-table> 
+                </p-accordion-header>
+                <p-accordion-content>
+                    <div class="flex flex-col mt-5">
+                        <div class="card flex flex-col gap-6 w-full">
+                            <div class="font-semibold text-xl">Service Plan</div>
+                            <div class="flex flex-col md:flex-row gap-6">
+                                <div class="flex flex-wrap gap-2 w-full">
+                                    <label>2.1 Foundation</label>
+                                    <p-datepicker appendTo="body" dateFormat="dd.mm.yy" placeholder="Foundation Date"
+                                        class="w-full" showIcon iconDisplay="input" />
+                                </div>
+                                <div class="flex flex-wrap gap-2 w-full">
+                                    <label>2.1.1 Foundation Casting</label>
+                                    <p-datepicker appendTo="body" dateFormat="dd.mm.yy"
+                                        placeholder="Foundation Casting Date" class="w-full" showIcon
+                                        iconDisplay="input" />
+                                </div>
+                            </div>
+
+                            <div class="flex flex-col md:flex-row gap-6">
+                                <div class="flex flex-wrap gap-2 w-full">
+                                    <label>2.1.2 Grouting</label>
+                                    <p-datepicker appendTo="body" dateFormat="dd.mm.yy" placeholder="Grouting Date"
+                                        class="w-full" showIcon iconDisplay="input" />
+                                </div>
+                                <div class="flex flex-wrap gap-2 w-full">
+                                    <label>2.1.3 7 days Cube testing</label>
+                                    <p-datepicker appendTo="body" dateFormat="dd.mm.yy"
+                                        placeholder="7 days Cube testing Date" class="w-full" showIcon
+                                        iconDisplay="input" />
+                                </div>
+                            </div>
+
+                            <div class="flex flex-col md:flex-row gap-6">
+                                <div class="flex flex-wrap gap-2 w-full">
+                                    <label>2.1.4 28 days Cube testing</label>
+                                    <p-datepicker appendTo="body" dateFormat="dd.mm.yy"
+                                        placeholder="28 days Cube testing Date" class="w-full" showIcon
+                                        iconDisplay="input" />
+                                </div>
+                                <div class="flex flex-wrap gap-2 w-full">
+                                    <label>2.1.5 Backfilling</label>
+                                    <p-datepicker appendTo="body" dateFormat="dd.mm.yy" placeholder="Backfilling Date"
+                                        class="w-full" showIcon iconDisplay="input" />
+                                </div>
+                            </div>
+
+                            <div class="flex flex-col md:flex-row gap-6">
+                                <div class="flex flex-wrap gap-2 w-full">
+                                    <label>2.2 Installation</label>
+                                    <p-datepicker appendTo="body" dateFormat="dd.mm.yy" placeholder="Installation Date"
+                                        class="w-full" showIcon iconDisplay="input" />
+                                </div>
+                                <div class="flex flex-wrap gap-2 w-full">
+                                    <label>2.2.1 Rotor Installation</label>
+                                    <p-datepicker appendTo="body" dateFormat="dd.mm.yy"
+                                        placeholder="Rotor Installation Date" class="w-full" showIcon
+                                        iconDisplay="input" />
+                                </div>
+                            </div>
+
+                            <div class="flex flex-col md:flex-row gap-6">
+                                <div class="flex flex-wrap gap-2 w-full">
+                                    <label>2.2.2 100% Torquing</label>
+                                    <p-datepicker appendTo="body" dateFormat="dd.mm.yy" placeholder="100% Torquing Date"
+                                        class="w-full" showIcon iconDisplay="input" />
+                                </div>
+                                <div class="flex flex-wrap gap-2 w-full">
+                                    <label>2.2.3 10% Torque Inspection</label>
+                                    <p-datepicker appendTo="body" dateFormat="dd.mm.yy"
+                                        placeholder="10% Torque Inspection Date" class="w-full" showIcon
+                                        iconDisplay="input" />
+                                </div>
+                            </div>
+                            <div class="flex flex-col md:flex-row gap-6">
+                                <div class="flex flex-wrap gap-2 w-full">
+                                    <label>2.2.4 Mechanical Completion</label>
+                                    <p-datepicker appendTo="body" dateFormat="dd.mm.yy"
+                                        placeholder="Mechanical Completion Date" class="w-full" showIcon
+                                        iconDisplay="input" />
+                                </div>
+                                <div class="flex flex-wrap gap-2 w-full">
+                                    <label>2.2.5 Electrical Completion</label>
+                                    <p-datepicker appendTo="body" dateFormat="dd.mm.yy"
+                                        placeholder="Electrical Completion Date" class="w-full" showIcon
+                                        iconDisplay="input" />
+                                </div>
+                            </div>
+                            <div class="flex flex-col md:flex-row gap-6">
+                                <div class="flex flex-wrap gap-2 w-full">
+                                    <label>2.3 Pre-Commissioning</label>
+                                    <p-datepicker appendTo="body" dateFormat="dd.mm.yy"
+                                        placeholder="Pre-Commissioning Date" class="w-full" showIcon
+                                        iconDisplay="input" />
+                                </div>
+                                <div class="flex flex-wrap gap-2 w-full">
+                                    <label>2.4 Commissioning</label>
+                                    <p-datepicker appendTo="body" dateFormat="dd.mm.yy" placeholder="Commissioning Date"
+                                        class="w-full" showIcon iconDisplay="input" />
+                                </div>
+                            </div>
+                            <div class="flex flex-col md:flex-row gap-6">
+                                <div class="flex flex-wrap gap-2 w-full">
+                                    <label>2.5 STPT</label>
+                                    <p-datepicker appendTo="body" dateFormat="dd.mm.yy" placeholder="STPT Date"
+                                        class="w-full" showIcon iconDisplay="input" />
+                                </div>
+                                <div class="flex flex-wrap gap-2 w-full">
+                                    <label>2.6 Punchlist</label>
+                                    <p-datepicker appendTo="body" dateFormat="dd.mm.yy" placeholder="Punchlist Date"
+                                        class="w-full" showIcon iconDisplay="input" />
+                                </div>
+                            </div>
+                            <div class="flex flex-col md:flex-row gap-6">
+                                <div class="flex flex-wrap gap-2 w-full">
+                                    <label>2.7 Handover Takeover (HOTO)</label>
+                                    <p-datepicker appendTo="body" dateFormat="dd.mm.yy"
+                                        placeholder="Handover Takeover (HOTO) Date" class="w-full" showIcon
+                                        iconDisplay="input" />
+                                </div>
+                                <div class="flex flex-wrap gap-2 w-full">
+
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="flex flex-col md:flex-row gap-8">
+                            <div class="md:w-full text-center">
+                                <p-button icon="pi pi-times" severity="danger" iconPos="right" label="Reset"
+                                    class="w-full"></p-button>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </p-accordion-content>
+            </p-accordion-panel>
+            <p-accordion-panel value="2">
+                <p-accordion-header>
+                    <p-table showGridlines breakpoint="775px" [rowHover]="true" [value]="products"
+                        [tableStyle]="{ 'min-width': '50rem' }">
+                        <ng-template #header>
+                            <tr>
+                                <th colspan="4">
+                                </th>
+
+                            </tr>
+                        </ng-template>
+                        <ng-template #body>
+                            <tr>
+                                <td style="width: 5%;" >3.</td>
+                                <td style="width: 25%;">Manpower Plan</td>
+                                <td style="width: 35%;">{{cdate | date : 'dd/MM/yyyy' }}</td>
+                                <td style="width: 45%;">Description about Manpower Plan</td>
+                            </tr>
+                        </ng-template>
+                    </p-table>
+                </p-accordion-header>
+                <p-accordion-content>
+                    <div class="flex flex-col mt-5">
+                        <div class="card flex flex-col gap-6 w-full">
+                            <div class="font-semibold text-xl">Manpower Plan</div>
+                            <div class="flex flex-col md:flex-row gap-6">
+                                <div class="flex flex-wrap gap-2 w-full">
+                                    <label>3.1 Project Manager</label>
+                                    <p-datepicker appendTo="body" dateFormat="dd.mm.yy"
+                                        placeholder="Project Manager Date" class="w-full" showIcon
+                                        iconDisplay="input" />
+                                </div>
+                                <div class="flex flex-wrap gap-2 w-full">
+                                    <label>3.2 Site Manager</label>
+                                    <p-datepicker appendTo="body" dateFormat="dd.mm.yy" placeholder="Site Manager Date"
+                                        class="w-full" showIcon iconDisplay="input" />
+                                </div>
+                            </div>
+
+                            <div class="flex flex-col md:flex-row gap-6">
+                                <div class="flex flex-wrap gap-2 w-full">
+                                    <label>3.3 Store Engineer</label>
+                                    <p-datepicker appendTo="body" dateFormat="dd.mm.yy"
+                                        placeholder="Store Engineer Date" class="w-full" showIcon iconDisplay="input" />
+                                </div>
+                                <div class="flex flex-wrap gap-2 w-full">
+                                    <label>3.4 Tools Technician</label>
+                                    <p-datepicker appendTo="body" dateFormat="dd.mm.yy"
+                                        placeholder="Tools Technician Date" class="w-full" showIcon
+                                        iconDisplay="input" />
+                                </div>
+                            </div>
+
+                            <div class="flex flex-col md:flex-row gap-6">
+                                <div class="flex flex-wrap gap-2 w-full">
+                                    <label>3.5 FRP Repair Technician</label>
+                                    <p-datepicker appendTo="body" dateFormat="dd.mm.yy"
+                                        placeholder="FRP Repair Technician Date" class="w-full" showIcon
+                                        iconDisplay="input" />
+                                </div>
+                                <div class="flex flex-wrap gap-2 w-full">
+                                    <label>3.6 Installation Manpower</label>
+                                    <p-datepicker appendTo="body" dateFormat="dd.mm.yy"
+                                        placeholder="Installation Manpower Date" class="w-full" showIcon
+                                        iconDisplay="input" />
+                                </div>
+                            </div>
+
+                            <div class="flex flex-col md:flex-row gap-6">
+                                <div class="flex flex-wrap gap-2 w-full">
+                                    <label>3.6.1 Installation Manager</label>
+                                    <p-datepicker appendTo="body" dateFormat="dd.mm.yy"
+                                        placeholder="Installation Manager Date" class="w-full" showIcon
+                                        iconDisplay="input" />
+                                </div>
+                                <div class="flex flex-wrap gap-2 w-full">
+                                    <label>3.6.2 Mechanical Engineer 1</label>
+                                    <p-datepicker appendTo="body" dateFormat="dd.mm.yy"
+                                        placeholder="Mechanical Engineer 1 Date" class="w-full" showIcon
+                                        iconDisplay="input" />
+                                </div>
+                            </div>
+
+                            <div class="flex flex-col md:flex-row gap-6">
+                                <div class="flex flex-wrap gap-2 w-full">
+                                    <label>3.6.3 Mechanical Engineer 2</label>
+                                    <p-datepicker appendTo="body" dateFormat="dd.mm.yy"
+                                        placeholder="Mechanical Engineer 2 Date" class="w-full" showIcon
+                                        iconDisplay="input" />
+                                </div>
+                                <div class="flex flex-wrap gap-2 w-full">
+                                    <label>3.6.4 Mechanical Engineer 3</label>
+                                    <p-datepicker appendTo="body" dateFormat="dd.mm.yy"
+                                        placeholder="Mechanical Engineer 3 Date" class="w-full" showIcon
+                                        iconDisplay="input" />
+                                </div>
+                            </div>
+                            <div class="flex flex-col md:flex-row gap-6">
+                                <div class="flex flex-wrap gap-2 w-full">
+                                    <label>3.6.5 Mechanical Engineer 4</label>
+                                    <p-datepicker appendTo="body" dateFormat="dd.mm.yy"
+                                        placeholder="Mechanical Engineer 4 Date" class="w-full" showIcon
+                                        iconDisplay="input" />
+                                </div>
+                                <div class="flex flex-wrap gap-2 w-full">
+                                    <label>3.6.6 Electrical Engineer 1</label>
+                                    <p-datepicker appendTo="body" dateFormat="dd.mm.yy"
+                                        placeholder="Electrical Engineer 1 Date" class="w-full" showIcon
+                                        iconDisplay="input" />
+                                </div>
+                            </div>
+                            <div class="flex flex-col md:flex-row gap-6">
+                                <div class="flex flex-wrap gap-2 w-full">
+                                    <label>3.6.7 Electrical Engineer 2</label>
+                                    <p-datepicker appendTo="body" dateFormat="dd.mm.yy"
+                                        placeholder="Electrical Engineer 2 Date" class="w-full" showIcon
+                                        iconDisplay="input" />
+                                </div>
+                                <div class="flex flex-wrap gap-2 w-full">
+                                    <label>3.7 Commissioning Manpower</label>
+                                    <p-datepicker appendTo="body" dateFormat="dd.mm.yy"
+                                        placeholder="Commissioning Manpower Date" class="w-full" showIcon
+                                        iconDisplay="input" />
+                                </div>
+                            </div>
+                            <div class="flex flex-col md:flex-row gap-6">
+                                <div class="flex flex-wrap gap-2 w-full">
+                                    <label>3.7.1 Commissioning Engineer 1</label>
+                                    <p-datepicker appendTo="body" dateFormat="dd.mm.yy"
+                                        placeholder="Commissioning Engineer 1 Date" class="w-full" showIcon
+                                        iconDisplay="input" />
+                                </div>
+                                <div class="flex flex-wrap gap-2 w-full">
+                                    <label>3.7.2 Commissioning Engineer 2</label>
+                                    <p-datepicker appendTo="body" dateFormat="dd.mm.yy"
+                                        placeholder="Commissioning Engineer 2 Date" class="w-full" showIcon
+                                        iconDisplay="input" />
+                                </div>
+                            </div>
+                            <div class="flex flex-col md:flex-row gap-6">
+                                <div class="flex flex-wrap gap-2 w-full">
+                                    <label>3.7.3 Commissioning Engineer 3</label>
+                                    <p-datepicker appendTo="body" dateFormat="dd.mm.yy"
+                                        placeholder="Commissioning Engineer 3 Date" class="w-full" showIcon
+                                        iconDisplay="input" />
+                                </div>
+                                <div class="flex flex-wrap gap-2 w-full">
+                                    <label>3.7.4 Commissioning Engineer 4</label>
+                                    <p-datepicker appendTo="body" dateFormat="dd.mm.yy"
+                                        placeholder="Commissioning Engineer 4 Date" class="w-full" showIcon
+                                        iconDisplay="input" />
+                                </div>
+                            </div>
+                            <div class="flex flex-col md:flex-row gap-6">
+                                <div class="flex flex-wrap gap-2 w-full">
+                                    <label>3.7.5 Commissioning Engineer 5</label>
+                                    <p-datepicker appendTo="body" dateFormat="dd.mm.yy"
+                                        placeholder="Commissioning Engineer 5 Date" class="w-full" showIcon
+                                        iconDisplay="input" />
+                                </div>
+                                <div class="flex flex-wrap gap-2 w-full">
+                                    <label>3.7.6 Commissioning Engineer 6</label>
+                                    <p-datepicker appendTo="body" dateFormat="dd.mm.yy"
+                                        placeholder="Commissioning Engineer 6 Date" class="w-full" showIcon
+                                        iconDisplay="input" />
+                                </div>
+                            </div>
+                            <div class="flex flex-col md:flex-row gap-6">
+                                <div class="flex flex-wrap gap-2 w-full">
+                                    <label>3.8 Civil Manpower</label>
+                                    <p-datepicker appendTo="body" dateFormat="dd.mm.yy"
+                                        placeholder="Civil Manpower Date" class="w-full" showIcon iconDisplay="input" />
+                                </div>
+                                <div class="flex flex-wrap gap-2 w-full">
+                                    <label>3.8.1 Civil Engineer 1</label>
+                                    <p-datepicker appendTo="body" dateFormat="dd.mm.yy"
+                                        placeholder="Civil Engineer 1 Date" class="w-full" showIcon
+                                        iconDisplay="input" />
+                                </div>
+                            </div>
+                            <div class="flex flex-col md:flex-row gap-6">
+                                <div class="flex flex-wrap gap-2 w-full">
+                                    <label>3.8.2 Civil Engineer 2</label>
+                                    <p-datepicker appendTo="body" dateFormat="dd.mm.yy"
+                                        placeholder="Civil Engineer 2 Date" class="w-full" showIcon
+                                        iconDisplay="input" />
+                                </div>
+                                <div class="flex flex-wrap gap-2 w-full">
+                                    <label>3.9 EHS Manpower</label>
+                                    <p-datepicker appendTo="body" dateFormat="dd.mm.yy" placeholder="EHS Manpower Date"
+                                        class="w-full" showIcon iconDisplay="input" />
+                                </div>
+                            </div>
+                            <div class="flex flex-col md:flex-row gap-6">
+                                <div class="flex flex-wrap gap-2 w-full">
+                                    <label>3.9.1 EHS Engineer 1</label>
+                                    <p-datepicker appendTo="body" dateFormat="dd.mm.yy"
+                                        placeholder="EHS Engineer 1 Date" class="w-full" showIcon iconDisplay="input" />
+                                </div>
+                                <div class="flex flex-wrap gap-2 w-full">
+                                    <label>3.9.2 EHS Engineer 2</label>
+                                    <p-datepicker appendTo="body" dateFormat="dd.mm.yy"
+                                        placeholder="EHS Engineer 2 Date" class="w-full" showIcon iconDisplay="input" />
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="flex flex-col md:flex-row gap-8">
+                            <div class="md:w-full text-center">
+                                <p-button icon="pi pi-times" severity="danger" iconPos="right" label="Reset"
+                                    class="w-full"></p-button>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </p-accordion-content>
+            </p-accordion-panel>
+            <p-accordion-panel value="3">
+                <p-accordion-header>
+                    <p-table showGridlines breakpoint="775px" [rowHover]="true" [value]="products"
+                        [tableStyle]="{ 'min-width': '50rem' }">
+                        <ng-template #header>
+                            <tr>
+                                <th colspan="4">
+                                </th>
+
+                            </tr>
+                        </ng-template>
+                        <ng-template #body>
+                            <tr>
+                                <td style="width: 5%;" >4.</td>
+                                <td style="width: 25%;">Tools Plan</td>
+                                <td style="width: 35%;">{{cdate | date : 'dd/MM/yyyy' }}</td>
+                                <td style="width: 45%;">Description about Tools Plan</td>
+                            </tr>
+                        </ng-template>
+                    </p-table>
+                </p-accordion-header>
+                <p-accordion-content>
+                    <div class="flex flex-col mt-5">
+                        <div class="card flex flex-col gap-6 w-full">
+                            <div class="font-semibold text-xl">Tools Plan</div>
+                            <div class="flex flex-col md:flex-row gap-6">
+                                <div class="flex flex-wrap gap-2 w-full">
+                                    <label>4.1 Unloading Tools</label>
+                                    <p-datepicker appendTo="body" dateFormat="dd.mm.yy"
+                                        placeholder="Unloading Tools Date" class="w-full" showIcon
+                                        iconDisplay="input" />
+                                </div>
+                                <div class="flex flex-wrap gap-2 w-full">
+                                    <label>4.1.1 Unloading Tools Set 1</label>
+                                    <p-datepicker appendTo="body" dateFormat="dd.mm.yy"
+                                        placeholder="Unloading Tools Set 1 Date" class="w-full" showIcon
+                                        iconDisplay="input" />
+                                </div>
+                            </div>
+
+                            <div class="flex flex-col md:flex-row gap-6">
+                                <div class="flex flex-wrap gap-2 w-full">
+                                    <label>4.1.2 Unloading Tools Set 2</label>
+                                    <p-datepicker appendTo="body" dateFormat="dd.mm.yy"
+                                        placeholder="Unloading Tools Set 2 Date" class="w-full" showIcon
+                                        iconDisplay="input" />
+                                </div>
+                                <div class="flex flex-wrap gap-2 w-full">
+                                    <label>4.2 Rotor Lifting Tools</label>
+                                    <p-datepicker appendTo="body" dateFormat="dd.mm.yy"
+                                        placeholder="Rotor Lifting Tools Date" class="w-full" showIcon
+                                        iconDisplay="input" />
+                                </div>
+                            </div>
+
+                            <div class="flex flex-col md:flex-row gap-6">
+                                <div class="flex flex-wrap gap-2 w-full">
+                                    <label>4.2.1 Rotor Lifting Tools Set 1</label>
+                                    <p-datepicker appendTo="body" dateFormat="dd.mm.yy"
+                                        placeholder="Rotor Lifting Tools Set 1 Date" class="w-full" showIcon
+                                        iconDisplay="input" />
+                                </div>
+                                <div class="flex flex-wrap gap-2 w-full">
+                                    <label>4.2.2 Rotor Lifting Tools Set 2</label>
+                                    <p-datepicker appendTo="body" dateFormat="dd.mm.yy"
+                                        placeholder="Rotor Lifting Tools Set 2 Date" class="w-full" showIcon
+                                        iconDisplay="input" />
+                                </div>
+                            </div>
+
+                            <div class="flex flex-col md:flex-row gap-6">
+                                <div class="flex flex-wrap gap-2 w-full">
+                                    <label>4.3 Single Blade Lifting Tools</label>
+                                    <p-datepicker appendTo="body" dateFormat="dd.mm.yy"
+                                        placeholder="Single Blade Lifting Tools Date" class="w-full" showIcon
+                                        iconDisplay="input" />
+                                </div>
+                                <div class="flex flex-wrap gap-2 w-full">
+                                    <label>4.3.1 Single Blade Lifting Tools Set 1</label>
+                                    <p-datepicker appendTo="body" dateFormat="dd.mm.yy"
+                                        placeholder="Single Blade Lifting Tools Set 1 Date" class="w-full" showIcon
+                                        iconDisplay="input" />
+                                </div>
+                            </div>
+
+                            <div class="flex flex-col md:flex-row gap-6">
+                                <div class="flex flex-wrap gap-2 w-full">
+                                    <label>4.3.2 Single Blade Lifting Tools Set 2</label>
+                                    <p-datepicker appendTo="body" dateFormat="dd.mm.yy"
+                                        placeholder="Single Blade Lifting Tools Set 2 Date" class="w-full" showIcon
+                                        iconDisplay="input" />
+                                </div>
+                                <div class="flex flex-wrap gap-2 w-full">
+                                    <label>4.4 Hydraulic Tools</label>
+                                    <p-datepicker appendTo="body" dateFormat="dd.mm.yy"
+                                        placeholder="Hydraulic Tools Date" class="w-full" showIcon
+                                        iconDisplay="input" />
+                                </div>
+                            </div>
+                            <div class="flex flex-col md:flex-row gap-6">
+                                <div class="flex flex-wrap gap-2 w-full">
+                                    <label>4.4.1 Hydraulic Tools Set 1</label>
+                                    <p-datepicker appendTo="body" dateFormat="dd.mm.yy"
+                                        placeholder="Hydraulic Tools Set 1 Date" class="w-full" showIcon
+                                        iconDisplay="input" />
+                                </div>
+                                <div class="flex flex-wrap gap-2 w-full">
+                                    <label>4.4.2 Hydraulic Tools Set 2</label>
+                                    <p-datepicker appendTo="body" dateFormat="dd.mm.yy"
+                                        placeholder="Hydraulic Tools Set 2 Date" class="w-full" showIcon
+                                        iconDisplay="input" />
+                                </div>
+                            </div>
+                            <div class="flex flex-col md:flex-row gap-6">
+                                <div class="flex flex-wrap gap-2 w-full">
+                                    <label>4.4.3 Hydraulic Tools Set 3</label>
+                                    <p-datepicker appendTo="body" dateFormat="dd.mm.yy"
+                                        placeholder="Hydraulic Tools Set 3 Date" class="w-full" showIcon
+                                        iconDisplay="input" />
+                                </div>
+                                <div class="flex flex-wrap gap-2 w-full">
+                                    <label>4.4.4 Hydraulic Tools Set 4</label>
+                                    <p-datepicker appendTo="body" dateFormat="dd.mm.yy"
+                                        placeholder="Hydraulic Tools Set 4 Date" class="w-full" showIcon
+                                        iconDisplay="input" />
+                                </div>
+                            </div>
+                            <div class="flex flex-col md:flex-row gap-6">
+                                <div class="flex flex-wrap gap-2 w-full">
+                                    <label>4.5 Cable Lifting Tools</label>
+                                    <p-datepicker appendTo="body" dateFormat="dd.mm.yy"
+                                        placeholder="Cable Lifting Tools Date" class="w-full" showIcon
+                                        iconDisplay="input" />
+                                </div>
+                                <div class="flex flex-wrap gap-2 w-full">
+                                    <label>4.5.1 Cable Lifting Tools Set 1</label>
+                                    <p-datepicker appendTo="body" dateFormat="dd.mm.yy"
+                                        placeholder="Cable Lifting Tools Set 1 Date" class="w-full" showIcon
+                                        iconDisplay="input" />
+                                </div>
+                            </div>
+                            <div class="flex flex-col md:flex-row gap-6">
+                                <div class="flex flex-wrap gap-2 w-full">
+                                    <label>4.6 Generator Alignment Tools</label>
+                                    <p-datepicker appendTo="body" dateFormat="dd.mm.yy"
+                                        placeholder="Generator Alignment Tools Date" class="w-full" showIcon
+                                        iconDisplay="input" />
+                                </div>
+                                <div class="flex flex-wrap gap-2 w-full">
+                                    <label>4.6.1 Generator Alignment Tools Set 1</label>
+                                    <p-datepicker appendTo="body" dateFormat="dd.mm.yy"
+                                        placeholder="Generator Alignment Tools Set 1 Date" class="w-full" showIcon
+                                        iconDisplay="input" />
+                                </div>
+                            </div>
+
+                            <div class="flex flex-col md:flex-row gap-6">
+                                <div class="flex flex-wrap gap-2 w-full">
+                                    <label>4.6.2 Generator Alignment Tools Set 2</label>
+                                    <p-datepicker appendTo="body" dateFormat="dd.mm.yy"
+                                        placeholder="Generator Alignment Tools Set 2 Date" class="w-full" showIcon
+                                        iconDisplay="input" />
+                                </div>
+                                <div class="flex flex-wrap gap-2 w-full">
+                                    <label>4.7 Sub-Contract Tools</label>
+                                    <p-datepicker appendTo="body" dateFormat="dd.mm.yy"
+                                        placeholder="Sub-Contract Tools Date" class="w-full" showIcon
+                                        iconDisplay="input" />
+                                </div>
+                            </div>
+                            <div class="flex flex-col md:flex-row gap-6">
+                                <div class="flex flex-wrap gap-2 w-full">
+                                    <label>4.7.1 Sub-Contract Tools Set 1</label>
+                                    <p-datepicker appendTo="body" dateFormat="dd.mm.yy"
+                                        placeholder="Sub-Contract Tools Set 1 Date" class="w-full" showIcon
+                                        iconDisplay="input" />
+                                </div>
+                                <div class="flex flex-wrap gap-2 w-full">
+                                    <label>4.7.2 Sub-Contract Tools Set 2</label>
+                                    <p-datepicker appendTo="body" dateFormat="dd.mm.yy"
+                                        placeholder="Sub-Contract Tools Set 2 Date" class="w-full" showIcon
+                                        iconDisplay="input" />
+                                </div>
+                            </div>
+                            <div class="flex flex-col md:flex-row gap-6">
+                                <div class="flex flex-wrap gap-2 w-full">
+                                    <label>4.7.3 Sub-Contract Tools Set 3</label>
+                                    <p-datepicker appendTo="body" dateFormat="dd.mm.yy"
+                                        placeholder="Sub-Contract Tools Set 3 Date" class="w-full" showIcon
+                                        iconDisplay="input" />
+                                </div>
+                                <div class="flex flex-wrap gap-2 w-full">
+                                    <label>4.7.4 Sub-Contract Tools Set 4</label>
+                                    <p-datepicker appendTo="body" dateFormat="dd.mm.yy"
+                                        placeholder="Sub-Contract Tools Set 4 Date" class="w-full" showIcon
+                                        iconDisplay="input" />
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="flex flex-col md:flex-row gap-8">
+                            <div class="md:w-full text-center">
+                                <p-button icon="pi pi-times" severity="danger" iconPos="right" label="Reset"
+                                    class="w-full"></p-button>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </p-accordion-content>
+            </p-accordion-panel>
+            <p-accordion-panel value="4">
+                <p-accordion-header>
+                    <p-table showGridlines breakpoint="775px" [rowHover]="true" [value]="products"
+                        [tableStyle]="{ 'min-width': '50rem' }">
+                        <ng-template #header>
+                            <tr>
+                                <th colspan="4">
+                                </th>
+
+                            </tr>
+                        </ng-template>
+                        <ng-template #body>
+                            <tr>
+                                <td style="width: 5%;" >5.</td>
+                                <td style="width: 25%;">Frame Return Plan</td>
+                                <td style="width: 35%;">{{cdate | date : 'dd/MM/yyyy' }}</td>
+                                <td style="width: 45%;">Description about Frame Return Plan</td>
+                            </tr>
+                        </ng-template>
+                    </p-table>
+                </p-accordion-header>
+                <p-accordion-content>
+                    <div class="flex flex-col mt-5">
+                        <div class="card flex flex-col gap-6 w-full">
+                            <div class="font-semibold text-xl">Frame Return Plan</div>
+                            <div class="flex flex-col md:flex-row gap-6">
+                                <div class="flex flex-wrap gap-2 w-full">
+                                    <label>5.1 Nacelle Frame Return Plan</label>
+                                    <p-datepicker appendTo="body" dateFormat="dd.mm.yy"
+                                        placeholder="Nacelle Frame Return Plan Date" class="w-full" showIcon
+                                        iconDisplay="input" />
+                                </div>
+                                <div class="flex flex-wrap gap-2 w-full">
+                                    <label>5.2 Hub Frame Return Plan</label>
+                                    <p-datepicker appendTo="body" dateFormat="dd.mm.yy"
+                                        placeholder="Hub Frame Return Plan Date" class="w-full" showIcon
+                                        iconDisplay="input" />
+                                </div>
+                            </div>
+                            <div class="flex flex-col md:flex-row gap-6">
+                                <div class="flex flex-wrap gap-2 w-full">
+                                    <label>5.3 Blade Frame Return Plan</label>
+                                    <p-datepicker appendTo="body" dateFormat="dd.mm.yy"
+                                        placeholder="Blade Frame Return Plan Date" class="w-full" showIcon
+                                        iconDisplay="input" />
+                                </div>
+                                <div class="flex flex-wrap gap-2 w-full">
+                                    <label>5.4 Tower Frame Return Plan</label>
+                                    <p-datepicker appendTo="body" dateFormat="dd.mm.yy"
+                                        placeholder="Tower Frame Return Plan Date" class="w-full" showIcon
+                                        iconDisplay="input" />
+                                </div>
+                            </div>
+                            <div class="flex flex-col md:flex-row gap-8">
+                                <div class="md:w-full text-center">
+                                    <p-button icon="pi pi-times" severity="danger" iconPos="right" label="Reset"
+                                        class="w-full"></p-button>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </p-accordion-content>
+            </p-accordion-panel>
+        </p-accordion>
+
+        <div class="flex mb-4 gap-2 justify-end">
+            <p-button (onClick)="active = '0'" [rounded]="true" label="1" class="w-8 h-8 p-0"
+                [outlined]="active !== '0'" />
+            <p-button (onClick)="active = '1'" [rounded]="true" label="2" class="w-8 h-8 p-0"
+                [outlined]="active !== '1'" />
+            <p-button (onClick)="active = '2'" [rounded]="true" label="3" class="w-8 h-8 p-0"
+                [outlined]="active !== '2'" />
+            <p-button (onClick)="active = '3'" [rounded]="true" label="4" class="w-8 h-8 p-0"
+                [outlined]="active !== '3'" />
+            <p-button (onClick)="active = '4'" [rounded]="true" label="5" class="w-8 h-8 p-0"
+                [outlined]="active !== '4'" />
+        </div>
+
+    </div>
+    <div class="flex flex-col md:flex-row gap-8">
+        <div class="md:w-full text-center">
+            <p-button icon="pi pi-arrow-left" severity="secondary" iconPos="left" label="Back" class="w-full m-2"
+                (click)="nextSubmit('back')"></p-button>
+            <p-button icon="pi pi-save" iconPos="right" label="Submit" class="w-full m-2"
+                (click)="nextSubmit('back')"></p-button>
+            <p-button icon="pi pi-times" severity="danger" iconPos="right" label="Cancel" class="w-full m-2"
+                (click)="nextSubmit('back')"></p-button>
+        </div>
+
+    </div>
+</div>
