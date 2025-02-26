@@ -1,0 +1,73 @@
+
+<p-fluid>
+    <div class="flex mt-8">
+        <div class="card flex flex-col w-full">
+            <div class="font-semibold text-xl m-3">Upload DGR Excel</div>
+            <div class="flex flex-col md:flex-row ">
+                <div class="flex flex-wrap w-full">
+                    <p-fileupload name="demo[]" (onSelect)="onFileSelect($event)" customUpload="true" [multiple]="false" accept=".xls, .xlsx" maxFileSize="1000000" mode="basic" [showUploadButton]="false" >
+                        <ng-template #empty>
+                            <div>Drag and drop files to here to upload.</div>
+                        </ng-template>
+                        <ng-template #content>
+                            <ul *ngIf="uploadedFiles.length">
+                                <li *ngFor="let file of uploadedFiles">{{ file.name }} - {{ file.size }} bytes</li>
+                            </ul>
+                        </ng-template>
+                    </p-fileupload>
+                </div>
+               
+            </div>
+    
+           
+        </div>
+    </div>
+
+   <!--  <p-table [value]="excelData" *ngIf="excelData.length">
+        <ng-template pTemplate="header">
+          <tr>
+            <th *ngFor="let col of excelData[0] | keyvalue">{{ col.key }}</th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-row>
+          <tr>
+            <td *ngFor="let col of row | keyvalue">{{ col.value }}</td>
+          </tr>
+        </ng-template>
+      </p-table> -->
+      <p-table [value]="excelData" showGridlines stripedRows *ngIf="excelData.length" responsiveLayout="scroll">
+        <ng-template pTemplate="caption">
+            <div class="flex justify-end flex-end">
+                <p-button icon="pi pi-save" iconPos="right" label="Save Report" 
+                (click)="saveExcel()"></p-button>
+            </div>
+        </ng-template>
+        <ng-template pTemplate="header">
+          <tr>
+            <th>S.No</th>
+            <th *ngFor="let col of columns">{{ col.header }}</th>
+          </tr>
+        </ng-template>
+      
+        <ng-template pTemplate="body" let-row let-rowIndex = rowIndex>
+          <tr>
+            <td>{{rowIndex+1}}</td>
+            <td *ngFor="let col of columns">
+              <p-cellEditor>
+                <!-- View Mode -->
+                <ng-template pTemplate="output">
+                  {{ row[col.field] }}
+                </ng-template>
+                <!-- Edit Mode -->
+                <ng-template pTemplate="input">
+                  <input type="text" [(ngModel)]="row[col.field]" class="p-inputtext p-d-block">
+                </ng-template>
+              </p-cellEditor>
+            </td>
+          </tr>
+        </ng-template>
+      </p-table>
+      
+      
+</p-fluid>
+
