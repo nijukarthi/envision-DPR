@@ -1,0 +1,82 @@
+ <div class="flex flex-col md:flex-row gap-8">
+    <div class="md:w-2/2">
+        <div class="card flex flex-col gap-2">
+            <div class="font-semibold text-xl uppercase">Organization Hierarchy</div>
+            <div class="flex flex-wrap ">
+                <p-organization-chart [value]="data" />
+            </div>
+        </div>
+        
+    </div>
+    <div class="md:w-1/2">
+        <div class="card flex flex-col gap-4">
+            <div class="font-semibold text-xl uppercase">key statistics</div>
+            <div class="flex flex-col gap-2">
+                <label for="name1">Tons Of CO2 Reduces
+                </label>
+                <input pInputText id="name1" type="text" class="w-full"/>
+            </div>
+            <div class="flex flex-col gap-2">
+                <label for="email1">CSR Stats</label>
+                <input pInputText id="email1" type="text" />
+            </div>
+            <div class="flex flex-col gap-2">
+                <label for="age1">Turbines Sold
+                </label>
+                <input pInputText id="age1" type="text" />
+            </div>
+            <div class="flex flex-col gap-2">
+                <label for="age1">Indian Market Share
+                </label>
+                <input pInputText id="age1" type="text" />
+            </div>
+        </div>
+    </div>
+</div> 
+<div class="md:w-full mt-6">
+    <div class=" flex flex-col gap-4">
+        <div class="flex flex-wrap gap-4">
+            <p-button label="PR-PO Module" [disabled]="true"></p-button>
+            <p-button label="Task Management Module "  [disabled]="true"/>
+            <p-button label="KPI Module "  [disabled]="true"/>
+            <p-button label="Project Report " class="p-button-link" class="w-20rem" />
+            <p-button label="Meeting Module"  [disabled]="true"/>
+            <p-button label="Resource  (Task & M.P)"  [disabled]="true"/>
+        </div>
+    </div>
+</div>
+
+<!-- <div class="card mt-8">
+    <div class="font-semibold text-xl uppercase w-full">Organization Hierarchy</div>
+    <div class="flex flex-col md:flex-row">
+        <div class="w-full md:w-6/12 flex flex-col items-center justify-center gap-3 py-5">
+            <div class="flex flex-col gap-2 flex ">
+                <p-organization-chart [value]="data" />
+            </div>
+            
+        </div>
+        <div class="w-full md:w-2/12">
+            <p-divider layout="vertical" class="!hidden md:!flex"><b></b></p-divider>
+            <p-divider layout="horizontal" class="!flex md:!hidden" align="center"><b></b></p-divider>
+        </div>
+        <div class="w-full md:w-5/12 flex items-start justify-start py-5">
+            <div class="card flex flex-col gap-4">
+                <div class="font-semibold text-xl uppercase">key statistics</div>
+                <div class="flex flex-col gap-2">
+                    <label for="name1">Tons Of CO2 Reduces
+                    </label>
+                    <input pInputText id="name1" type="text" class="w-full"/>
+                </div>
+                <div class="flex flex-col gap-2">
+                    <label for="email1">CSR Stats</label>
+                    <input pInputText id="email1" type="text" />
+                </div>
+                <div class="flex flex-col gap-2">
+                    <label for="age1">Turbines Sold
+                    </label>
+                    <input pInputText id="age1" type="text" />
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->
