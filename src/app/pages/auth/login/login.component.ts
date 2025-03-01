@@ -46,16 +46,20 @@ export class LoginComponent {
     this.validation = true;
     console.log(this.loginForm.value);
     if (this.loginForm.invalid){
-      this.router.navigate(['/app/'])
-      //this.messageService.add({ severity: 'error', summary: 'Error', detail: "Please Fill Details!", life: 3000 });
+      this.messageService.add({ severity: 'error', summary: 'Error', detail: "Please Fill Details!", life: 3000 });
       return;
     }else{
       let data = {
          "userName" :this.loginForm.get('userName').value,
          "password" :this.loginForm.get('password').value
       }
-      console.log(data);
-      this.router.navigate(['/app/'])
+      if(data.userName == 'siteengineer_user1' && data.password == "123456"){
+        console.log(data);
+        localStorage.setItem('user',data.userName);
+        this.router.navigate(['/app/'])
+      }else{
+        this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Please Check Username & Password', life: 3000 });
+      }
 
 
       /* this.api.login(data)

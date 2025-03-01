@@ -10,6 +10,7 @@ import { AuthService } from './app/services/auth/auth.service';
 import { DashComponent } from './app/pages/dashboard/dash/dash.component';
 import { CreateProjectComponent } from './app/pages/dashboard/create-project/create-project.component';
 import { DgrToolComponent } from './app/pages/unikit/dgr-tool/dgr-tool.component';
+import { SiteengineerComponent } from './app/pages/unikit/siteengineer/siteengineer.component';
 
 export const appRoutes: Routes = [
     {
@@ -24,6 +25,7 @@ export const appRoutes: Routes = [
             { path: 'dash', component: Dashboard },
             { path: '', component: DashComponent },
             { path: 'createProject', component: CreateProjectComponent },
+            { path: 'siteengineer', component: SiteengineerComponent },
             { path: 'dgrtools', component: DgrToolComponent },
             { path: 'uikit', loadChildren: () => import('./app/pages/uikit/uikit.routes') },
             { path: 'documentation', component: Documentation },

@@ -15,6 +15,7 @@ import { OverlayDemo } from './overlaydemo';
 import { TreeDemo } from './treedemo';
 import { MenuDemo } from './menudemo';
 import { SiteEngComponent } from '../unikit/site-eng/site-eng.component';
+import { SiteengineerComponent } from '../unikit/siteengineer/siteengineer.component';
 
 export default [
     { path: 'button', data: { breadcrumb: 'Button' }, component: ButtonDemo },
@@ -22,6 +23,7 @@ export default [
     { path: 'file', data: { breadcrumb: 'File' }, component: FileDemo },
     { path: 'formlayout', data: { breadcrumb: 'Form Layout' }, component: FormLayoutDemo },
     { path: 'site-eng', data: { breadcrumb: 'Site Engineer' }, component: SiteEngComponent },
+    { path: 'siteengineer', data: { breadcrumb: 'Site Engineer' }, component: SiteengineerComponent },
     { path: 'input', data: { breadcrumb: 'Input' }, component: InputDemo },
     { path: 'list', data: { breadcrumb: 'List' }, component: ListDemo },
     { path: 'media', data: { breadcrumb: 'Media' }, component: MediaDemo },

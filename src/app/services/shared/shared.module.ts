@@ -37,6 +37,7 @@ import { AccordionModule } from 'primeng/accordion';
 import { FluidModule } from 'primeng/fluid';
 import { ToolbarModule } from 'primeng/toolbar';
 import {RouterModule} from '@angular/router';
+import { OrganizationChartModule } from 'primeng/organizationchart';
 @NgModule({
   declarations: [],
   imports: [
@@ -78,7 +79,8 @@ import {RouterModule} from '@angular/router';
     AccordionModule,
     FluidModule,
     ToolbarModule,
-    RouterModule
+    RouterModule,
+    OrganizationChartModule
   ],
   providers:[
     MessageService,

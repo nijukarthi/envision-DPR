@@ -49,7 +49,8 @@ export class AppMenu {
             {
                 label: 'Project Management',
                 items: [
-                    { label: 'Site Manager', icon: 'pi pi-fw pi-id-card', routerLink: ['/app/uikit/site-eng'] },
+                    //{ label: 'Site Manager1', icon: 'pi pi-fw pi-id-card', routerLink: ['/app/uikit/site-eng'] },
+                    { label: 'Site Manager', icon: 'pi pi-fw pi-id-card', routerLink: ['/app/uikit/siteengineer'] },
                     /* { label: 'State Head', icon: 'pi pi-fw pi-check-square',  }, *//* routerLink: ['//uikit/input'] */
                     /* { label: 'Project Manager', icon: 'pi pi-fw pi-mobile', class: 'rotated-icon', }, *//*  routerLink: ['//uikit/button'] */
                     /* { label: 'Project Engineer', icon: 'pi pi-fw pi-table',  }, *//* routerLink: ['//uikit/table'] */
