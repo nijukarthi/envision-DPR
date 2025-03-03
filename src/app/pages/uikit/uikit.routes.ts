@@ -16,6 +16,7 @@ import { TreeDemo } from './treedemo';
 import { MenuDemo } from './menudemo';
 import { SiteEngComponent } from '../unikit/site-eng/site-eng.component';
 import { SiteengineerComponent } from '../unikit/siteengineer/siteengineer.component';
+import { SitemanagerprojectreportComponent } from '../unikit/sitemanagerprojectreport/sitemanagerprojectreport.component';
 
 export default [
     { path: 'button', data: { breadcrumb: 'Button' }, component: ButtonDemo },
@@ -23,6 +24,7 @@ export default [
     { path: 'file', data: { breadcrumb: 'File' }, component: FileDemo },
     { path: 'formlayout', data: { breadcrumb: 'Form Layout' }, component: FormLayoutDemo },
     { path: 'site-eng', data: { breadcrumb: 'Site Engineer' }, component: SiteEngComponent },
+    { path: 'site-eng-Project-report', data: { breadcrumb: 'Site Engineer' }, component: SitemanagerprojectreportComponent },
     { path: 'siteengineer', data: { breadcrumb: 'Site Engineer' }, component: SiteengineerComponent },
     { path: 'input', data: { breadcrumb: 'Input' }, component: InputDemo },
     { path: 'list', data: { breadcrumb: 'List' }, component: ListDemo },

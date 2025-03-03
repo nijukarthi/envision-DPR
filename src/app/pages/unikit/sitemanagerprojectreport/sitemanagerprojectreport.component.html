@@ -1,0 +1,193 @@
+<p-fluid>
+
+
+    <div class="flex mt-8">
+        <div class="card flex flex-col gap-6 w-full">
+            <div class="card flex flex-col gap-4 border-1">
+                <p-table [value]="dummy" showGridlines stripedRows>
+                    <ng-template #header>
+                        <tr>
+                            <th style="width: 50%;">Number Of Projects :</th>
+                            <th>State :</th>
+                        </tr>
+                    </ng-template>
+                    <ng-template #body let-product>
+                        <tr>
+                            <td>{{'10'}}</td>
+                            <td>{{'Tamil Nadu'}}</td>
+                        </tr>
+                    </ng-template>
+                </p-table>
+            </div>
+
+            <div class="flex flex-col md:flex-row gap-6">
+                <div class="flex flex-wrap gap-2 w-full" *ngFor="let row of dummy1">
+                    <p-card [style]="{ width: 'auto', overflow: 'hidden' }" class="cursor-pointer">
+                        <ng-template pTemplate="header">
+                            <div class="font-semibold text-xl text-center m-2">
+                                <p-button label="Project {{row}}" severity="success" class="w-full" styleClass="w-full" />
+                            </div>
+                        </ng-template>
+                        <p-divider layout="horizontal" class="flex md:hidden" align="center"><b></b></p-divider>
+                        <div class="card">
+                            <table>
+                                <tr>
+                                    <th style="text-align: start;margin: 5px;">Location </th>
+                                    <td>: {{'Chennai'}}</td>
+                                </tr>
+                                <tr>
+                                    <th style="text-align: start;">State </th>
+                                    <td>: {{'Tamil Nadu'}}</td>
+                                </tr>
+                                <tr>
+                                    <th style="text-align: start;">WTC Count </th>
+                                    <td>: {{'10'}}</td>
+                                </tr>
+                                <tr>
+                                    <th style="text-align: start;">Status </th>
+                                    <td>: {{'Installation'}}</td>
+                                </tr>
+                                <tr>
+                                    <th style="text-align: start;">MW </th>
+                                    <td>: {{'10'}}</td>
+                                </tr>
+                                <tr>
+                                    <th style="text-align: start;">Pcode </th>
+                                    <td>: {{'PC10'}}</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <p-divider layout="horizontal" class="flex md:hidden" align="center"><b></b></p-divider>
+                        <ng-template pTemplate="footer">
+                            <div class="flex gap-4 mt-1">
+                                <p-button label="View" icon="pi pi-external-link" outlined severity="success" class="w-full" styleClass="w-full" (click)="showDRP()"/>
+                            </div>
+                        </ng-template>
+                    </p-card>
+                </div>
+            </div>
+
+            <div class="flex flex-col md:flex-row gap-6">
+                <div class="flex flex-wrap gap-2 w-full" *ngFor="let row of dummy2">
+                    <p-card [style]="{ width: 'auto', overflow: 'hidden' }" class="cursor-pointer">
+                        <ng-template pTemplate="header">
+                            <div class="font-semibold text-xl text-center m-2">
+                                <p-button label="Project {{row}}" severity="success" class="w-full" styleClass="w-full" />
+                            </div>
+                        </ng-template>
+                        <p-divider layout="horizontal" class="flex md:hidden" align="center"><b></b></p-divider>
+                        <div class="card">
+                            <table>
+                                <tr>
+                                    <th style="text-align: start;margin: 5px;">Location </th>
+                                    <td>: {{'Chennai'}}</td>
+                                </tr>
+                                <tr>
+                                    <th style="text-align: start;">State </th>
+                                    <td>: {{'Tamil Nadu'}}</td>
+                                </tr>
+                                <tr>
+                                    <th style="text-align: start;">WTC Count </th>
+                                    <td>: {{'10'}}</td>
+                                </tr>
+                                <tr>
+                                    <th style="text-align: start;">Status </th>
+                                    <td>: {{'Installation'}}</td>
+                                </tr>
+                                <tr>
+                                    <th style="text-align: start;">MW </th>
+                                    <td>: {{'10'}}</td>
+                                </tr>
+                                <tr>
+                                    <th style="text-align: start;">Pcode </th>
+                                    <td>: {{'PC10'}}</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <p-divider layout="horizontal" class="flex md:hidden" align="center"><b></b></p-divider>
+                        <ng-template pTemplate="footer">
+                            <div class="flex gap-4 mt-1">
+                                <p-button label="View" icon="pi pi-external-link" outlined severity="success" class="w-full" styleClass="w-full" (click)="showDRP()"/>
+                            </div>
+                        </ng-template>
+                    </p-card>
+                </div>
+            </div>
+
+            <div class="card flex flex-col gap-4">
+                <div class="flex flex-wrap gap-6">
+                    <div class="flex justify-start flex-col-3 grow basis-0 gap-2">
+                        <p-button label="Home" severity="info" icon="pi pi-home" />
+                    </div>
+                    <div class="flex justify-end flex-col-3 grow basis-0 gap-2">
+                        <p-button label="Back" severity="danger"  icon="pi pi-arrow-left"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</p-fluid>
+
+
+<p-dialog header="" [modal]="true" [(visible)]="drpModel" [style]="{ width: '90rem' }">
+    
+    <div class="card mt-8">
+        <div class="flex flex-col md:flex-row">
+            <div class="w-full md:w-5/12 flex flex-col items-center justify-center gap-3 py-5 cursor-pointer">
+                <p-card header="Project" [style]="{ width: '20rem' }">
+                    <p class="m-0">
+                        DPR Input
+                    </p>
+                </p-card>
+            </div>
+            <div class="w-full md:w-2/12">
+                <p-divider layout="vertical" class="!hidden md:!flex"><b></b></p-divider>
+                <p-divider layout="horizontal" class="!flex md:!hidden" align="center"><b></b></p-divider>
+            </div>
+            <div class="w-full md:w-5/12 flex items-center justify-center py-5 cursor-pointer">
+                <p-card header="Project" [style]="{ width: '20rem' }">
+                    <p class="m-0">
+                        DPR Output
+                    </p>
+                </p-card>
+            </div>
+        </div>
+
+        <div class="font-semibold text-xl mb-4 text-center">Project Data</div>
+
+        <div class="table-container mt-4">
+            <!-- First Table -->
+            <p-table [value]="data1"  stripedRows responsiveLayout="scroll" class="p-mr-2 dprTable">
+              <ng-template pHeader>
+                <tr>
+                  <th>Contract Sign Date</th>
+                  <td>{{'Age'}}</td>
+                </tr>
+              </ng-template>
+              <ng-template pTemplate="body" let-rowData>
+                <tr>
+                  <td>{{ rowData.name }}</td>
+                  <td>{{ rowData.val  }}</td>
+                </tr>
+              </ng-template>
+            </p-table>
+          
+            <!-- Second Table -->
+            <p-table [value]="data2" showGridlines stripedRows responsiveLayout="scroll" class="p-ml-2 dprTable">
+              <ng-template pHeader>
+                <tr>
+                  <th>Product</th>
+                  <th>Price</th>
+                </tr>
+              </ng-template>
+              <ng-template pTemplate="body" let-rowData>
+                <tr>
+                  <td>{{ rowData.name }}</td>
+                  <td>{{ rowData.val }}</td>
+                </tr>
+              </ng-template>
+            </p-table>
+          </div>
+          
+    </div>
+</p-dialog>
