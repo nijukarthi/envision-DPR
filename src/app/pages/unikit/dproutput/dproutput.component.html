@@ -1,0 +1,43 @@
+
+<div class=" flex flex-col gap-4">
+    <div class="flex flex-wrap gap-6">
+        <div class="flex justify-start flex-col-3 grow basis-0 gap-2">
+            <p-button label="Home" severity="info" icon="pi pi-home" />
+        </div>
+        <div class="flex justify-end flex-col-3 grow basis-0 gap-2">
+            <p-button label="Back" severity="danger"  icon="pi pi-arrow-left" [routerLink]="['/app/uikit/site-eng-Project-report']"/>
+        </div>
+    </div>
+</div>
+<div class="flex flex-col md:flex-row mt-6">
+    <div class="w-full md:w-1/2 flex flex-col items-center justify-center gap-3 py-5 cursor-pointer">
+        <p-card [style]="{ width: 'auto', overflow: 'hidden'}" class="cursor-pointer">
+            <ng-template pTemplate="header">
+                <div class="font-semibold text-xl text-center m-2">
+                    <p-button label="Plain DRP Output " severity="success" class="w-full" styleClass="w-full" (click)="showOutputvalue('plainDPR')" />
+                </div>
+            </ng-template>
+        </p-card>
+    </div>
+    <div class="w-full md:w-1/2 flex flex-col items-center justify-center gap-3 py-5 cursor-pointer">
+        <p-card [style]="{ width: 'auto', overflow: 'hidden' }" class="cursor-pointer">
+            <ng-template pTemplate="header">
+                <div class="font-semibold text-xl text-center m-2">
+                    <p-button label="Plan Vs Actual" severity="success" class="w-full" styleClass="w-full" (click)="showOutputvalue('planActualDPR')"/>
+                </div>
+            </ng-template>
+        </p-card>
+    </div>
+    <div class="w-full md:w-1/2 flex flex-col items-center justify-center gap-3 py-5 cursor-pointer">
+        <p-card [style]="{ width: 'auto', overflow: 'hidden' }" class="cursor-pointer">
+            <ng-template pTemplate="header">
+                <div class="font-semibold text-xl text-center m-2">
+                    <p-button label="Graphical Output " severity="success" class="w-full" styleClass="w-full" (click)="showOutputvalue('graphicalDPR')"/>
+                </div>
+            </ng-template>
+        </p-card>
+    </div>
+</div>
+
+
+

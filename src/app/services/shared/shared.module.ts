@@ -38,6 +38,7 @@ import { FluidModule } from 'primeng/fluid';
 import { ToolbarModule } from 'primeng/toolbar';
 import {RouterModule} from '@angular/router';
 import { OrganizationChartModule } from 'primeng/organizationchart';
+import { ChartModule } from 'primeng/chart';
 @NgModule({
   declarations: [],
   imports: [
@@ -80,7 +81,8 @@ import { OrganizationChartModule } from 'primeng/organizationchart';
     FluidModule,
     ToolbarModule,
     RouterModule,
-    OrganizationChartModule
+    OrganizationChartModule,
+    ChartModule
   ],
   providers:[
     MessageService,

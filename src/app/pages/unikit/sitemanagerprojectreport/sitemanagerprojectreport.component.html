@@ -120,7 +120,7 @@
                         <p-button label="Home" severity="info" icon="pi pi-home" />
                     </div>
                     <div class="flex justify-end flex-col-3 grow basis-0 gap-2">
-                        <p-button label="Back" severity="danger"  icon="pi pi-arrow-left"/>
+                        <p-button label="Back" severity="danger"  icon="pi pi-arrow-left" [routerLink]="['/app/uikit/siteengineer']"/>
                     </div>
                 </div>
             </div>
@@ -134,7 +134,7 @@
     <div class="card mt-8">
         <div class="flex flex-col md:flex-row">
             <div class="w-full md:w-5/12 flex flex-col items-center justify-center gap-3 py-5 cursor-pointer">
-                <p-card header="Project" [style]="{ width: '20rem' }">
+                <p-card header="Project" [style]="{ width: '20rem' }" [routerLink]="['/app/uikit/dprInput']">
                     <p class="m-0">
                         DPR Input
                     </p>
@@ -145,7 +145,7 @@
                 <p-divider layout="horizontal" class="!flex md:!hidden" align="center"><b></b></p-divider>
             </div>
             <div class="w-full md:w-5/12 flex items-center justify-center py-5 cursor-pointer">
-                <p-card header="Project" [style]="{ width: '20rem' }">
+                <p-card header="Project" [style]="{ width: '20rem' }" [routerLink]="['/app/uikit/dprOutput']">
                     <p class="m-0">
                         DPR Output
                     </p>

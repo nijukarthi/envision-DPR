@@ -17,55 +17,37 @@ import { AppMenuitem } from './app.menuitem';
 })
 export class AppMenu {
     model: MenuItem[] = [];
+    siteManager:boolean = false;
+    users:boolean = false;
 
     ngOnInit() {
+        var user = sessionStorage.getItem('user');
+        if(user == 'siteengineer_user1'){
+            this.siteManager = true;
+        }
         this.model = [
             {
                 label: 'Home',
                 items: [{ label: 'Dashboard', icon: 'pi pi-fw pi-home', routerLink: ['/app'] }],
+                visible: this.siteManager && this.users
             },
 
             {
                 label: 'DGR',
                 items: [
-                    { label: 'DGR Tools', icon: 'pi pi-fw pi-hammer', routerLink: ['/app/dgrtools'] },
-                    /* { label: 'State Head', icon: 'pi pi-fw pi-check-square',  }, *//* routerLink: ['//uikit/input'] */
-                    /* { label: 'Project Manager', icon: 'pi pi-fw pi-mobile', class: 'rotated-icon', }, *//*  routerLink: ['//uikit/button'] */
-                    /* { label: 'Project Engineer', icon: 'pi pi-fw pi-table',  }, *//* routerLink: ['//uikit/table'] */
-                    /* { label: 'Project Planner', icon: 'pi pi-fw pi-list',  }, *//* routerLink: ['//uikit/list'] */
-                    /* { label: 'Project Head', icon: 'pi pi-fw pi-share-alt', }, *//*  routerLink: ['//uikit/tree'] */
-                    /* { label: 'HODs', icon: 'pi pi-fw pi-tablet',  }, *//* routerLink: ['//uikit/panel'] */
-                    /* { label: 'Top Management', icon: 'pi pi-fw pi-clone',  }, *//* routerLink: ['//uikit/overlay'] */
-/*                     { label: 'Media', icon: 'pi pi-fw pi-image', routerLink: ['//uikit/media'] },
-                    { label: 'Menu', icon: 'pi pi-fw pi-bars', routerLink: ['//uikit/menu'] },
-                    { label: 'Message', icon: 'pi pi-fw pi-comment', routerLink: ['//uikit/message'] },
-                    { label: 'File', icon: 'pi pi-fw pi-file', routerLink: ['//uikit/file'] },
-                    { label: 'Chart', icon: 'pi pi-fw pi-chart-bar', routerLink: ['//uikit/charts'] },
-                    { label: 'Timeline', icon: 'pi pi-fw pi-calendar', routerLink: ['//uikit/timeline'] },
-                    { label: 'Misc', icon: 'pi pi-fw pi-circle', routerLink: ['//uikit/misc'] } */
-                ]
+                    { label: 'DGR Tools', icon: 'pi pi-fw pi-hammer', routerLink: ['/app/dgrtools'],
+                    },
+                ],
+                visible: this.siteManager && this.users
             },
             
             {
                 label: 'Project Management',
                 items: [
-                    //{ label: 'Site Manager1', icon: 'pi pi-fw pi-id-card', routerLink: ['/app/uikit/site-eng'] },
-                    { label: 'Site Manager', icon: 'pi pi-fw pi-id-card', routerLink: ['/app/uikit/siteengineer'] },
-                    /* { label: 'State Head', icon: 'pi pi-fw pi-check-square',  }, *//* routerLink: ['//uikit/input'] */
-                    /* { label: 'Project Manager', icon: 'pi pi-fw pi-mobile', class: 'rotated-icon', }, *//*  routerLink: ['//uikit/button'] */
-                    /* { label: 'Project Engineer', icon: 'pi pi-fw pi-table',  }, *//* routerLink: ['//uikit/table'] */
-                    /* { label: 'Project Planner', icon: 'pi pi-fw pi-list',  }, *//* routerLink: ['//uikit/list'] */
-                    /* { label: 'Project Head', icon: 'pi pi-fw pi-share-alt', }, *//*  routerLink: ['//uikit/tree'] */
-                    /* { label: 'HODs', icon: 'pi pi-fw pi-tablet',  }, *//* routerLink: ['//uikit/panel'] */
-                    /* { label: 'Top Management', icon: 'pi pi-fw pi-clone',  }, *//* routerLink: ['//uikit/overlay'] */
-/*                     { label: 'Media', icon: 'pi pi-fw pi-image', routerLink: ['//uikit/media'] },
-                    { label: 'Menu', icon: 'pi pi-fw pi-bars', routerLink: ['//uikit/menu'] },
-                    { label: 'Message', icon: 'pi pi-fw pi-comment', routerLink: ['//uikit/message'] },
-                    { label: 'File', icon: 'pi pi-fw pi-file', routerLink: ['//uikit/file'] },
-                    { label: 'Chart', icon: 'pi pi-fw pi-chart-bar', routerLink: ['//uikit/charts'] },
-                    { label: 'Timeline', icon: 'pi pi-fw pi-calendar', routerLink: ['//uikit/timeline'] },
-                    { label: 'Misc', icon: 'pi pi-fw pi-circle', routerLink: ['//uikit/misc'] } */
-                ]
+                    { label: 'Site Manager', icon: 'pi pi-fw pi-id-card', routerLink: ['/app/uikit/siteengineer'],
+                    },
+                ],
+                visible: this.siteManager 
             },
            /*  {
                 label: 'Reports',
@@ -122,7 +104,8 @@ export class AppMenu {
                                 icon: 'pi pi-fw pi-bookmark',
                                 items: [{ label: 'Submenu 1.2.1', icon: 'pi pi-fw pi-bookmark' }]
                             }
-                        ]
+                        ],
+                        
                     },
                     {
                         label: 'Submenu 2',
@@ -141,9 +124,11 @@ export class AppMenu {
                                 icon: 'pi pi-fw pi-bookmark',
                                 items: [{ label: 'Submenu 2.2.1', icon: 'pi pi-fw pi-bookmark' }]
                             }
-                        ]
+                        ],
+                        
                     }
-                ]
+                ],
+                visible: this.siteManager && this.users
             },
           /*   {
                 label: 'Export Report',

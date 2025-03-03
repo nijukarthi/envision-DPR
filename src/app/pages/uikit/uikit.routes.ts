@@ -17,6 +17,9 @@ import { MenuDemo } from './menudemo';
 import { SiteEngComponent } from '../unikit/site-eng/site-eng.component';
 import { SiteengineerComponent } from '../unikit/siteengineer/siteengineer.component';
 import { SitemanagerprojectreportComponent } from '../unikit/sitemanagerprojectreport/sitemanagerprojectreport.component';
+import { DprinputComponent } from '../unikit/dprinput/dprinput.component';
+import { DproutputComponent } from '../unikit/dproutput/dproutput.component';
+import { DproutputValueComponent } from '../unikit/dproutput-value/dproutput-value.component';
 
 export default [
     { path: 'button', data: { breadcrumb: 'Button' }, component: ButtonDemo },
@@ -26,6 +29,9 @@ export default [
     { path: 'site-eng', data: { breadcrumb: 'Site Engineer' }, component: SiteEngComponent },
     { path: 'site-eng-Project-report', data: { breadcrumb: 'Site Engineer' }, component: SitemanagerprojectreportComponent },
     { path: 'siteengineer', data: { breadcrumb: 'Site Engineer' }, component: SiteengineerComponent },
+    { path: 'dprInput', data: { breadcrumb: 'Site Engineer' }, component: DprinputComponent },
+    { path: 'dprOutput', data: { breadcrumb: 'Site Engineer' }, component: DproutputComponent },
+    { path: 'dprOutputValue', data: { breadcrumb: 'Site Engineer' }, component: DproutputValueComponent },
     { path: 'input', data: { breadcrumb: 'Input' }, component: InputDemo },
     { path: 'list', data: { breadcrumb: 'List' }, component: ListDemo },
     { path: 'media', data: { breadcrumb: 'Media' }, component: MediaDemo },

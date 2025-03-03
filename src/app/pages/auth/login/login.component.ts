@@ -55,8 +55,8 @@ export class LoginComponent {
       }
       if(data.userName == 'siteengineer_user1' && data.password == "123456"){
         console.log(data);
-        localStorage.setItem('user',data.userName);
-        this.router.navigate(['/app/'])
+        sessionStorage.setItem('user',data.userName);
+        this.router.navigate(['/app/uikit/siteengineer'])
       }else{
         this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Please Check Username & Password', life: 3000 });
       }
