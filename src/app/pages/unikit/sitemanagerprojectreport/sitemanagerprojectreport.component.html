@@ -22,7 +22,7 @@
 
             <div class="flex flex-col md:flex-row gap-6">
                 <div class="flex flex-wrap gap-2 w-full" *ngFor="let row of dummy1">
-                    <p-card [style]="{ width: 'auto', overflow: 'hidden' }" class="cursor-pointer">
+                    <p-card [style]="{ width: 'auto', overflow: 'hidden' }" class="cursor-pointer" (click)="showDRP()">
                         <ng-template pTemplate="header">
                             <div class="font-semibold text-xl text-center m-2">
                                 <p-button label="Project {{row}}" severity="success" class="w-full" styleClass="w-full" />
@@ -134,10 +134,15 @@
     <div class="card mt-8">
         <div class="flex flex-col md:flex-row">
             <div class="w-full md:w-5/12 flex flex-col items-center justify-center gap-3 py-5 cursor-pointer">
-                <p-card header="Project" [style]="{ width: '20rem' }" [routerLink]="['/app/uikit/dprInput']">
-                    <p class="m-0">
+                <p-card header="" [style]="{ width: '20rem',backgroundColor: '#80e6a3',color:'#fff' }" [routerLink]="['/app/uikit/dprInput']">
+                   <ng-template #header>
+                    <h3 class="m-0 text-center">
+                        Project
+                    </h3>
+                   </ng-template>
+                    <h6 class="m-0 text-center">
                         DPR Input
-                    </p>
+                    </h6>
                 </p-card>
             </div>
             <div class="w-full md:w-2/12">
@@ -145,10 +150,15 @@
                 <p-divider layout="horizontal" class="!flex md:!hidden" align="center"><b></b></p-divider>
             </div>
             <div class="w-full md:w-5/12 flex items-center justify-center py-5 cursor-pointer">
-                <p-card header="Project" [style]="{ width: '20rem' }" [routerLink]="['/app/uikit/dprOutput']">
-                    <p class="m-0">
-                        DPR Output
-                    </p>
+                <p-card header="" [style]="{ width: '20rem',backgroundColor: '#80e6a3',color:'#fff' }" [routerLink]="['/app/uikit/dprOutput']">
+                    <ng-template #header>
+                        <h3 class="m-0 text-center">
+                            Project
+                        </h3>
+                       </ng-template>
+                        <h6 class="m-0 text-center">
+                            DPR Output
+                        </h6>
                 </p-card>
             </div>
         </div>
