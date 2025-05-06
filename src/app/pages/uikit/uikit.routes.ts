@@ -20,6 +20,12 @@ import { SitemanagerprojectreportComponent } from '../unikit/sitemanagerprojectr
 import { DprinputComponent } from '../unikit/dprinput/dprinput.component';
 import { DproutputComponent } from '../unikit/dproutput/dproutput.component';
 import { DproutputValueComponent } from '../unikit/dproutput-value/dproutput-value.component';
+import { RevenueProductionComponent } from '../unikit/revenue-production/revenue-production.component';
+import { PlanningManagerComponent } from '../unikit/planning-manager/planning-manager.component';
+import { ProductionManagerComponent } from '../unikit/production-manager/production-manager.component';
+import { ProjectManagerComponent } from '../unikit/project-manager/project-manager.component';
+import { ClusterManagerComponent } from '../unikit/cluster-manager/cluster-manager.component';
+import { HodSiteManagerComponent } from '../unikit/hod-site-manager/hod-site-manager.component';
 
 export default [
     { path: 'button', data: { breadcrumb: 'Button' }, component: ButtonDemo },
@@ -43,5 +49,11 @@ export default [
     { path: 'overlay', data: { breadcrumb: 'Overlay' }, component: OverlayDemo },
     { path: 'tree', data: { breadcrumb: 'Tree' }, component: TreeDemo },
     { path: 'menu', data: { breadcrumb: 'Menu' }, component: MenuDemo },
+    { path: 'revenue-prodcution', data: { breadcrumb: 'Menu' }, component: RevenueProductionComponent },
+    { path: 'planningManager', data: { breadcrumb: 'Menu' }, component: PlanningManagerComponent },
+    { path: 'productionManager', data: { breadcrumb: 'Menu' }, component: ProductionManagerComponent },
+    { path: 'projectManager', data: { breadcrumb: 'Menu' }, component: ProjectManagerComponent },
+    { path: 'clusterManager', data: { breadcrumb: 'Menu' }, component: ClusterManagerComponent },
+    { path: 'siteManager', data: { breadcrumb: 'Menu' }, component: HodSiteManagerComponent },
     { path: '**', redirectTo: '/notfound' }
 ] as Routes;

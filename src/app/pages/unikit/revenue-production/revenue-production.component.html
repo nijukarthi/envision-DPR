@@ -1,0 +1,62 @@
+
+<p-fluid>
+    <div class="flex mt-8">
+        <div class="card flex flex-col gap-6 w-full">
+            <div class="card flex flex-col gap-4 border-1">
+                <p-table [value]="products" showGridlines stripedRows  [tableStyle]="{ 'min-width': '50rem' }">
+                    <ng-template #header>
+                        <tr>
+                            <th colspan="1"></th>
+                            <th class="bg-primary" style="text-align: center;" colspan="3">Nacelle</th>
+                            <th class="bg-teal-500" style="text-align: center;" colspan="3">Hub</th>
+                            <th class="bg-green-500" style="text-align: center;" colspan="3">Blade</th>
+                            <th class="bg-green-500" style="text-align: center;" colspan="3">Tower</th>
+                            <th class="bg-green-500" style="text-align: center;" colspan="3"> Anchor Cage</th>
+                        </tr>
+                        <tr>
+                            <th></th>
+                            <th>Planned</th>
+                            <th>Actual</th>
+                            <th>Latest Expected</th>
+                            <th>Planned</th>
+                            <th>Actual</th>
+                            <th>Latest Expected</th>
+                            <th>Planned</th>
+                            <th>Actual</th>
+                            <th>Latest Expected</th>
+                            <th>Planned</th>
+                            <th>Actual</th>
+                            <th>Latest Expected</th>
+                            <th>Planned</th>
+                            <th>Actual</th>
+                            <th>Latest Expected</th>
+                        </tr>
+                    </ng-template>
+                    <ng-template  #body let-product let-rowIndex="rowIndex">
+                        <tr>
+                            <td>{{product.wtg}}</td>
+                            <td>{{ product.plan }}</td>
+                            <td>{{ product.actual }}</td>
+                            <td>{{ product.latest }}</td>
+                            <td>{{ product.planHub }}</td>
+                            <td>{{ product.actualHub }}</td>
+                            <td>{{ product.latestHub }}</td>
+                            <td>{{ product.planBlade }}</td>
+                            <td>{{ product.actualBlade }}</td>
+                            <td>{{ product.latestBlade }}</td>
+                            <td>{{ product.planTower }}</td>
+                            <td>{{ product.actualTower }}</td>
+                            <td>{{ product.latestTower }}</td>
+                            <td>{{ product.planAnchor }}</td>
+                            <td>{{ product.actualAnchor }}</td>
+                            <td>{{ product.latestAnchor }}</td>
+                        </tr>
+                        <tr ><!-- *ngFor="let product of products" -->
+                            
+                        </tr>
+                    </ng-template>
+                </p-table>
+            </div>
+        </div>
+    </div>
+</p-fluid>

@@ -1,0 +1,91 @@
+<div class="card">
+    <p-table #dt1 [value]="projectList" [paginator]="true" [rowsPerPageOptions]="[5, 10, 20]" stripedRows  dataKey="id" [rows]="10"  [rowHover]="true" [showGridlines]="true"
+     [showCurrentPageReport]="true"  currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+        [paginator]="true" 
+        responsiveLayout="scroll"><!-- [globalFilterFields]="['name', 'country.name', 'representative.name', 'status']" -->
+        <ng-template #caption>
+            <div class="flex justify-between items-center flex-column sm:flex-row">
+                <p-iconfield iconPosition="left" class="mr-auto">
+                    <p-inputicon>
+                        <i class="pi pi-search"></i>
+                    </p-inputicon>
+                    <input pInputText type="text"  placeholder="Search keyword" /><!-- (input)="onGlobalFilter(dt1, $event)" -->
+                </p-iconfield>
+                <div>
+                    <!-- <label for="buttondisplay" class="font-bold block mb-2"> Assign Actual Date </label> -->
+                    <p-datepicker [showIcon]="true" inputId="buttondisplay" [showOnFocus]="false" placeholder="Select Assign Actual Date"/> &nbsp;
+                    <p-select [options]="clusterManager"  optionLabel="name" placeholder="Select Cluster Manager" class="w-full md:w-56" />
+
+                </div>
+            </div>
+        </ng-template>
+        <ng-template #header>
+            <tr>
+                <th>Sl. No.</th>
+                <th>P-code </th>
+                <th>Full Project Description</th>
+                <th>Site Name</th>
+                <th>Customer</th>
+                <th>City info</th>
+                <th>unique Site-#No.</th>
+                <th>State</th>
+                <th>WTG QTY.</th>
+                <th>Capacity</th>
+                <th>PM</th>
+                <th>Type1</th>
+                <th>State Head</th>
+                <th>Type2</th>
+                <th>Construction Manager</th>
+                <th>Type3</th>
+                <th>Mechanical Lead</th>
+                <th>Type4</th>
+                <th>Start Date</th>
+                <th>Complete Date</th>
+                <th>Detail Status</th>
+                <th>Status4 (P or S)</th>
+                <th>Contractual CoD</th>
+                <th>Expected CoD</th>
+                <th>Actual CoD</th>
+                <th>Delay</th>
+                <th>Remarks</th>
+            </tr>
+        </ng-template>
+        <ng-template #body let-customer>
+            <tr>
+                <td>{{customer.SlNo}}</td>
+                <td style="min-width: 7rem">{{customer.Pcode}}</td>
+                <td style="min-width: 7rem">{{customer.FPD}}</td>
+                <td style="min-width: 12rem">{{customer.SiteName}}</td>
+                <td style="min-width: 7rem">{{customer.Customer}}</td>
+                <td style="min-width: 7rem">{{customer.Cityinfo}}</td>
+                <td style="min-width: 7rem">{{customer.uniqueS}}</td>
+                <td style="min-width: 7rem">{{customer.State}}</td>
+                <td style="min-width: 7rem">{{customer.WTGQTY}}</td>
+                <td style="min-width: 7rem">{{customer.Capacity}}</td>
+                <td style="min-width: 7rem">{{customer.PM}}</td>
+                <td style="min-width: 7rem">{{customer.type1}}</td>
+                <td style="min-width: 12rem">{{customer.StateHead}}</td>
+                <td style="min-width: 7rem">{{customer.type2}}</td>
+                <td style="min-width: 7rem">{{customer.ConstructionManager}}</td>
+                <td style="min-width: 7rem">{{customer.type3}}</td>
+                <td style="min-width: 7rem">{{customer.machinaclLead}}</td>
+                <td style="min-width: 7rem">{{customer.type4}}</td>
+                <td style="min-width: 10rem">{{customer.StartDate}}</td>
+                <td style="min-width: 10rem">{{customer.CompleteDate}}</td>
+                <td style="min-width: 7rem">{{customer.DetailStatus}}</td>
+                <td style="min-width: 7rem">{{customer.Status4}}</td>
+                <td style="min-width: 10rem">{{customer.ContractualCoD}}</td>
+                <td style="min-width: 10rem">{{customer.ExpectedCoD}}</td>
+                <td style="min-width: 10rem">{{customer.ActualCoD}}</td>
+                <td style="min-width: 7rem">{{customer.Delay}}</td>
+                <td style="min-width: 12rem">{{customer.Remarks}}</td>
+            </tr>
+        </ng-template>
+        <ng-template #emptymessage>
+            <tr>
+                <td colspan="8" style="text-align: center;">No customers found.</td>
+            </tr>
+        </ng-template>
+        
+    </p-table>
+</div>

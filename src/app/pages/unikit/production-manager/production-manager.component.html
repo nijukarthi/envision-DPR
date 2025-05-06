@@ -1,0 +1,172 @@
+<p-fluid>
+    <div class="flex flex-col md:flex-row gap-8">
+        <div class="md:w-full">
+            <div class="card flex flex-col gap-4">
+                <div class="font-semibold text-xl">Production Manager</div>
+                <div class="flex flex-wrap gap-6">
+                    <div class="flex flex-col grow basis-0 gap-2">
+                        <label for="name2">P-Code</label>
+                        <input pInputText id="name2" type="text" />
+                    </div>
+                    <div class="flex flex-col grow basis-0 gap-2">
+                        <label for="email2">No. Of WTG's</label>
+                        <input pInputText id="email2" type="text" />
+                    </div>
+                    <div class="flex flex-col grow basis-0 gap-2">
+                        <label for="email2">Planning Date</label>
+                        <p-datepicker [iconDisplay]="'input'" [showIcon]="true" />
+                    </div>
+                </div>
+                <p-divider />
+                <div>
+                    <p-accordion value="0">
+                        <p-accordion-panel value="0">
+                            <p-accordion-header>Production I</p-accordion-header>
+                            <p-accordion-content>
+                                <p-table #dt1 [value]="projectList" [paginator]="true"
+                                    [rowsPerPageOptions]="[5, 10, 20]" stripedRows dataKey="id" [rows]="10"
+                                    [rowHover]="true" [showGridlines]="true" [showCurrentPageReport]="true"
+                                    currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+                                    [paginator]="true"
+                                    responsiveLayout="scroll"><!-- [globalFilterFields]="['name', 'country.name', 'representative.name', 'status']" -->
+                                    <ng-template #caption>
+                                        <div class="flex justify-between items-center flex-column sm:flex-row">
+                                            <p-iconfield iconPosition="left" class="mr-auto">
+                                                <p-inputicon>
+                                                    <i class="pi pi-search"></i>
+                                                </p-inputicon>
+                                                <input pInputText type="text"
+                                                    placeholder="Search keyword" /><!-- (input)="onGlobalFilter(dt1, $event)" -->
+                                            </p-iconfield>
+
+                                        </div>
+                                    </ng-template>
+                                    <ng-template #header>
+                                        <tr>
+                                            <th>Sl. No.</th>
+                                            <th>Nacelle </th>
+                                            <th>Hub</th>
+                                            <th>Blade</th>
+                                            <th>Tower</th>
+                                            <th>Anchor Stage</th>
+                                            <th>Site Accessories</th>
+                                            <th>Converter Panel</th>
+                                        </tr>
+                                    </ng-template>
+                                    <ng-template #body let-customer>
+                                        <tr>
+
+                                        </tr>
+                                    </ng-template>
+                                    <ng-template #emptymessage>
+                                        <tr>
+                                            <td colspan="8" style="text-align: center;">No Record found.</td>
+                                        </tr>
+                                    </ng-template>
+
+                                </p-table>
+                            </p-accordion-content>
+                        </p-accordion-panel>
+
+                        <p-accordion-panel value="1">
+                            <p-accordion-header>Inspection II</p-accordion-header>
+                            <p-accordion-content>
+                                <p-table #dt1 [value]="projectList" [paginator]="true"
+                                    [rowsPerPageOptions]="[5, 10, 20]" stripedRows dataKey="id" [rows]="10"
+                                    [rowHover]="true" [showGridlines]="true" [showCurrentPageReport]="true"
+                                    currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+                                    [paginator]="true"
+                                    responsiveLayout="scroll"><!-- [globalFilterFields]="['name', 'country.name', 'representative.name', 'status']" -->
+                                    <ng-template #caption>
+                                        <div class="flex justify-between items-center flex-column sm:flex-row">
+                                            <p-iconfield iconPosition="left" class="mr-auto">
+                                                <p-inputicon>
+                                                    <i class="pi pi-search"></i>
+                                                </p-inputicon>
+                                                <input pInputText type="text"
+                                                    placeholder="Search keyword" /><!-- (input)="onGlobalFilter(dt1, $event)" -->
+                                            </p-iconfield>
+
+                                        </div>
+                                    </ng-template>
+                                    <ng-template #header>
+                                        <tr>
+                                            <th>Sl. No.</th>
+                                            <th>Nacelle </th>
+                                            <th>Hub</th>
+                                            <th>Blade</th>
+                                            <th>Tower</th>
+                                            <th>Anchor Stage</th>
+                                            <th>Site Accessories</th>
+                                            <th>Converter Panel</th>
+                                        </tr>
+                                    </ng-template>
+                                    <ng-template #body let-customer>
+                                        <tr>
+
+                                        </tr>
+                                    </ng-template>
+                                    <ng-template #emptymessage>
+                                        <tr>
+                                            <td colspan="8" style="text-align: center;">No Record found</td>
+                                        </tr>
+                                    </ng-template>
+
+                                </p-table>
+                            </p-accordion-content>
+                        </p-accordion-panel>
+
+                        <p-accordion-panel value="2">
+                            <p-accordion-header>Delivery III</p-accordion-header>
+                            <p-accordion-content>
+                                <p-table #dt1 [value]="projectList" [paginator]="true"
+                                    [rowsPerPageOptions]="[5, 10, 20]" stripedRows dataKey="id" [rows]="10"
+                                    [rowHover]="true" [showGridlines]="true" [showCurrentPageReport]="true"
+                                    currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+                                    [paginator]="true"
+                                    responsiveLayout="scroll"><!-- [globalFilterFields]="['name', 'country.name', 'representative.name', 'status']" -->
+                                    <ng-template #caption>
+                                        <div class="flex justify-between items-center flex-column sm:flex-row">
+                                            <p-iconfield iconPosition="left" class="mr-auto">
+                                                <p-inputicon>
+                                                    <i class="pi pi-search"></i>
+                                                </p-inputicon>
+                                                <input pInputText type="text"
+                                                    placeholder="Search keyword" /><!-- (input)="onGlobalFilter(dt1, $event)" -->
+                                            </p-iconfield>
+
+                                        </div>
+                                    </ng-template>
+                                    <ng-template #header>
+                                        <tr>
+                                            <th>Sl. No.</th>
+                                            <th>Nacelle </th>
+                                            <th>Hub</th>
+                                            <th>Blade</th>
+                                            <th>Tower</th>
+                                            <th>Anchor Stage</th>
+                                            <th>Site Accessories</th>
+                                            <th>Converter Panel</th>
+                                        </tr>
+                                    </ng-template>
+                                    <ng-template #body let-customer>
+                                        <tr>
+
+                                        </tr>
+                                    </ng-template>
+                                    <ng-template #emptymessage>
+                                        <tr>
+                                            <td colspan="8" style="text-align: center;">No Record found</td>
+                                        </tr>
+                                    </ng-template>
+
+                                </p-table>
+                            </p-accordion-content>
+                        </p-accordion-panel>
+                    </p-accordion>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</p-fluid>
