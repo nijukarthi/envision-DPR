@@ -29,7 +29,7 @@ export class AppMenu {
             {
                 label: 'Home',
                 items: [{ label: 'Dashboard', icon: 'pi pi-fw pi-home', routerLink: ['/app'] }],
-                visible: this.siteManager && this.users
+                //visible: this.siteManager && this.users
             },
 
             {
@@ -38,7 +38,7 @@ export class AppMenu {
                     { label: 'DGR Tools', icon: 'pi pi-fw pi-hammer', routerLink: ['/app/dgrtools'],
                     },
                 ],
-                visible: this.siteManager && this.users
+                //visible: this.siteManager && this.users
             },
             
             {
@@ -47,7 +47,7 @@ export class AppMenu {
                     { label: 'Site Manager', icon: 'pi pi-fw pi-id-card', routerLink: ['/app/uikit/siteengineer'],
                     },
                 ],
-                visible: this.siteManager 
+                //visible: this.siteManager 
             },
            /*  {
                 label: 'Reports',
@@ -84,33 +84,90 @@ export class AppMenu {
                 ]
             }, */
             {
-                label: 'Day Activity',
+                label: 'MANAGEMENT',
                 items: [
                     {
-                        label: 'Submenu 1',
+                        label: 'Revenue',
                         icon: 'pi pi-fw pi-bookmark',
                         items: [
                             {
-                                label: 'Submenu 1.1',
-                                icon: 'pi pi-fw pi-bookmark',
-                                items: [
-                                    { label: 'Submenu 1.1.1', icon: 'pi pi-fw pi-bookmark' },
-                                    { label: 'Submenu 1.1.2', icon: 'pi pi-fw pi-bookmark' },
-                                    { label: 'Submenu 1.1.3', icon: 'pi pi-fw pi-bookmark' }
-                                ]
+                                label: 'Production',
+                                icon: 'pi pi-fw pi-bars',
+                                routerLink: ['/app/uikit/revenue-prodcution']
+                                // items: [
+                                //     { label: 'Submenu 1.1.1', icon: 'pi pi-fw pi-bookmark' },
+                                //     { label: 'Submenu 1.1.2', icon: 'pi pi-fw pi-bookmark' },
+                                //     { label: 'Submenu 1.1.3', icon: 'pi pi-fw pi-bookmark' }
+                                // ]
                             },
                             {
-                                label: 'Submenu 1.2',
-                                icon: 'pi pi-fw pi-bookmark',
-                                items: [{ label: 'Submenu 1.2.1', icon: 'pi pi-fw pi-bookmark' }]
+                                label: 'Dispatch',
+                                icon: 'pi pi-fw pi-bolt',
+                               /*  items: [{ label: 'Submenu 1.2.1', icon: 'pi pi-fw pi-bookmark' }] */
+                            },
+                            {
+                                label: 'Delivery',
+                                icon: 'pi pi-fw pi-book',
+                               /*  items: [{ label: 'Submenu 1.2.1', icon: 'pi pi-fw pi-bookmark' }] */
+                            },
+                            {
+                                label: 'Install',
+                                icon: 'pi pi-fw pi-box',
+                               /*  items: [{ label: 'Submenu 1.2.1', icon: 'pi pi-fw pi-bookmark' }] */
+                            },
+                            {
+                                label: 'Comm',
+                                icon: 'pi pi-fw pi-briefcase',
+                               /*  items: [{ label: 'Submenu 1.2.1', icon: 'pi pi-fw pi-bookmark' }] */
+                            },
+                            {
+                                label: 'STPT',
+                                icon: 'pi pi-fw pi-bullseye',
+                               /*  items: [{ label: 'Submenu 1.2.1', icon: 'pi pi-fw pi-bookmark' }] */
                             }
                         ],
                         
                     },
                     {
-                        label: 'Submenu 2',
+                        label: 'Cash',
                         icon: 'pi pi-fw pi-bookmark',
                         items: [
+                            {
+                                label: 'Production',
+                                icon: 'pi pi-fw pi-bars',
+                                // items: [
+                                //     { label: 'Submenu 1.1.1', icon: 'pi pi-fw pi-bookmark' },
+                                //     { label: 'Submenu 1.1.2', icon: 'pi pi-fw pi-bookmark' },
+                                //     { label: 'Submenu 1.1.3', icon: 'pi pi-fw pi-bookmark' }
+                                // ]
+                            },
+                            {
+                                label: 'Dispatch',
+                                icon: 'pi pi-fw pi-bolt',
+                               /*  items: [{ label: 'Submenu 1.2.1', icon: 'pi pi-fw pi-bookmark' }] */
+                            },
+                            {
+                                label: 'Delivery',
+                                icon: 'pi pi-fw pi-book',
+                               /*  items: [{ label: 'Submenu 1.2.1', icon: 'pi pi-fw pi-bookmark' }] */
+                            },
+                            {
+                                label: 'Install',
+                                icon: 'pi pi-fw pi-box',
+                               /*  items: [{ label: 'Submenu 1.2.1', icon: 'pi pi-fw pi-bookmark' }] */
+                            },
+                            {
+                                label: 'Comm',
+                                icon: 'pi pi-fw pi-briefcase',
+                               /*  items: [{ label: 'Submenu 1.2.1', icon: 'pi pi-fw pi-bookmark' }] */
+                            },
+                            {
+                                label: 'STPT',
+                                icon: 'pi pi-fw pi-bullseye',
+                               /*  items: [{ label: 'Submenu 1.2.1', icon: 'pi pi-fw pi-bookmark' }] */
+                            }
+                        ],
+                        /* items: [
                             {
                                 label: 'Submenu 2.1',
                                 icon: 'pi pi-fw pi-bookmark',
@@ -124,11 +181,67 @@ export class AppMenu {
                                 icon: 'pi pi-fw pi-bookmark',
                                 items: [{ label: 'Submenu 2.2.1', icon: 'pi pi-fw pi-bookmark' }]
                             }
+                        ], */
+                        
+                    },
+                    {
+                        label: 'Setup',
+                        icon: 'pi pi-fw pi-bookmark',
+                        items: [
+                            {
+                                label: 'Production',
+                                icon: 'pi pi-fw pi-bars',
+                                // items: [
+                                //     { label: 'Submenu 1.1.1', icon: 'pi pi-fw pi-bookmark' },
+                                //     { label: 'Submenu 1.1.2', icon: 'pi pi-fw pi-bookmark' },
+                                //     { label: 'Submenu 1.1.3', icon: 'pi pi-fw pi-bookmark' }
+                                // ]
+                            },
+                            {
+                                label: 'Dispatch',
+                                icon: 'pi pi-fw pi-bolt',
+                               /*  items: [{ label: 'Submenu 1.2.1', icon: 'pi pi-fw pi-bookmark' }] */
+                            },
+                            {
+                                label: 'Delivery',
+                                icon: 'pi pi-fw pi-book',
+                               /*  items: [{ label: 'Submenu 1.2.1', icon: 'pi pi-fw pi-bookmark' }] */
+                            },
+                            {
+                                label: 'Install',
+                                icon: 'pi pi-fw pi-box',
+                               /*  items: [{ label: 'Submenu 1.2.1', icon: 'pi pi-fw pi-bookmark' }] */
+                            },
+                            {
+                                label: 'Comm',
+                                icon: 'pi pi-fw pi-briefcase',
+                               /*  items: [{ label: 'Submenu 1.2.1', icon: 'pi pi-fw pi-bookmark' }] */
+                            },
+                            {
+                                label: 'STPT',
+                                icon: 'pi pi-fw pi-bullseye',
+                               /*  items: [{ label: 'Submenu 1.2.1', icon: 'pi pi-fw pi-bookmark' }] */
+                            }
                         ],
+                        /* items: [
+                            {
+                                label: 'Submenu 2.1',
+                                icon: 'pi pi-fw pi-bookmark',
+                                items: [
+                                    { label: 'Submenu 2.1.1', icon: 'pi pi-fw pi-bookmark' },
+                                    { label: 'Submenu 2.1.2', icon: 'pi pi-fw pi-bookmark' }
+                                ]
+                            },
+                            {
+                                label: 'Submenu 2.2',
+                                icon: 'pi pi-fw pi-bookmark',
+                                items: [{ label: 'Submenu 2.2.1', icon: 'pi pi-fw pi-bookmark' }]
+                            }
+                        ], */
                         
                     }
                 ],
-                visible: this.siteManager && this.users
+                //visible: this.siteManager && this.users
             },
           /*   {
                 label: 'Export Report',

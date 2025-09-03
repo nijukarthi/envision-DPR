@@ -20,6 +20,7 @@ import { SitemanagerprojectreportComponent } from '../unikit/sitemanagerprojectr
 import { DprinputComponent } from '../unikit/dprinput/dprinput.component';
 import { DproutputComponent } from '../unikit/dproutput/dproutput.component';
 import { DproutputValueComponent } from '../unikit/dproutput-value/dproutput-value.component';
+import { RevenueProductionComponent } from '../unikit/revenue-production/revenue-production.component';
 
 export default [
     { path: 'button', data: { breadcrumb: 'Button' }, component: ButtonDemo },
@@ -43,5 +44,6 @@ export default [
     { path: 'overlay', data: { breadcrumb: 'Overlay' }, component: OverlayDemo },
     { path: 'tree', data: { breadcrumb: 'Tree' }, component: TreeDemo },
     { path: 'menu', data: { breadcrumb: 'Menu' }, component: MenuDemo },
+    { path: 'revenue-prodcution', data: { breadcrumb: 'Menu' }, component: RevenueProductionComponent },
     { path: '**', redirectTo: '/notfound' }
 ] as Routes;

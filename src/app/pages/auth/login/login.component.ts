@@ -15,8 +15,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 @Component({
   selector: 'app-login',
   imports:[ButtonModule, CheckboxModule, InputTextModule, PasswordModule, 
-    FormsModule, RouterModule, RippleModule, AppFloatingConfigurator,
-  ReactiveFormsModule,FormsModule,CommonModule,ToastModule],
+    FormsModule, RouterModule, RippleModule,
+  ReactiveFormsModule,FormsModule,CommonModule,ToastModule],/* AppFloatingConfigurator */
   providers: [MessageService],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss'
