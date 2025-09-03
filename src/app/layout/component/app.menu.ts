@@ -49,40 +49,51 @@ export class AppMenu {
                 ],
                 //visible: this.siteManager 
             },
-           /*  {
+            {
                 label: 'Reports',
                 icon: 'pi pi-fw pi-briefcase',
                 routerLink: ['//pages'],
                 items: [
-                    {
+                   /*  {
                         label: 'Global Report',
                         icon: 'pi pi-fw pi-globe',
                         
-                    },
+                    }, */
                     {
-                        label: 'Daily Report',
+                        label: 'HOD',
                         icon: 'pi pi-fw pi-user',
                         items: [
                             {
-                                label: 'Project Management',
+                                label: 'Planning Manager',
                                 icon: 'pi pi-fw pi-sign-in',
-                                
+                                routerLink: ['/app/uikit/planningManager']
                             },
                             {
-                                label: 'Project Head',
+                                label: 'Production Manager',
                                 icon: 'pi pi-fw pi-box',
-                                
+                                routerLink: ['/app/uikit/productionManager']
                             },
                             {
-                                label: 'State Head',
+                                label: 'Project Manager',
                                 icon: 'pi pi-building-columns',
-                               
+                                routerLink: ['/app/uikit/projectManager']
+                            },
+                            {
+                                label: 'Cluster Manager',
+                                icon: 'pi pi-id-card',
+                                routerLink: ['/app/uikit/clusterManager']
+                            },
+                            {
+                                label: 'Site Manager',
+                                icon: 'pi pi-shield',
+                                routerLink: ['/app/uikit/siteManager']
                             }
+
                         ]
                     },
                    
                 ]
-            }, */
+            },
             {
                 label: 'MANAGEMENT',
                 items: [

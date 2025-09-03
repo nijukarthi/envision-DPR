@@ -20,6 +20,11 @@ import { SitemanagerprojectreportComponent } from '../unikit/sitemanagerprojectr
 import { DprinputComponent } from '../unikit/dprinput/dprinput.component';
 import { DproutputComponent } from '../unikit/dproutput/dproutput.component';
 import { DproutputValueComponent } from '../unikit/dproutput-value/dproutput-value.component';
+import { PlanningManagerComponent } from '../unikit/planning-manager/planning-manager.component';
+import { ProductionManagerComponent } from '../unikit/production-manager/production-manager.component';
+import { ProjectManagerComponent } from '../unikit/project-manager/project-manager.component';
+import { ClusterManagerComponent } from '../unikit/cluster-manager/cluster-manager.component';
+import { HodSiteManagerComponent } from '../unikit/hod-site-manager/hod-site-manager.component';
 import { RevenueProductionComponent } from '../unikit/revenue-production/revenue-production.component';
 
 export default [
@@ -32,7 +37,12 @@ export default [
     { path: 'siteengineer', data: { breadcrumb: 'Site Engineer' }, component: SiteengineerComponent },
     { path: 'dprInput', data: { breadcrumb: 'Site Engineer' }, component: DprinputComponent },
     { path: 'dprOutput', data: { breadcrumb: 'Site Engineer' }, component: DproutputComponent },
-    { path: 'dprOutputValue', data: { breadcrumb: 'Site Engineer' }, component: DproutputValueComponent },
+    { path: 'planningManager', data: { breadcrumb: 'Site Engineer' }, component: PlanningManagerComponent },
+    { path: 'productionManager', data: { breadcrumb: 'Site Engineer' }, component: ProductionManagerComponent },
+    { path: 'projectManager', data: { breadcrumb: 'Site Engineer' }, component: ProjectManagerComponent },
+    { path: 'clusterManager', data: { breadcrumb: 'Site Engineer' }, component: ClusterManagerComponent },
+    { path: 'siteManager', data: { breadcrumb: 'Site Engineer' }, component: HodSiteManagerComponent },
+    { path: 'revenue-prodcution', data: { breadcrumb: 'Site Engineer' }, component: RevenueProductionComponent },
     { path: 'input', data: { breadcrumb: 'Input' }, component: InputDemo },
     { path: 'list', data: { breadcrumb: 'List' }, component: ListDemo },
     { path: 'media', data: { breadcrumb: 'Media' }, component: MediaDemo },
@@ -44,6 +54,5 @@ export default [
     { path: 'overlay', data: { breadcrumb: 'Overlay' }, component: OverlayDemo },
     { path: 'tree', data: { breadcrumb: 'Tree' }, component: TreeDemo },
     { path: 'menu', data: { breadcrumb: 'Menu' }, component: MenuDemo },
-    { path: 'revenue-prodcution', data: { breadcrumb: 'Menu' }, component: RevenueProductionComponent },
     { path: '**', redirectTo: '/notfound' }
 ] as Routes;
