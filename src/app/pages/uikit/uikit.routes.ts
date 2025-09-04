@@ -19,13 +19,13 @@ import { SiteengineerComponent } from '../unikit/siteengineer/siteengineer.compo
 import { SitemanagerprojectreportComponent } from '../unikit/sitemanagerprojectreport/sitemanagerprojectreport.component';
 import { DprinputComponent } from '../unikit/dprinput/dprinput.component';
 import { DproutputComponent } from '../unikit/dproutput/dproutput.component';
-import { DproutputValueComponent } from '../unikit/dproutput-value/dproutput-value.component';
 import { PlanningManagerComponent } from '../unikit/planning-manager/planning-manager.component';
 import { ProductionManagerComponent } from '../unikit/production-manager/production-manager.component';
 import { ProjectManagerComponent } from '../unikit/project-manager/project-manager.component';
 import { ClusterManagerComponent } from '../unikit/cluster-manager/cluster-manager.component';
 import { HodSiteManagerComponent } from '../unikit/hod-site-manager/hod-site-manager.component';
 import { RevenueProductionComponent } from '../unikit/revenue-production/revenue-production.component';
+import { DproutputValueComponent } from '../unikit/dproutput-value/dproutput-value.component';
 
 export default [
     { path: 'button', data: { breadcrumb: 'Button' }, component: ButtonDemo },
@@ -37,6 +37,7 @@ export default [
     { path: 'siteengineer', data: { breadcrumb: 'Site Engineer' }, component: SiteengineerComponent },
     { path: 'dprInput', data: { breadcrumb: 'Site Engineer' }, component: DprinputComponent },
     { path: 'dprOutput', data: { breadcrumb: 'Site Engineer' }, component: DproutputComponent },
+    { path: 'dprOutputValue', data: { breadcrumb: 'Site Engineer' }, component: DproutputValueComponent },
     { path: 'planningManager', data: { breadcrumb: 'Site Engineer' }, component: PlanningManagerComponent },
     { path: 'productionManager', data: { breadcrumb: 'Site Engineer' }, component: ProductionManagerComponent },
     { path: 'projectManager', data: { breadcrumb: 'Site Engineer' }, component: ProjectManagerComponent },
