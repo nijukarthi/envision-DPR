@@ -26,6 +26,9 @@ import { ClusterManagerComponent } from '../unikit/cluster-manager/cluster-manag
 import { HodSiteManagerComponent } from '../unikit/hod-site-manager/hod-site-manager.component';
 import { RevenueProductionComponent } from '../unikit/revenue-production/revenue-production.component';
 import { DproutputValueComponent } from '../unikit/dproutput-value/dproutput-value.component';
+import { ManagementComponent } from '../unikit/management/management.component';
+import { ImcComponent } from '../unikit/imc/imc.component';
+import { CashComponent } from '../unikit/cash/cash.component';
 
 export default [
     { path: 'button', data: { breadcrumb: 'Button' }, component: ButtonDemo },
@@ -44,6 +47,9 @@ export default [
     { path: 'clusterManager', data: { breadcrumb: 'Site Engineer' }, component: ClusterManagerComponent },
     { path: 'siteManager', data: { breadcrumb: 'Site Engineer' }, component: HodSiteManagerComponent },
     { path: 'revenue-prodcution', data: { breadcrumb: 'Site Engineer' }, component: RevenueProductionComponent },
+    { path: 'revenue', data: { breadcrumb: 'Site Engineer' }, component: ManagementComponent },
+    { path: 'imc', data: { breadcrumb: 'Site Engineer' }, component: ImcComponent },
+    { path: 'cash', data: { breadcrumb: 'Site Engineer' }, component: CashComponent },
     { path: 'input', data: { breadcrumb: 'Input' }, component: InputDemo },
     { path: 'list', data: { breadcrumb: 'List' }, component: ListDemo },
     { path: 'media', data: { breadcrumb: 'Media' }, component: MediaDemo },

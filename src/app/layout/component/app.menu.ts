@@ -50,7 +50,7 @@ export class AppMenu {
                 //visible: this.siteManager 
             },
             {
-                label: 'Reports',
+                label: 'Planning Manager',
                 icon: 'pi pi-fw pi-briefcase',
                 routerLink: ['//pages'],
                 items: [
@@ -60,7 +60,7 @@ export class AppMenu {
                         
                     }, */
                     {
-                        label: 'HOD',
+                        label: 'Roles',
                         icon: 'pi pi-fw pi-user',
                         items: [
                             {
@@ -74,7 +74,7 @@ export class AppMenu {
                                 routerLink: ['/app/uikit/productionManager']
                             },
                             {
-                                label: 'Project Manager',
+                                label: 'Delivery Manager',
                                 icon: 'pi pi-building-columns',
                                 routerLink: ['/app/uikit/projectManager']
                             },
@@ -94,6 +94,21 @@ export class AppMenu {
                    
                 ]
             },
+             {
+                label: 'MANAGEMENT',
+                items: [
+                    { label: 'Revenue', icon: 'pi pi-wallet', routerLink: ['/app/uikit/revenue'],
+                    },
+                    {
+                        label: 'IMC', icon: 'pi pi-bolt', routerLink: ['/app/uikit/imc'],
+                    },
+                    {
+                        label: 'Cash', icon: 'pi pi-indian-rupee', routerLink: ['/app/uikit/cash'],
+                    }
+                    
+                ],
+                //visible: this.siteManager 
+            },
             {
                 label: 'MANAGEMENT',
                 items: [
@@ -105,11 +120,7 @@ export class AppMenu {
                                 label: 'Production',
                                 icon: 'pi pi-fw pi-bars',
                                 routerLink: ['/app/uikit/revenue-prodcution']
-                                // items: [
-                                //     { label: 'Submenu 1.1.1', icon: 'pi pi-fw pi-bookmark' },
-                                //     { label: 'Submenu 1.1.2', icon: 'pi pi-fw pi-bookmark' },
-                                //     { label: 'Submenu 1.1.3', icon: 'pi pi-fw pi-bookmark' }
-                                // ]
+                                
                             },
                             {
                                 label: 'Dispatch',
@@ -252,7 +263,7 @@ export class AppMenu {
                         
                     }
                 ],
-                //visible: this.siteManager && this.users
+                visible: this.users
             },
           /*   {
                 label: 'Export Report',
