@@ -1,3 +1,5 @@
+<p-toast />
+
 <div class="card">
     <p-table #dt1 [value]="projectList" [paginator]="true" [rowsPerPageOptions]="[5, 10, 20]" stripedRows  dataKey="id" [rows]="10"  [rowHover]="true" [showGridlines]="true"
      [showCurrentPageReport]="true"  currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
@@ -11,19 +13,40 @@
                     </p-inputicon>
                     <input pInputText type="text"  placeholder="Search keyword" /><!-- (input)="onGlobalFilter(dt1, $event)" -->
                 </p-iconfield>
+
+                <span>
+                    <p-button label="Add" icon="pi pi-plus" severity="info" (onClick)="addAssign()" />
+                
+                </span>
                 
             </div>
         </ng-template>
         <ng-template #header>
             <tr>
-                <th>SM</th>
-                <th>Project Id </th>
-                <th>Detail</th>
+                <th>Assign</th>
+                <th>Sl.No</th>
+                <th style="min-width:7rem">P-code </th>
+                <th>Full Project Description</th>
+                <th>Site Name</th>
+                <th>Customer</th>
+                <th>City info</th>
+                <th>WTG QTY</th>
+                <th>State</th>
                 
             </tr>
         </ng-template>
         <ng-template #body let-customer>
-           <tr></tr>
+           <tr class="text-center">
+            <td><p-checkbox   [(ngModel)]="isChecked" (onChange)="showAssignPopup(customer)"/></td>
+            <td>{{customer.SlNo}}</td>
+            <td style="min-width:7rem">{{customer.Pcode}}</td>
+            <td>{{customer.FPD}}</td>
+            <td>{{customer.SiteName}}</td>
+            <td>{{customer.Customer}}</td>
+            <td>{{customer.Cityinfo}}</td>
+            <td>{{customer.WTGQTY}}</td>
+            <td>{{customer.State}}</td>
+           </tr>
         </ng-template>
         <ng-template #emptymessage>
             <tr >
@@ -33,3 +56,76 @@
         
     </p-table>
 </div>
+
+<p-dialog header="Assign Project {{pCode}}" [modal]="true" [(visible)]="assignPopup"
+    [style]="{ width: '75rem',height:'15rem' }" [breakpoints]="{ '1199px': '75vw', '575px': '90vw' }"
+    [maximizable]="true">
+    <p-card class="flex items-center justify-center">
+        <div class="text-center">
+            <p-select [appendTo]="'body'" [options]="siteManager" [(ngModel)]="selectedSiteManager" optionLabel="name"
+                [filter]="true" filterBy="name" [showClear]="true" placeholder="Select Site Manager"
+                class="w-full md:w-56">
+
+            </p-select>
+        </div>
+    </p-card>
+
+    <div class="text-center mt-3">
+        <p-button label="Submit" icon="pi pi-save" (onClick)="saveAssign()" />
+    </div>
+</p-dialog>
+
+<p-dialog header="" [resizable]="true" [draggable]="false" [modal]="true" [maximizable]="true" appendTo="body"
+    [(visible)]="addProjectDialog" [style]="{ width: '70vw' }" [contentStyle]="{ height: '500px' }">
+
+    <p-fluid>
+        <div class="flex flex-col md:flex-row gap-8">
+           
+            <div class="md:w-full">
+
+                <div class="card flex flex-col gap-4">
+                    <div class="flex flex-wrap items-start gap-6">
+                        <div class="flex flex-col gap-2">
+                            <label for="P-code">P-code </label>
+                            <input pInputText id="P-code" type="text" />
+                        </div>
+                        <div class="flex flex-col gap-2">
+                            <label for="desc">Full Project Description</label>
+                            <textarea pTextarea id="description"  rows="1" cols="19" style="resize: none" ></textarea>
+                        </div>
+                        <div class="flex flex-col gap-2">
+                            <label for="SiteName">Site Name</label>
+                            <input pInputText id="SiteName" type="text" />
+                        </div>
+                        <div class="flex flex-col gap-2">
+                            <label for="customer">Customer</label>
+                            <input pInputText id="customer" type="text" />
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap items-start gap-6">
+                        <div class="flex flex-col gap-2">
+                            <label for="Cityinfo">City info </label>
+                            <input pInputText id="Cityinfo" type="text" />
+                        </div>
+                        
+                        <div class="flex flex-col gap-2">
+                            <label for="State">State</label>
+                            <input pInputText id="State" type="text" />
+                        </div>
+                        <div class="flex flex-col gap-2">
+                            <label for="WTGQTY">WTG QTY</label>
+                            <input pInputText id="WTGQTY" type="text" />
+                        </div>
+                    </div>
+                    
+                    <div class="flex justify-center">
+                        <p-button icon="pi pi-save" label="Submit" [fluid]="false" class="m-2"></p-button>
+                        <p-button icon="pi pi-times" label="Cancel" [fluid]="false" severity="danger" class="m-2"></p-button>
+
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </p-fluid>
+</p-dialog>
