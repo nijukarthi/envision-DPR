@@ -1,4 +1,97 @@
-<p-fluid>
+<div class="card">
+    <p-table #dt1 [value]="projectList" [paginator]="true" [rowsPerPageOptions]="[5, 10, 20]" stripedRows  dataKey="id" [rows]="10"  [rowHover]="true" [showGridlines]="true"
+     [showCurrentPageReport]="true"  currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+        [paginator]="true" 
+        responsiveLayout="scroll">
+        <ng-template #caption>
+            <div class="flex justify-between items-center flex-column sm:flex-row">
+                <p-iconfield iconPosition="left" class="mr-auto">
+                    <p-inputicon>
+                        <i class="pi pi-search"></i>
+                    </p-inputicon>
+                    <input pInputText type="text"  placeholder="Search keyword" />
+                </p-iconfield>
+                <button pButton label="Save " class="p-button-outlined mb-2" icon="pi pi-save"></button>
+            </div>
+        </ng-template>
+        <ng-template #header>
+            <tr>
+                <th>Sl. No.</th>
+                <th>P-code </th>
+                <th>Full Project Description</th>
+                <th>State</th>
+                <th>Activity</th>
+                <th>Project QTY</th>
+                <th>Foundation Actual </th>
+                <th>Foundation LE</th>
+                <th>Installation Plan</th>
+                <th>Installation Actual </th>
+                <th>Installation LE</th>
+                <th>InstallationPlan</th>
+
+                <th>InstallationActual </th>
+                <th>InstallationLE</th>
+                <th>Pre-CommPlan</th>
+                <th>Pre-CommActual </th>
+                <th>Pre-CommLE</th>
+                <th>CommissioningPlan</th>
+                <th>CommissioningActual </th>
+                <th>CommissioningLE</th>
+                <th>STPTPlan</th>
+                <th>STPTActual </th>
+
+                <th>STPTLE</th>
+                <th>HOTOPlan</th>
+                <th>HOTOActual </th>
+                <th>HOTOLE</th>
+                
+
+
+                
+                
+            </tr>
+        </ng-template>
+        <ng-template #body let-customer>
+            <tr>
+                <td>{{customer.SlNo}}</td>
+                <td style="min-width: 7rem">{{customer.Pcode}}</td>
+                <td style="min-width: 7rem">{{customer.FPD}}</td>
+                <td style="min-width: 7rem">{{customer.State}}</td>
+                <td style="min-width: 12rem">{{customer.SiteName}}</td>
+                <td style="min-width: 7rem"></td>
+                <td style="min-width: 7rem"></td>
+                <td style="min-width: 7rem"><input type="text" pInputText  /></td>
+                <td style="min-width: 7rem"><input type="text" pInputText  /></td>
+                <td style="min-width: 7rem"><input type="text" pInputText  /></td>
+                <td style="min-width: 7rem"><input type="text" pInputText  /></td>
+                <td style="min-width: 7rem"><input type="text" pInputText  /></td>
+                <td style="min-width: 7rem"><input type="text" pInputText  /></td>
+                <td style="min-width: 7rem"><input type="text" pInputText  /></td>
+                <td style="min-width: 7rem"><input type="text" pInputText  /></td>
+                <td style="min-width: 7rem"><input type="text" pInputText  /></td>
+                <td style="min-width: 7rem"><input type="text" pInputText  /></td>
+                <td style="min-width: 7rem"><input type="text" pInputText  /></td>
+                <td style="min-width: 7rem"><input type="text" pInputText  /></td>
+                <td style="min-width: 7rem"><input type="text" pInputText  /></td>
+                <td style="min-width: 7rem"><input type="text" pInputText  /></td>
+                <td style="min-width: 7rem"><input type="text" pInputText  /></td>
+                <td style="min-width: 7rem"><input type="text" pInputText  /></td>
+                <td style="min-width: 7rem"><input type="text" pInputText  /></td>
+                <td style="min-width: 7rem"><input type="text" pInputText  /></td>
+                <td style="min-width: 7rem"><input type="text" pInputText  /></td>
+            </tr>
+        </ng-template>
+        <ng-template #emptymessage>
+            <tr>
+                <td colspan="8" style="text-align: center;">No customers found.</td>
+            </tr>
+        </ng-template>
+        
+    </p-table>
+</div>
+
+
+<!-- <p-fluid>
     <div class="flex flex-col md:flex-row gap-8">
         <div class="md:w-full">
             <div class="card flex flex-col gap-4">
@@ -13,7 +106,7 @@
                                     [rowHover]="true" [showGridlines]="true" [showCurrentPageReport]="true"
                                     currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
                                     [paginator]="true"
-                                    responsiveLayout="scroll"><!-- [globalFilterFields]="['name', 'country.name', 'representative.name', 'status']" -->
+                                    responsiveLayout="scroll">
                                     <ng-template #caption>
                                         <div class="flex justify-between items-center flex-column sm:flex-row">
                                             <p-iconfield iconPosition="left" class="mr-auto">
@@ -21,7 +114,7 @@
                                                     <i class="pi pi-search"></i>
                                                 </p-inputicon>
                                                 <input pInputText type="text"
-                                                    placeholder="Search keyword" /><!-- (input)="onGlobalFilter(dt1, $event)" -->
+                                                    placeholder="Search keyword" />
                                             </p-iconfield>
 
                                         </div>
@@ -59,7 +152,7 @@
                                     [rowHover]="true" [showGridlines]="true" [showCurrentPageReport]="true"
                                     currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
                                     [paginator]="true"
-                                    responsiveLayout="scroll"><!-- [globalFilterFields]="['name', 'country.name', 'representative.name', 'status']" -->
+                                    responsiveLayout="scroll">
                                     <ng-template #caption>
                                         <div class="flex justify-between items-center flex-column sm:flex-row">
                                             <p-iconfield iconPosition="left" class="mr-auto">
@@ -67,7 +160,7 @@
                                                     <i class="pi pi-search"></i>
                                                 </p-inputicon>
                                                 <input pInputText type="text"
-                                                    placeholder="Search keyword" /><!-- (input)="onGlobalFilter(dt1, $event)" -->
+                                                    placeholder="Search keyword" />
                                             </p-iconfield>
 
                                         </div>
@@ -104,7 +197,7 @@
                                     [rowHover]="true" [showGridlines]="true" [showCurrentPageReport]="true"
                                     currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
                                     [paginator]="true"
-                                    responsiveLayout="scroll"><!-- [globalFilterFields]="['name', 'country.name', 'representative.name', 'status']" -->
+                                    responsiveLayout="scroll">
                                     <ng-template #caption>
                                         <div class="flex justify-between items-center flex-column sm:flex-row">
                                             <p-iconfield iconPosition="left" class="mr-auto">
@@ -112,7 +205,7 @@
                                                     <i class="pi pi-search"></i>
                                                 </p-inputicon>
                                                 <input pInputText type="text"
-                                                    placeholder="Search keyword" /><!-- (input)="onGlobalFilter(dt1, $event)" -->
+                                                    placeholder="Search keyword" />
                                             </p-iconfield>
 
                                         </div>
@@ -146,4 +239,4 @@
 
         </div>
     </div>
-</p-fluid>
+</p-fluid> -->

@@ -50,7 +50,7 @@ export class AppMenu {
                 //visible: this.siteManager 
             },
             {
-                label: 'Planning Manager',
+                label: 'Roles',
                 icon: 'pi pi-fw pi-briefcase',
                 routerLink: ['//pages'],
                 items: [
