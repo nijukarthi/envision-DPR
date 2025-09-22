@@ -106,7 +106,7 @@
                 <th style="min-width: 10rem">State</th>
                 <th style="min-width: 10rem">Activity</th>
                 <th style="min-width: 10rem">Project QTY</th>
-                <th style="min-width: 10rem">COC Plan</th>
+              <!--   <th style="min-width: 10rem">COC Plan</th>
                 <th style="min-width: 10rem">COC Actual </th>
                 <th style="min-width: 10rem">COC LE </th>
                 <th style="min-width: 10rem">Inspection Plan</th>
@@ -114,14 +114,14 @@
                 <th style="min-width: 10rem">Inspection LE</th>
                 <th style="min-width: 10rem">MDCC Plan</th>
                 <th style="min-width: 10rem">MDCC Actual </th>
-                <th style="min-width: 10rem">MDCC LE</th>
+                <th style="min-width: 10rem">MDCC LE</th> -->
                 <th style="min-width: 10rem">Dispatch Plan</th>
                 <th style="min-width: 10rem">Dispatch Actual </th>
                 <th style="min-width: 10rem">Dispatch LE</th>
                 <th style="min-width: 10rem">DeliveryPlan</th>
                 <th style="min-width: 10rem">Delivery Actual </th>
                 <th style="min-width: 10rem">Delivery LE </th>
-                <th style="min-width: 10rem">Foundation Plan</th>
+                <!-- <th style="min-width: 10rem">Foundation Plan</th> -->
             </tr>
         </ng-template>
     
@@ -139,6 +139,7 @@
                 <td>{{ project.FPD }}</td>
                 <td>{{ project.State }}</td>
                 <td>{{ project.SiteName }}</td>
+                <td>{{ project.WTGQTY }}</td>
                 <td colspan="10"></td>
             </tr>
         </ng-template>
@@ -146,16 +147,16 @@
         <!-- Expanded Row -->
         <ng-template pTemplate="rowexpansion" #expandedrow let-project>
             <tr *ngFor="let exp of valuesofEXP">
-                <td colspan="6" style="text-align: center;">
+                <td colspan="7" style="text-align: center;">
                     {{exp.name}}
                 </td>
-                <td>
+                <!-- <td>
                     <div>
                         <label class="block mb-2 font-semibold">Project_QTY</label>
                         <input type="text" pInputText placeholder="Enter QTY" class="w-full" />
                     </div>
-                </td>
-                <td>
+                </td> -->
+                <!-- <td>
                     <div>
                         <label class="block mb-2 font-semibold">COC Plan</label>
                         <p-datepicker appendTo="body" styleClass="w-full" placeholder="Select Date"></p-datepicker>
@@ -211,7 +212,7 @@
                         <label class="block mb-2 font-semibold">MDCC LE</label>
                         <p-datepicker appendTo="body" styleClass="w-full" placeholder="Select Date"></p-datepicker>
                     </div>
-                </td>
+                </td> -->
                 <td>
             
                     <div>
@@ -254,13 +255,13 @@
                         <p-datepicker appendTo="body" styleClass="w-full" placeholder="Select Date"></p-datepicker>
                     </div>
                 </td>
-                <td>
+                <!-- <td>
             
                     <div>
                         <label class="block mb-2 font-semibold">Foundation Plan</label>
                         <p-datepicker appendTo="body" styleClass="w-full" placeholder="Select Date"></p-datepicker>
                     </div>
-                </td>
+                </td> -->
                 <!-- <td colspan="6">
                                 <div class="p-4">
                                     <div class="grid grid-cols-1 md:grid-cols-3 gap-4">

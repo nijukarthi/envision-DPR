@@ -249,7 +249,9 @@
                     </p-inputicon>
                     <input pInputText type="text" placeholder="Search keyword" />
                 </p-iconfield>
-                <button pButton label="Save" class="p-button-outlined mb-2" icon="pi pi-save"></button>
+                <button pButton label="Upload COC" class=" mb-2 m-2" icon="pi pi-upload"></button>
+                <button pButton label="Download COC" class=" mb-2 m-2" icon="pi pi-download"></button>
+                <button pButton label="Save" class="p-button-outlined mb-2 m-2" icon="pi pi-save"></button>
             </div>
         </ng-template>
     
@@ -272,6 +274,8 @@
                 <th style="min-width: 10rem">Inspection Plan</th>
                 <th style="min-width: 10rem">Inspection Actual </th>
                 <th style="min-width: 10rem">Inspection LE</th>
+                <th style="min-width: 10rem">MDCC Plan</th>
+                <th style="min-width: 10rem">Actual and LE</th>
             </tr>
         </ng-template>
     
@@ -289,6 +293,7 @@
                 <td>{{ project.FPD }}</td>
                 <td>{{ project.State }}</td>
                 <td>{{ project.SiteName }}</td>
+                <td>{{ project.WTGQTY }}</td>
                 <td colspan="100%"></td>
             </tr>
         </ng-template>
@@ -296,15 +301,15 @@
         <!-- Expanded Row -->
         <ng-template pTemplate="rowexpansion" #expandedrow let-project>
             <tr *ngFor="let exp of valuesofEXP">
-                <td colspan="6" style="text-align: center;">
+                <td colspan="7" style="text-align: center;">
                     {{exp.name}}
                 </td>
-                <td>
+                <!-- <td>
                     <div>
                         <label class="block mb-2 font-semibold">Project_QTY</label>
                         <input type="text" pInputText placeholder="Enter QTY" class="w-full" />
                     </div>
-                </td>
+                </td> -->
                 <td>
                     <div>
                         <label class="block mb-2 font-semibold">Production_Plan</label>
@@ -357,6 +362,20 @@
             
                     <div>
                         <label class="block mb-2 font-semibold">Inspection LE</label>
+                        <p-datepicker appendTo="body" styleClass="w-full" placeholder="Select Date"></p-datepicker>
+                    </div>
+                </td>
+                <td>
+            
+                    <div>
+                        <label class="block mb-2 font-semibold">MDCC Plan</label>
+                        <p-datepicker appendTo="body" styleClass="w-full" placeholder="Select Date"></p-datepicker>
+                    </div>
+                </td>
+                <td>
+            
+                    <div>
+                        <label class="block mb-2 font-semibold">Actual and LE</label>
                         <p-datepicker appendTo="body" styleClass="w-full" placeholder="Select Date"></p-datepicker>
                     </div>
                 </td>
