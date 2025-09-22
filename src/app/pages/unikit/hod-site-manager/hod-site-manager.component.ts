@@ -66,5 +66,9 @@ export class HodSiteManagerComponent {
   Delay: 763,
   Remarks: "Project size reduced to 46"
 },]
-
+  expandedRowsKeys: { [key: string]: boolean } = {};
+  expandedRows: { [key: string]: boolean } = {};
+  valuesofEXP:any = [
+  {name:'WTG1'},{name:'WTG2'},{name:'WTG3'},
+]
 }

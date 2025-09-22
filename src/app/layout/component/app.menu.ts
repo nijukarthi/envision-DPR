@@ -60,7 +60,7 @@ export class AppMenu {
                         
                     }, */
                     {
-                        label: 'Roles',
+                        label: "Manager's",
                         icon: 'pi pi-fw pi-user',
                         items: [
                             {

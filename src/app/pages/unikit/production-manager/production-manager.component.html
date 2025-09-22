@@ -170,9 +170,9 @@
         </div>
     </div> -->
 </p-fluid>
-
+<p-toast></p-toast>
 <div class="card">
-    <p-table #dt1 [value]="projectList" [paginator]="true" [rowsPerPageOptions]="[5, 10, 20]" stripedRows  dataKey="id" [rows]="10"  [rowHover]="true" [showGridlines]="true"
+     <!-- <p-table #dt1 [value]="projectList" [paginator]="true" [rowsPerPageOptions]="[5, 10, 20]" stripedRows  dataKey="id" [rows]="10"  [rowHover]="true" [showGridlines]="true"
      [showCurrentPageReport]="true"  currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
         [paginator]="true" 
         responsiveLayout="scroll">
@@ -214,16 +214,16 @@
                 <td style="min-width: 7rem">{{customer.FPD}}</td>
                 <td style="min-width: 7rem">{{customer.State}}</td>
                 <td style="min-width: 12rem">{{customer.SiteName}}</td>
-                <td style="min-width: 7rem"></td>
-                <td style="min-width: 7rem"></td>
-                <td style="min-width: 7rem"><input type="text" pInputText  /></td>
-                <td style="min-width: 7rem"><input type="text" pInputText  /></td>
-                <td style="min-width: 7rem"><input type="text" pInputText  /></td>
-                <td style="min-width: 7rem"><input type="text" pInputText  /></td>
-                <td style="min-width: 7rem"><input type="text" pInputText  /></td>
-                <td style="min-width: 7rem"><input type="text" pInputText  /></td>
-                <td style="min-width: 7rem"><input type="text" pInputText  /></td>
-                <td style="min-width: 7rem"><input type="text" pInputText  /></td>
+                <td style="min-width: 5rem"><input type="text" pInputText  placeholder="Enter QTY"/></td>
+                <td style="min-width: 10rem"><p-datepicker appendTo="body" styleClass="w-full" placeholder="Select Date"/></td>
+                <td style="min-width: 10rem"><p-datepicker appendTo="body" styleClass="w-full" placeholder="Select Date"/></td>
+                <td style="min-width: 10rem"><p-datepicker appendTo="body" styleClass="w-full" placeholder="Select Date"/></td>
+                <td style="min-width: 10rem"><p-datepicker appendTo="body" styleClass="w-full" placeholder="Select Date"/></td>
+                <td style="min-width: 10rem"><p-datepicker appendTo="body" styleClass="w-full" placeholder="Select Date"/></td>
+                <td style="min-width: 10rem"><p-datepicker appendTo="body" styleClass="w-full" placeholder="Select Date"/></td>
+                <td style="min-width: 10rem"><p-datepicker appendTo="body" styleClass="w-full" placeholder="Select Date"/></td>
+                <td style="min-width: 10rem"><p-datepicker appendTo="body" styleClass="w-full" placeholder="Select Date"/></td>
+                <td style="min-width: 10rem"><p-datepicker appendTo="body" styleClass="w-full" placeholder="Select Date"/></td>
                 
             </tr>
         </ng-template>
@@ -233,5 +233,153 @@
             </tr>
         </ng-template>
         
+    </p-table>  -->
+
+    <p-table #dt1 [value]="projectList" dataKey="SlNo" [paginator]="true" [rowsPerPageOptions]="[5, 10, 20]" [rows]="10"
+        stripedRows [rowHover]="true" [showGridlines]="true" [showCurrentPageReport]="true"
+        currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" responsiveLayout="scroll"
+        [expandedRowKeys]="expandedRowsKeys" (onRowExpand)="onRowExpand($event)" (onRowCollapse)="onRowCollapse($event)">
+    
+        <!-- Caption -->
+        <ng-template pTemplate="caption">
+            <div class="flex justify-between items-center flex-column sm:flex-row">
+                <p-iconfield iconPosition="left" class="mr-auto">
+                    <p-inputicon>
+                        <i class="pi pi-search"></i>
+                    </p-inputicon>
+                    <input pInputText type="text" placeholder="Search keyword" />
+                </p-iconfield>
+                <button pButton label="Save" class="p-button-outlined mb-2" icon="pi pi-save"></button>
+            </div>
+        </ng-template>
+    
+        <!-- Header -->
+        <ng-template pTemplate="header">
+            <tr>
+                <th style="width: 3rem"></th> <!-- Expand icon column -->
+                <th>Sl. No.</th>
+                <th style="width: 7rem">P-code</th>
+                <th>Full Project Description</th>
+                <th style="min-width: 10rem">State</th>
+                <th style="min-width: 10rem">Activity</th>
+                <th style="min-width: 10rem">Project QTY</th>
+                <th style="min-width: 10rem">Production_Plan</th>
+                <th style="min-width: 10rem">Production_Actual </th>
+                <th style="min-width: 10rem">Production LE</th>
+                <th style="min-width: 10rem">COC Plan</th>
+                <th style="min-width: 10rem">COC Actual </th>
+                <th style="min-width: 10rem">COC LE</th>
+                <th style="min-width: 10rem">Inspection Plan</th>
+                <th style="min-width: 10rem">Inspection Actual </th>
+                <th style="min-width: 10rem">Inspection LE</th>
+            </tr>
+        </ng-template>
+    
+        <!-- Body -->
+        <ng-template pTemplate="body" let-project let-expanded="expanded">
+            <tr>
+                <td>
+                    <button type="button" pButton pRipple [pRowToggler]="project"
+                        class="p-button-text p-button-rounded p-button-plain"
+                        [icon]="expanded ? 'pi pi-chevron-down' : 'pi pi-chevron-right'">
+                    </button>
+                </td>
+                <td>{{ project.SlNo }}</td>
+                <td style="min-width: 7rem">{{ project.Pcode }}</td>
+                <td>{{ project.FPD }}</td>
+                <td>{{ project.State }}</td>
+                <td>{{ project.SiteName }}</td>
+                <td colspan="100%"></td>
+            </tr>
+        </ng-template>
+    
+        <!-- Expanded Row -->
+        <ng-template pTemplate="rowexpansion" #expandedrow let-project>
+            <tr *ngFor="let exp of valuesofEXP">
+                <td colspan="6" style="text-align: center;">
+                    {{exp.name}}
+                </td>
+                <td>
+                    <div>
+                        <label class="block mb-2 font-semibold">Project_QTY</label>
+                        <input type="text" pInputText placeholder="Enter QTY" class="w-full" />
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <label class="block mb-2 font-semibold">Production_Plan</label>
+                        <p-datepicker appendTo="body" styleClass="w-full" placeholder="Select Date"></p-datepicker>
+                    </div>
+                </td>
+                <td styleClass="min-width:10rem">
+                    <div>
+                        <label class="block mb-2 font-semibold">Production_Actual</label>
+                        <p-datepicker appendTo="body" styleClass="w-full" placeholder="Select Date"></p-datepicker>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <label class="block mb-2 font-semibold">Production LE</label>
+                        <p-datepicker appendTo="body" styleClass="w-full" placeholder="Select Date"></p-datepicker>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <label class="block mb-2 font-semibold">COC Plan</label>
+                        <p-datepicker appendTo="body" styleClass="w-full" placeholder="Select Date"></p-datepicker>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <label class="block mb-2 font-semibold">COC Actual</label>
+                        <p-datepicker appendTo="body" styleClass="w-full" placeholder="Select Date"></p-datepicker>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <label class="block mb-2 font-semibold">COC LE</label>
+                        <p-datepicker appendTo="body" styleClass="w-full" placeholder="Select Date"></p-datepicker>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <label class="block mb-2 font-semibold">Inspection Plan</label>
+                        <p-datepicker appendTo="body" styleClass="w-full" placeholder="Select Date"></p-datepicker>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <label class="block mb-2 font-semibold">Inspection Actual</label>
+                        <p-datepicker appendTo="body" styleClass="w-full" placeholder="Select Date"></p-datepicker>
+                    </div>
+                </td>
+                <td>
+            
+                    <div>
+                        <label class="block mb-2 font-semibold">Inspection LE</label>
+                        <p-datepicker appendTo="body" styleClass="w-full" placeholder="Select Date"></p-datepicker>
+                    </div>
+                </td>
+                <!-- <td colspan="6">
+                                <div class="p-4">
+                                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                                        
+                                        
+                                       
+                                        
+                                    </div>
+                                </div>
+                            </td> -->
+            </tr>
+        </ng-template>
+    
+        <!-- Empty message -->
+        <ng-template pTemplate="emptymessage">
+            <tr>
+                <td colspan="6" class="text-center">No projects found.</td>
+            </tr>
+        </ng-template>
     </p-table>
+
+
 </div>

@@ -1,5 +1,5 @@
 <div class="card">
-    <p-table #dt1 [value]="projectList" [paginator]="true" [rowsPerPageOptions]="[5, 10, 20]" stripedRows  dataKey="id" [rows]="10"  [rowHover]="true" [showGridlines]="true"
+    <!-- <p-table #dt1 [value]="projectList" [paginator]="true" [rowsPerPageOptions]="[5, 10, 20]" stripedRows  dataKey="id" [rows]="10"  [rowHover]="true" [showGridlines]="true"
      [showCurrentPageReport]="true"  currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
         [paginator]="true" 
         responsiveLayout="scroll">
@@ -27,23 +27,23 @@
                 <th>Installation Plan</th>
                 <th>Installation Actual </th>
                 <th>Installation LE</th>
-                <th>InstallationPlan</th>
+                <th>Installation Plan</th>
 
-                <th>InstallationActual </th>
-                <th>InstallationLE</th>
+                <th>Installation Actual </th>
+                <th>Installation LE</th>
                 <th>Pre-CommPlan</th>
                 <th>Pre-CommActual </th>
                 <th>Pre-CommLE</th>
-                <th>CommissioningPlan</th>
-                <th>CommissioningActual </th>
-                <th>CommissioningLE</th>
-                <th>STPTPlan</th>
-                <th>STPTActual </th>
+                <th>Commissioning Plan</th>
+                <th>Commissioning Actual </th>
+                <th>Commissioning LE</th>
+                <th>STPT Plan</th>
+                <th>STPT Actual </th>
 
-                <th>STPTLE</th>
-                <th>HOTOPlan</th>
-                <th>HOTOActual </th>
-                <th>HOTOLE</th>
+                <th>STPT LE</th>
+                <th>HOTO Plan</th>
+                <th>HOTO Actual </th>
+                <th>HOTO LE</th>
                 
 
 
@@ -58,27 +58,27 @@
                 <td style="min-width: 7rem">{{customer.FPD}}</td>
                 <td style="min-width: 7rem">{{customer.State}}</td>
                 <td style="min-width: 12rem">{{customer.SiteName}}</td>
-                <td style="min-width: 7rem"></td>
-                <td style="min-width: 7rem"></td>
-                <td style="min-width: 7rem"><input type="text" pInputText  /></td>
-                <td style="min-width: 7rem"><input type="text" pInputText  /></td>
-                <td style="min-width: 7rem"><input type="text" pInputText  /></td>
-                <td style="min-width: 7rem"><input type="text" pInputText  /></td>
-                <td style="min-width: 7rem"><input type="text" pInputText  /></td>
-                <td style="min-width: 7rem"><input type="text" pInputText  /></td>
-                <td style="min-width: 7rem"><input type="text" pInputText  /></td>
-                <td style="min-width: 7rem"><input type="text" pInputText  /></td>
-                <td style="min-width: 7rem"><input type="text" pInputText  /></td>
-                <td style="min-width: 7rem"><input type="text" pInputText  /></td>
-                <td style="min-width: 7rem"><input type="text" pInputText  /></td>
-                <td style="min-width: 7rem"><input type="text" pInputText  /></td>
-                <td style="min-width: 7rem"><input type="text" pInputText  /></td>
-                <td style="min-width: 7rem"><input type="text" pInputText  /></td>
-                <td style="min-width: 7rem"><input type="text" pInputText  /></td>
-                <td style="min-width: 7rem"><input type="text" pInputText  /></td>
-                <td style="min-width: 7rem"><input type="text" pInputText  /></td>
-                <td style="min-width: 7rem"><input type="text" pInputText  /></td>
-                <td style="min-width: 7rem"><input type="text" pInputText  /></td>
+                <td style="min-width: 7rem"><input type="text" pInputText  placeholder="Enter QTY"/></td>
+                <td style="min-width: 10rem"><p-datepicker appendTo="body" styleClass="w-full" placeholder="Select Date"/></td>
+                <td style="min-width: 10rem"><p-datepicker appendTo="body" styleClass="w-full" placeholder="Select Date"/></td>
+                <td style="min-width: 10rem"><p-datepicker appendTo="body" styleClass="w-full" placeholder="Select Date"/></td>
+                <td style="min-width: 10rem"><p-datepicker appendTo="body" styleClass="w-full" placeholder="Select Date"/></td>
+                <td style="min-width: 10rem"><p-datepicker appendTo="body" styleClass="w-full" placeholder="Select Date"/></td>
+                <td style="min-width: 10rem"><p-datepicker appendTo="body" styleClass="w-full" placeholder="Select Date"/></td>
+                <td style="min-width: 10rem"><p-datepicker appendTo="body" styleClass="w-full" placeholder="Select Date"/></td>
+                <td style="min-width: 10rem"><p-datepicker appendTo="body" styleClass="w-full" placeholder="Select Date"/></td>
+                <td style="min-width: 10rem"><p-datepicker appendTo="body" styleClass="w-full" placeholder="Select Date"/></td>
+                <td style="min-width: 10rem"><p-datepicker appendTo="body" styleClass="w-full" placeholder="Select Date"/></td>
+                <td style="min-width: 10rem"><p-datepicker appendTo="body" styleClass="w-full" placeholder="Select Date"/></td>
+                <td style="min-width: 10rem"><p-datepicker appendTo="body" styleClass="w-full" placeholder="Select Date"/></td>
+                <td style="min-width: 10rem"><p-datepicker appendTo="body" styleClass="w-full" placeholder="Select Date"/></td>
+                <td style="min-width: 10rem"><p-datepicker appendTo="body" styleClass="w-full" placeholder="Select Date"/></td>
+                <td style="min-width: 10rem"><p-datepicker appendTo="body" styleClass="w-full" placeholder="Select Date"/></td>
+                <td style="min-width: 10rem"><p-datepicker appendTo="body" styleClass="w-full" placeholder="Select Date"/></td>
+                <td style="min-width: 10rem"><p-datepicker appendTo="body" styleClass="w-full" placeholder="Select Date"/></td>
+                <td style="min-width: 10rem"><p-datepicker appendTo="body" styleClass="w-full" placeholder="Select Date"/></td>
+                <td style="min-width: 10rem"><p-datepicker appendTo="body" styleClass="w-full" placeholder="Select Date"/></td>
+                <td style="min-width: 10rem"><p-datepicker appendTo="body" styleClass="w-full" placeholder="Select Date"/></td>
             </tr>
         </ng-template>
         <ng-template #emptymessage>
@@ -87,6 +87,240 @@
             </tr>
         </ng-template>
         
+    </p-table> -->
+
+     <p-table #dt1 [value]="projectList" dataKey="SlNo" [paginator]="true" [rowsPerPageOptions]="[5, 10, 20]" [rows]="10"
+        stripedRows [rowHover]="true" [showGridlines]="true" [showCurrentPageReport]="true"
+        currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" responsiveLayout="scroll"
+        [expandedRowKeys]="expandedRowsKeys" >
+    
+        <!-- Caption -->
+        <ng-template pTemplate="caption">
+            <div class="flex justify-between items-center flex-column sm:flex-row">
+                <p-iconfield iconPosition="left" class="mr-auto">
+                    <p-inputicon>
+                        <i class="pi pi-search"></i>
+                    </p-inputicon>
+                    <input pInputText type="text" placeholder="Search keyword" />
+                </p-iconfield>
+                <button pButton label="Save" class="p-button-outlined mb-2" icon="pi pi-save"></button>
+            </div>
+        </ng-template>
+    
+        <!-- Header -->
+        <ng-template pTemplate="header">
+            <tr>
+                <th style="width: 3rem"></th> <!-- Expand icon column -->
+                <th>Sl. No.</th>
+                <th style="width: 7rem">P-code</th>
+                <th>Full Project Description</th>
+                <th style="min-width: 10rem">State</th>
+                <th style="min-width: 10rem">Activity</th>
+                <th style="min-width: 10rem">Project QTY</th>
+                <th style="min-width: 12rem">Foundation Actual </th>
+                <th style="min-width: 10rem">Foundation LE</th>
+                <th style="min-width: 10rem">Installation Plan</th>
+                <th style="min-width: 10rem">Installation Actual </th>
+                <th style="min-width: 10rem">Installation LE</th>
+                <th style="min-width: 10rem">Installation Plan</th>
+                <th style="min-width: 10rem">Installation Actual </th>
+                <th style="min-width: 10rem">Installation LE</th>
+                <th style="min-width: 10rem">Pre-Comm Plan</th>
+                <th style="min-width: 10rem">Pre-Comm Actual </th>
+                <th style="min-width: 10rem">Pre-Comm LE</th>
+                <th style="min-width: 12rem">Commissioning Plan</th>
+                <th style="min-width: 12rem">Commissioning Actual </th>
+                <th style="min-width: 12rem">Commissioning LE</th>
+                <th style="min-width: 10rem">STPT Plan</th>
+                <th style="min-width: 10rem">STPT Actual </th>
+                <th style="min-width: 10rem">STPT LE</th>
+                <th style="min-width: 10rem">HOTO Plan</th>
+                <th style="min-width: 10rem">HOTO Actual </th>
+                <th style="min-width: 10rem">HOTO LE</th>
+            </tr>
+        </ng-template>
+    
+        <!-- Body -->
+        <ng-template pTemplate="body" let-project let-expanded="expanded">
+            <tr>
+                <td>
+                    <button type="button" pButton pRipple [pRowToggler]="project"
+                        class="p-button-text p-button-rounded p-button-plain"
+                        [icon]="expanded ? 'pi pi-chevron-down' : 'pi pi-chevron-right'">
+                    </button>
+                </td>
+                <td>{{ project.SlNo }}</td>
+                <td style="min-width: 7rem">{{ project.Pcode }}</td>
+                <td>{{ project.FPD }}</td>
+                <td>{{ project.State }}</td>
+                <td>{{ project.SiteName }}</td>
+                <td colspan="100%"></td>
+            </tr>
+        </ng-template>
+    
+        <!-- Expanded Row -->
+        <ng-template pTemplate="rowexpansion" #expandedrow let-project>
+            <tr *ngFor="let exp of valuesofEXP">
+                <td colspan="6" style="text-align: center;">
+                    {{exp.name}}
+                </td>
+                <td>
+                    <div>
+                        <label class="block mb-2 font-semibold">Project_QTY</label>
+                        <input type="text" pInputText placeholder="Enter QTY" class="w-full" />
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <label class="block mb-2 font-semibold">Foundation Actual</label>
+                        <p-datepicker appendTo="body" styleClass="w-full" placeholder="Select Date"></p-datepicker>
+                    </div>
+                </td>
+                <td styleClass="min-width:10rem">
+                    <div>
+                        <label class="block mb-2 font-semibold">Foundation LE</label>
+                        <p-datepicker appendTo="body" styleClass="w-full" placeholder="Select Date"></p-datepicker>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <label class="block mb-2 font-semibold">Installation Plan</label>
+                        <p-datepicker appendTo="body" styleClass="w-full" placeholder="Select Date"></p-datepicker>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <label class="block mb-2 font-semibold">Installation Actual</label>
+                        <p-datepicker appendTo="body" styleClass="w-full" placeholder="Select Date"></p-datepicker>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <label class="block mb-2 font-semibold">Installation LE</label>
+                        <p-datepicker appendTo="body" styleClass="w-full" placeholder="Select Date"></p-datepicker>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <label class="block mb-2 font-semibold">Installation Plan</label>
+                        <p-datepicker appendTo="body" styleClass="w-full" placeholder="Select Date"></p-datepicker>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <label class="block mb-2 font-semibold">Installation Actual</label>
+                        <p-datepicker appendTo="body" styleClass="w-full" placeholder="Select Date"></p-datepicker>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <label class="block mb-2 font-semibold">Installation LE</label>
+                        <p-datepicker appendTo="body" styleClass="w-full" placeholder="Select Date"></p-datepicker>
+                    </div>
+                </td>
+                <td>
+            
+                    <div>
+                        <label class="block mb-2 font-semibold">Pre-CommPlan</label>
+                        <p-datepicker appendTo="body" styleClass="w-full" placeholder="Select Date"></p-datepicker>
+                    </div>
+                </td>
+                <td>
+            
+                    <div>
+                        <label class="block mb-2 font-semibold">Pre-CommActual</label>
+                        <p-datepicker appendTo="body" styleClass="w-full" placeholder="Select Date"></p-datepicker>
+                    </div>
+                </td>
+                <td>
+            
+                    <div>
+                        <label class="block mb-2 font-semibold">Pre-CommLE</label>
+                        <p-datepicker appendTo="body" styleClass="w-full" placeholder="Select Date"></p-datepicker>
+                    </div>
+                </td>
+                <td>
+            
+                    <div>
+                        <label class="block mb-2 font-semibold">Commissioning Plan</label>
+                        <p-datepicker appendTo="body" styleClass="w-full" placeholder="Select Date"></p-datepicker>
+                    </div>
+                </td>
+                <td>
+            
+                    <div>
+                        <label class="block mb-2 font-semibold">Commissioning Actual</label>
+                        <p-datepicker appendTo="body" styleClass="w-full" placeholder="Select Date"></p-datepicker>
+                    </div>
+                </td>
+                <td>
+            
+                    <div>
+                        <label class="block mb-2 font-semibold">Commissioning LE</label>
+                        <p-datepicker appendTo="body" styleClass="w-full" placeholder="Select Date"></p-datepicker>
+                    </div>
+                </td>
+                <td>
+            
+                    <div>
+                        <label class="block mb-2 font-semibold">STPT Plan</label>
+                        <p-datepicker appendTo="body" styleClass="w-full" placeholder="Select Date"></p-datepicker>
+                    </div>
+                </td>
+                <td>
+            
+                    <div>
+                        <label class="block mb-2 font-semibold">STPT Actual</label>
+                        <p-datepicker appendTo="body" styleClass="w-full" placeholder="Select Date"></p-datepicker>
+                    </div>
+                </td>
+                <td>
+            
+                    <div>
+                        <label class="block mb-2 font-semibold">STPT LE</label>
+                        <p-datepicker appendTo="body" styleClass="w-full" placeholder="Select Date"></p-datepicker>
+                    </div>
+                </td>
+                <td>
+            
+                    <div>
+                        <label class="block mb-2 font-semibold">HOTO Plan</label>
+                        <p-datepicker appendTo="body" styleClass="w-full" placeholder="Select Date"></p-datepicker>
+                    </div>
+                </td>
+                <td>
+            
+                    <div>
+                        <label class="block mb-2 font-semibold">HOTO Actual</label>
+                        <p-datepicker appendTo="body" styleClass="w-full" placeholder="Select Date"></p-datepicker>
+                    </div>
+                </td>
+                 <td>
+            
+                    <div>
+                        <label class="block mb-2 font-semibold">HOTO LE</label>
+                        <p-datepicker appendTo="body" styleClass="w-full" placeholder="Select Date"></p-datepicker>
+                    </div>
+                </td>
+                <!-- <td colspan="6">
+                                <div class="p-4">
+                                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                                        
+                                        
+                                       
+                                        
+                                    </div>
+                                </div>
+                            </td> -->
+            </tr>
+        </ng-template>
+    
+        <!-- Empty message -->
+        <ng-template pTemplate="emptymessage">
+            <tr>
+                <td colspan="6" class="text-center">No projects found.</td>
+            </tr>
+        </ng-template>
     </p-table>
 </div>
 

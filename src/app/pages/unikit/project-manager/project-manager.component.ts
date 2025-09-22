@@ -74,6 +74,11 @@ export class ProjectManagerComponent {
   Remarks: "Project size reduced to 46"
 },]
 addProjectDialog:boolean = false;
+valuesofEXP:any = [
+  {name:'WTG1'},{name:'WTG2'},{name:'WTG3'},
+]
+  expandedRowsKeys: { [key: string]: boolean } = {};
+  expandedRows: { [key: string]: boolean } = {};
   constructor(){}
 
   ngOnInit(){

@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { Shared } from '../../../services/shared/shared.module';
+import { TableRowCollapseEvent, TableRowExpandEvent } from 'primeng/table';
+import { MessageService } from 'primeng/api';
 
 @Component({
   selector: 'app-production-manager',
@@ -8,6 +10,8 @@ import { Shared } from '../../../services/shared/shared.module';
   styleUrl: './production-manager.component.scss'
 })
 export class ProductionManagerComponent {
+  expandedRowsKeys: { [key: string]: boolean } = {};
+  expandedRows: { [key: string]: boolean } = {};
 clusterManager = [
   { name: 'Manager1', code: 'NY' },
   { name: 'Manager2', code: 'RM' },
@@ -74,10 +78,21 @@ clusterManager = [
   Remarks: "Project size reduced to 46"
 },]
 
+valuesofEXP:any = [
+  {name:'WTG1'},{name:'WTG2'},{name:'WTG3'},
+]
 addProjectDialog:boolean = false;
-  constructor(){}
+  constructor(private messageService: MessageService){}
 
   ngOnInit(){
 
   }
+
+   onRowExpand(event: TableRowExpandEvent) {
+        //this.messageService.add({ severity: 'info', summary: 'Product Expanded', detail: event.data.name, life: 3000 });
+    }
+
+    onRowCollapse(event: TableRowCollapseEvent) {
+       // this.messageService.add({ severity: 'success', summary: 'Product Collapsed', detail: event.data.name, life: 3000 });
+    }
 }
