@@ -156,6 +156,7 @@
                 <td>{{ project.FPD }}</td>
                 <td>{{ project.State }}</td>
                 <td>{{ project.SiteName }}</td>
+                <td>{{ project.WTGQTY }}</td>
                 <td colspan="100%"></td>
             </tr>
         </ng-template>
@@ -163,15 +164,15 @@
         <!-- Expanded Row -->
         <ng-template pTemplate="rowexpansion" #expandedrow let-project>
             <tr *ngFor="let exp of valuesofEXP">
-                <td colspan="6" style="text-align: center;">
+                <td colspan="7" style="text-align: center;">
                     {{exp.name}}
                 </td>
-                <td>
+                <!-- <td>
                     <div>
                         <label class="block mb-2 font-semibold">Project_QTY</label>
                         <input type="text" pInputText placeholder="Enter QTY" class="w-full" />
                     </div>
-                </td>
+                </td> -->
                 <td>
                     <div>
                         <label class="block mb-2 font-semibold">Foundation Actual</label>
