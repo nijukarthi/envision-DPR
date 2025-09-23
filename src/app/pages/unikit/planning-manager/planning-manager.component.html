@@ -19,7 +19,7 @@
             <tr>
                 <th>Sl. No.</th>
                 <th>P-code </th>
-                <th>Full Project Description</th>
+                <th>Project Description</th>
                 <th>Site Name</th>
                 <th>Customer</th>
                 <th>City info</th>
@@ -87,7 +87,7 @@
 </div>
 <!-- Add New Project -->
 <p-dialog header="Add Project" [resizable]="true" [draggable]="false" [modal]="true" [maximizable]="true" appendTo="body"
-    [(visible)]="addProjectDialog" [style]="{ width: '70vw' }" [contentStyle]="{ height: '500px' }">
+    [(visible)]="addProjectDialog" [style]="{ width: '75vw' }" [contentStyle]="{ height: '500px' }">
 
     <p-fluid>
         <div class="flex flex-col md:flex-row gap-8">
@@ -97,124 +97,145 @@
                 <div class="card flex flex-col gap-4">
                     <div class="flex flex-wrap items-start gap-6">
                         <div class="flex flex-col gap-2">
-                            <label for="P-code">P-code </label>
+                            <label for="P-code">P-code <span class="text-red-500">*</span></label>
                             <input pInputText id="P-code" type="text" />
                         </div>
-                        <div class="flex flex-col gap-2">
-                            <label for="desc">Full Project Description</label>
-                            <textarea pTextarea id="description"  rows="1" cols="19" style="resize: none" ></textarea>
-                        </div>
-                        <div class="flex flex-col gap-2">
-                            <label for="SiteName">Site Name</label>
-                            <input pInputText id="SiteName" type="text" />
-                        </div>
-                        <div class="flex flex-col gap-2">
-                            <label for="customer">Customer</label>
+                         <div class="flex flex-col gap-2">
+                            <label for="customer">Customer <span class="text-red-500">*</span></label>
                             <input pInputText id="customer" type="text" />
                         </div>
+                        <div class="flex flex-col gap-2">
+                            <label for="customer">SPV <span class="text-red-500">*</span></label>
+                            <input pInputText id="customer" type="text" />
+                        </div>
+                        <div class="flex flex-col gap-2">
+                            <label for="desc">Project Description</label>
+                            <textarea pTextarea id="description"  rows="1" cols="19" style="resize: none" ></textarea>
+                        </div>
+                       <!--  <div class="flex flex-col gap-2">
+                            <label for="SiteName">Site Name</label>
+                            <input pInputText id="SiteName" type="text" />
+                        </div> -->
+                       
                     </div>
                     <div class="flex flex-wrap items-start gap-6">
                         <div class="flex flex-col gap-2">
-                            <label for="Cityinfo">City info </label>
+                            <label for="Cityinfo">City Info<span class="text-red-500">*</span> </label>
                             <input pInputText id="Cityinfo" type="text" />
                         </div>
-                        <div class="flex flex-col gap-2">
+                       <!--  <div class="flex flex-col gap-2">
                             <label for="unique">Unique Site-#No.</label>
+                            <input pInputText id="uniqueription" type="text">
+                        </div> -->
+                        <div class="flex flex-col gap-2">
+                            <label for="State">State <span class="text-red-500">*</span></label>
+                            <input pInputText id="State" type="text" />
+                        </div>
+                         <div class="flex flex-col gap-2">
+                            <label for="unique">Zone <span class="text-red-500">*</span></label>
                             <input pInputText id="uniqueription" type="text">
                         </div>
                         <div class="flex flex-col gap-2">
-                            <label for="State">State</label>
-                            <input pInputText id="State" type="text" />
-                        </div>
-                        <div class="flex flex-col gap-2">
-                            <label for="WTGQTY">WTG QTY</label>
+                            <label for="WTGQTY">WTG QTY <span class="text-red-500">*</span></label>
                             <input pInputText id="WTGQTY" type="text" />
                         </div>
                     </div>
                     <div class="flex flex-wrap items-start gap-6">
                         <div class="flex flex-col gap-2">
-                            <label for="Capacity">Capacity </label>
+                            <label for="WTGQTY">WTG Type <span class="text-red-500">*</span></label>
+                            <input pInputText id="WTGQTY" type="text" />
+                        </div>
+                        <div class="flex flex-col gap-2">
+                            <label for="Capacity">Capacity(MW) <span class="text-red-500">*</span></label>
                             <input pInputText id="Capacity" type="text" />
                         </div>
                         <div class="flex flex-col gap-2">
-                            <label for="PM">PM</label>
+                            <label for="PM">PPA Type</label>
                             <input pInputText id="PM" type="text">
                         </div>
                         <div class="flex flex-col gap-2">
-                            <label for="type1">Type1</label>
+                            <label for="type1">Grid Connectivity <span class="text-red-500">*</span></label>
                             <input pInputText id="type1" type="text" />
                         </div>
-                        <div class="flex flex-col gap-2">
-                            <label for="StateHead">State Head</label>
-                            <input pInputText id="StateHead" type="text" />
-                        </div>
+                        
                     </div>
                     <div class="flex flex-wrap items-start gap-6">
                         <div class="flex flex-col gap-2">
-                            <label for="type2">Type2 </label>
+                            <label for="StateHead">BD Manager <span class="text-red-500">*</span></label>
+                            <input pInputText id="StateHead" type="text" />
+                        </div>
+                        <div class="flex flex-col gap-2">
+                            <label for="type2">Solution Manager <span class="text-red-500">*</span></label>
                             <input pInputText id="type2" type="text" />
                         </div>
                         <div class="flex flex-col gap-2">
-                            <label for="ConstructionManager">Construction Manager</label>
+                            <label for="ConstructionManager">Project Manager <span class="text-red-500">*</span></label>
                             <input pInputText id="ConstructionManager" type="text">
                         </div>
                         <div class="flex flex-col gap-2">
-                            <label for="type3">Type3</label>
+                            <label for="type3">State Head <span class="text-red-500">*</span></label>
                             <input pInputText id="type3" type="text" />
                         </div>
+                        
+                    </div>
+                    <div class="flex flex-wrap items-start gap-6">
                         <div class="flex flex-col gap-2">
                             <label for="MechanicalLead">Mechanical Lead</label>
                             <input pInputText id="MechanicalLead" type="text" />
                         </div>
-                    </div>
-                    <div class="flex flex-wrap items-start gap-6">
                         <div class="flex flex-col gap-2">
-                            <label for="type4">Type4 </label>
+                            <label for="type4">Site Manager <span class="text-red-500">*</span> </label>
                             <input pInputText id="type4" type="text" />
                         </div>
-                        <div class="flex flex-col gap-2">
-                            <label for="Start Date">Start Date</label>
+                        <div class="flex flex-col gap-2" style="min-width: 10rem;">
+                            <label for="Start Date">Start of First Component Supply </label>
                             <p-datepicker appendTo="body" />
                         </div>
                         <div class="flex flex-col gap-2">
-                            <label for="CompleteDate">Complete Date</label>
+                            <label for="CompleteDate">Start of First Site Activity</label>
                             <p-datepicker appendTo="body" />
                         </div>
-                        <div class="flex flex-col gap-2">
-                            <label for="DetailStatus">Detail Status</label>
-                            <input pInputText id="DetailStatus" type="text" />
-                        </div>
+                        
                     </div>
                     <div class="flex flex-wrap items-start gap-6">
                         <div class="flex flex-col gap-2">
-                            <label for="Status4">Status4 (P or S) </label>
-                            <input pInputText id="Status4" type="text" />
+                            <label for="DetailStatus">Start of First Commissioning Activity</label>
+                             <p-datepicker appendTo="body" />
                         </div>
                         <div class="flex flex-col gap-2">
-                            <label for="Start Date">Start Date</label>
+                            <label for="Status4">Contractual COD </label>
+                            <p-datepicker appendTo="body" />
+                        </div>
+                        <div class="flex flex-col gap-2">
+                            <label for="Start Date">Expected COD</label>
                             <p-datepicker appendTo="body" />
                         </div>
                         <div class="flex flex-col gap-2">
                             <label for="ContractualCoD">Contractual CoD</label>
-                            <input pInputText id="ContractualCoD" type="text" />
+                            <p-datepicker appendTo="body" />
                         </div>
-                        <div class="flex flex-col gap-2">
-                            <label for="ExpectedCoD">Expected CoD</label>
-                            <input pInputText id="ExpectedCoD" type="text" />
-                        </div>
+                       
                     </div>
                     <div class="flex flex-wrap items-start gap-6">
-                        <div class="flex flex-col gap-2">
-                            <label for="ActualCoD">Actual CoD </label>
-                            <input pInputText id="ActualCoD" type="text" />
+                         <div class="flex flex-col gap-2">
+                            <label for="ExpectedCoD">Term Sheet Sign Date <span class="text-red-500">*</span></label>
+                            <p-datepicker appendTo="body" />
                         </div>
                         <div class="flex flex-col gap-2">
-                            <label for="Delay">Delay</label>
-                            <input pInputText id="Delay" type="text">
+                            <label for="ActualCoD">Supply Contract Sign Date</label>
+                            <p-datepicker appendTo="body" />
                         </div>
                         <div class="flex flex-col gap-2">
-                            <label for="Remarks">Remarks</label>
-                            <textarea pTextarea id="description"  rows="4" cols="46" style="resize: none" ></textarea>
+                            <label for="Delay">Service Sign Date</label>
+                            <p-datepicker appendTo="body" />
+                        </div>
+                        <div class="flex flex-col gap-2">
+                            <label for="Remarks">LTSA Sign Date</label>
+                            <p-datepicker appendTo="body" />
+                        </div>
+                        <div class="flex flex-col gap-2">
+                            <label for="Remarks">NTP Date</label>
+                            <p-datepicker appendTo="body" />
                         </div>
                         <!-- <div class="flex flex-col gap-2">
                             <label for="ExpectedCoD">Expected CoD</label>

@@ -50,7 +50,7 @@ export class AppMenu {
                 //visible: this.siteManager 
             },
             {
-                label: 'Roles',
+                label: 'Portfolio',
                 icon: 'pi pi-fw pi-briefcase',
                 routerLink: ['//pages'],
                 items: [
@@ -60,9 +60,99 @@ export class AppMenu {
                         
                     }, */
                     {
-                        label: "Manager's",
+                        label: "Onshore Wind",
                         icon: 'pi pi-fw pi-user',
-                        items: [
+                         items: [
+                            {
+                                label: 'Project',
+                                icon: 'pi pi-fw pi-sign-in',
+                                routerLink: ['/app/uikit/planningManager'],
+                                items: [
+                            {
+                                label: 'Project Planning',
+                                icon: 'pi pi-fw pi-bookmark',
+                                routerLink: ['/app/uikit/productionManager'],
+                              
+                            },
+                            {
+                                label: 'TSA',
+                                icon: 'pi pi-fw pi-bookmark',
+                                items:[
+                                  {label:'T Production'},
+                                  {label:'T Delivery'},
+                                ]
+                              
+                            },
+                            {
+                                label: 'T I&C',
+                                icon: 'pi pi-fw pi-bookmark',
+                                 items:[
+                                  {label:'WTG Receiving'},
+                                  {label:'Foundation'},
+                                  {label:'Instllation'},
+                                  {label:'Commissioning'},
+                                  {label:'STPT'},
+                                  {label:'HOTO'},
+                                ]
+                            },
+                            {
+                                label: 'T Cash',
+                                icon: 'pi pi-fw pi-bookmark',
+                                items:[
+                                  {label:'Work Complete'},
+                                  {label:'Invoice'},
+                                ]
+                               
+                            },
+                            
+                        ],
+                            },
+                            {
+                                label: 'O&M',
+                                icon: 'pi pi-fw pi-box',
+                                routerLink: ['/app/uikit/productionManager'],
+                                 items: [
+                            {
+                                label: 'O&M Planning',
+                                icon: 'pi pi-fw pi-bookmark',
+                                routerLink: ['/app/uikit/productionManager'],
+                              
+                            },
+                            {
+                                label: 'T Warranty',
+                                icon: 'pi pi-fw pi-bookmark',
+                              
+                            },
+                            {
+                                label: 'LTSA',
+                                icon: 'pi pi-fw pi-bookmark',
+                            },
+                            /* {
+                                label: 'Tower',
+                                icon: 'pi pi-fw pi-bookmark',
+                               
+                            }, */
+                            
+                        ],
+                            },
+                            /* {
+                                label: 'Delivery Manager',
+                                icon: 'pi pi-building-columns',
+                                routerLink: ['/app/uikit/projectManager']
+                            },
+                            {
+                                label: 'Cluster Manager',
+                                icon: 'pi pi-id-card',
+                                routerLink: ['/app/uikit/clusterManager']
+                            },
+                            {
+                                label: 'Site Manager',
+                                icon: 'pi pi-shield',
+                                routerLink: ['/app/uikit/siteManager']
+                            } */
+
+                        ]
+                       /*  items: [
                             {
                                 label: 'Planning Manager',
                                 icon: 'pi pi-fw pi-sign-in',
@@ -112,9 +202,135 @@ export class AppMenu {
                                 routerLink: ['/app/uikit/siteManager']
                             }
 
-                        ]
+                        ] */
                     },
+                     {
+                        label: "BESS",
+                        icon: 'pi pi-fw pi-user',
+                        items:[
+                            {label:'BESS Project',
+                                 items: [
+                            {
+                                label: 'BESS Planning',
+                                icon: 'pi pi-fw pi-sign-in',
+                                routerLink: ['/app/uikit/planningManager'],
+                                item:[
+                                    {}
+                                ]
+                            },
+                            {
+                                label: 'BSA',
+                                icon: 'pi pi-fw pi-box',
+                                routerLink: ['/app/uikit/productionManager'],
+                                 items: [
+                            {
+                                label: 'Production Manager',
+                                icon: 'pi pi-fw pi-bookmark',
+                                routerLink: ['/app/uikit/productionManager'],
+                                items:[
+                                    {
+                                label: 'AC',
+                                icon: 'pi pi-fw pi-bookmark',
+                              
+                            },
+                            {
+                                label: 'PCS',
+                                icon: 'pi pi-fw pi-bookmark',
+                            },
+                            {
+                                label: 'SCADA',
+                                icon: 'pi pi-fw pi-bookmark',
+                               
+                            },
+                                ]
+                              
+                            },
+                            
+                            
+                        ],
+                            },
+                                     
+                                     {
+                                         label: 'BESS I&C',
+                                         icon: 'pi pi-fw pi-user',
+                                     },
+                                     {
+                                         label: 'BESS Cash',
+                                         icon: 'pi pi-fw pi-user',
+                                     },
+                           /*  {
+                                label: 'Delivery Manager',
+                                icon: 'pi pi-building-columns',
+                                routerLink: ['/app/uikit/projectManager']
+                            },
+                            {
+                                label: 'Cluster Manager',
+                                icon: 'pi pi-id-card',
+                                routerLink: ['/app/uikit/clusterManager']
+                            },
+                            {
+                                label: 'Site Manager',
+                                icon: 'pi pi-shield',
+                                routerLink: ['/app/uikit/siteManager']
+                            } */
+
+                        ]
+                            },
+                            
+                            {label:'BESS O&M',
+                                items:[
+                                    {label:'BESS O&M Plan'},
+                                    {label:'BESS Warranty'},
+                                    {label:'BESS LTSA'},
+                            ]
+                            }
+                        ]
+                       
+                    }
                    
+                ]
+            },
+            {
+                 label: 'TSA',
+                icon: 'pi pi-fw pi-briefcase',
+                items:[
+                    {
+                        label: 'Prod',
+                        icon: 'pi pi-fw pi-sign-in',
+                        //routerLink: ['/app/uikit/planningManager']
+                    },
+                    {
+                        label: 'Delivery',
+                        icon: 'pi pi-fw pi-sign-in',
+                        //routerLink: ['/app/uikit/planningManager']
+                    }
+                ]
+            },
+            {
+                 label: 'I & C',
+                icon: 'pi pi-fw pi-briefcase',
+                items:[
+                    {
+                        label: 'Cluster',
+                        icon: 'pi pi-fw pi-sign-in',
+                        //routerLink: ['/app/uikit/planningManager']
+                    },
+                    {
+                        label: 'SI',
+                        icon: 'pi pi-fw pi-sign-in',
+                        //routerLink: ['/app/uikit/planningManager']
+                    }
+                ]
+            },
+            {
+                 label: 'Cash',
+                icon: 'pi pi-fw pi-briefcase',
+                items:[
+                    {
+                        label: 'Cash',
+                        icon: 'pi pi-fw pi-sign-in',
+                        //routerLink: ['/app/uikit/planningManager']
+                    }
                 ]
             },
              {
