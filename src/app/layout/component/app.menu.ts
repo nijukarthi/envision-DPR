@@ -71,7 +71,31 @@ export class AppMenu {
                             {
                                 label: 'Production Manager',
                                 icon: 'pi pi-fw pi-box',
-                                routerLink: ['/app/uikit/productionManager']
+                                routerLink: ['/app/uikit/productionManager'],
+                                 items: [
+                            {
+                                label: 'Nacelle & Hub',
+                                icon: 'pi pi-fw pi-bookmark',
+                               /*  items: [
+                                    { label: 'Submenu 2.1.1', icon: 'pi pi-fw pi-bookmark' },
+                                    { label: 'Submenu 2.1.2', icon: 'pi pi-fw pi-bookmark' }
+                                ] */
+                            },
+                            {
+                                label: 'Blade',
+                                icon: 'pi pi-fw pi-bookmark',
+                               /*  items: [{ label: 'Submenu 2.2.1', icon: 'pi pi-fw pi-bookmark' }] */
+                            },
+                            {
+                                label: 'Tower',
+                                icon: 'pi pi-fw pi-bookmark',
+                               /*  items: [
+                                    { label: 'Submenu 2.1.1', icon: 'pi pi-fw pi-bookmark' },
+                                    { label: 'Submenu 2.1.2', icon: 'pi pi-fw pi-bookmark' }
+                                ] */
+                            },
+                            
+                        ],
                             },
                             {
                                 label: 'Delivery Manager',
